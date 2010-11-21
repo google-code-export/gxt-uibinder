@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.1.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.1.0/distro-source/core/src/gwt-module.dtd">
+<module>
+  <inherits name="com.jhickman.web.gwt.customuibinder.CustomUiBinder" />
+  
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.Container:com.jhickman.web.gwt.gxtuibinder.elementparsers.ContainerParser" />
+        
+
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.LayoutContainer:com.jhickman.web.gwt.gxtuibinder.elementparsers.LayoutContainerParser" />    
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.ContentPanel:com.jhickman.web.gwt.gxtuibinder.elementparsers.ContentPanelParser" />    
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.menu.MenuBarItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.MenuBarItemParser" />    
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.menu.CheckMenuItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.CheckMenuItemParser" />    
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.menu.MenuItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.MenuItemParser" />    
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.button.ToolButton:com.jhickman.web.gwt.gxtuibinder.elementparsers.button.ToolButtonParser" />    
+
+  <!-- 
+  <extend-configuration-property name="gwt.uibinder.customHandlerEvaluator"
+        value="com.jhickman.web.gwt.gxtuibinder.rebind.GxtHandlerEvaluator" />
+ -->
+</module>
