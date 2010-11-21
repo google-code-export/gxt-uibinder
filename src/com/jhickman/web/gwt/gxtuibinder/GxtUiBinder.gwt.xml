@@ -20,8 +20,6 @@
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.button.ToolButton:com.jhickman.web.gwt.gxtuibinder.elementparsers.button.ToolButtonParser" />    
 
-  <!-- 
   <extend-configuration-property name="gwt.uibinder.customHandlerEvaluator"
         value="com.jhickman.web.gwt.gxtuibinder.rebind.GxtHandlerEvaluator" />
- -->
 </module>
