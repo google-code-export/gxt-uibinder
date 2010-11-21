@@ -3,9 +3,6 @@
  */
 package com.jhickman.web.gwt.gxtuibinder.elementparsers;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.core.ext.typeinfo.NotFoundException;
@@ -90,8 +87,6 @@ public class ContentPanelParser implements ElementParser {
         public String getMethodName() {
             return methodName;
         }
-        
-        public static final List<SupportedChildLocalNames> SUPPORTED = Arrays.asList(values());
     }
 
 }
