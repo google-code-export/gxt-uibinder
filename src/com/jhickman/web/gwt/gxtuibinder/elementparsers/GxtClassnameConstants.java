@@ -3,6 +3,7 @@
  */
 package com.jhickman.web.gwt.gxtuibinder.elementparsers;
 
+
 /**
  * Provides class names of all used GXT components.  This avoids GXT dependencies.
  * 
@@ -26,4 +27,9 @@ public interface GxtClassnameConstants {
 	public static final String EVENTTYPE = "com.extjs.gxt.ui.client.event.EventType";
 	public static final String EVENTS = "com.extjs.gxt.ui.client.event.Events";
 	public static final String LISTENER = "com.extjs.gxt.ui.client.event.Listener";
+
+
+	public static final String LISTSTORE = "com.extjs.gxt.ui.client.store.ListStore";
+	public static final String COLUMNMODEL = "com.extjs.gxt.ui.client.widget.grid.ColumnModel";
+	public static final String COLUMNCONFIG = "com.extjs.gxt.ui.client.widget.grid.ColumnConfig";
 }
