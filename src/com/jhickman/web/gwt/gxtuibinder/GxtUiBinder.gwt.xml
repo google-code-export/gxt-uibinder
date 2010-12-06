@@ -18,7 +18,11 @@
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.menu.MenuItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.MenuItemParser" />    
   <extend-configuration-property name="gwt.uibinder.elementparser"
-        value="com.extjs.gxt.ui.client.widget.button.ToolButton:com.jhickman.web.gwt.gxtuibinder.elementparsers.button.ToolButtonParser" />    
+        value="com.extjs.gxt.ui.client.widget.button.ToolButton:com.jhickman.web.gwt.gxtuibinder.elementparsers.button.ToolButtonParser" />
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.grid.Grid:com.jhickman.web.gwt.gxtuibinder.elementparsers.grid.GridParser" />
+        
+           
 
   <extend-configuration-property name="gwt.uibinder.customHandlerEvaluator"
         value="com.jhickman.web.gwt.gxtuibinder.rebind.GxtHandlerEvaluator" />
