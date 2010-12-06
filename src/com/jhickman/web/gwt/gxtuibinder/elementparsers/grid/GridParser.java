@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
@@ -21,14 +20,10 @@ import com.google.gwt.uibinder.rebind.XMLElement;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.GxtClassnameConstants;
 
 /**
- *
+ * @author hickman
  */
 public class GridParser implements ElementParser {
-	
-	private static final AtomicInteger COUNTER = new AtomicInteger();
-	private static final String COLUMN_MODEL_FIELD_BASENAME = "uniqueVariableNameForItemsInGridParser_";
-	
-	
+
 	@Override
 	public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
 		JClassType listStoreType = writer.getOracle().findType(GxtClassnameConstants.LISTSTORE);
@@ -38,29 +33,24 @@ public class GridParser implements ElementParser {
 			writer.die(elem, "Attribute 'store' is required");
 		}
 		
+		// have to set the following fields to null temporarily.  
+		// Due to the order of operations added, we need to construct
+		// all ColumnConfigs before constructing a ColumnModel.
+		writer.setFieldInitializer(fieldName, "null");
+		// new ColumnModel(columnConfig)
+		String columnModel = writer.declareField(GxtClassnameConstants.COLUMNMODEL, elem);
+		writer.setFieldInitializer(columnModel, "null");
 		
 		
 		JClassType arrayListType = writer.getOracle().findType(ArrayList.class.getName());
 		JClassType columnConfigType = writer.getOracle().findType(GxtClassnameConstants.COLUMNCONFIG);
 		JParameterizedType parameterizedArrayListType = writer.getOracle().getParameterizedType(arrayListType.isGenericType(), new JClassType[] {columnConfigType});
 		
-		
-		
 		Map<String, JType> columnConfigSetterTypes = fetchColumnConfigProperties(columnConfigType);
 
-		
 		// List<ColumnConfig>
 		String columnConfigList = writer.declareField(List.class.getName(), elem);
 		writer.setFieldInitializerAsConstructor(columnConfigList, parameterizedArrayListType);
-		
-		// new ColumnModel(columnConfig)
-		String columnModel = writer.declareField(GxtClassnameConstants.COLUMNMODEL, elem);
-		writer.setFieldInitializer(columnModel, String.format("new %s((java.util.List<%s>) %s);", GxtClassnameConstants.COLUMNMODEL, GxtClassnameConstants.COLUMNCONFIG, columnConfigList));
-
-		// new Grid(store, columnModel);
-		writer.setFieldInitializerAsConstructor(fieldName, type, store, columnModel);
-		
-		
 
 		for(XMLElement child : elem.consumeChildElements()) {
 			if ( ! elem.getPrefix().equals(child.getPrefix())) {
@@ -77,6 +67,11 @@ public class GridParser implements ElementParser {
 			
 			writer.addStatement("%s.add(%s);", columnConfigList, columnConfig);
 		}
+		
+		// now that we have all ColumnConfigs created and added to list, we can now
+		// construct the ColumnModel and Grid
+		writer.addStatement("%s = new %s(%s);", columnModel, GxtClassnameConstants.COLUMNMODEL, columnConfigList);
+		writer.addStatement("%s = new %s(%s, %s);", fieldName, type.getQualifiedSourceName(), store, columnModel);
 	}
 
 
@@ -84,9 +79,11 @@ public class GridParser implements ElementParser {
 			Map<String, JType> columnConfigSetterTypes, XMLElement child,
 			String columnConfig) throws UnableToCompleteException {
 		
-		for(int i = 0; i < child.getAttributeCount(); i++) {
-			XMLAttribute attribute = child.getAttribute(i);
-			
+		int attributeCount = child.getAttributeCount();
+		for(int i = 0; i < attributeCount; i++) {
+			// always get 0 because we're consuming them
+			XMLAttribute attribute = child.getAttribute(0);
+
 			String setterMethod = "set" + initialCap(attribute.getName());
 			String value = child.consumeAttribute(attribute.getName(), columnConfigSetterTypes.get(setterMethod));
 			writer.addStatement("%s.%s(%s);", columnConfig, setterMethod, value);
@@ -111,10 +108,4 @@ public class GridParser implements ElementParser {
 		return propertyName.substring(0, 1).toUpperCase()
 			+ propertyName.substring(1);
 	}
-
-
-	private static String nextVariableName() {
-		return COLUMN_MODEL_FIELD_BASENAME + COUNTER.addAndGet(1);
-	}
-
 }
