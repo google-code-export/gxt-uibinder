@@ -40,6 +40,5 @@ public interface GxtClassnameConstants {
 	public static final String COLUMNMODEL = "com.extjs.gxt.ui.client.widget.grid.ColumnModel";
 	public static final String COLUMNCONFIG = "com.extjs.gxt.ui.client.widget.grid.ColumnConfig";
 
-
-	
+	public static final String TOOLTIPCONFIG = "com.extjs.gxt.ui.client.widget.tips.ToolTipConfig";
 }
