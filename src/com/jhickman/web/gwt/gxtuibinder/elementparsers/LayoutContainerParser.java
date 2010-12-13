@@ -20,7 +20,15 @@ import com.google.gwt.uibinder.rebind.XMLElement;
 public class LayoutContainerParser implements ElementParser {
     private static enum Layout {
         BorderLayout(new BorderLayoutParser()),
-        FitLayout(new GenericLayoutParser(GxtClassnameConstants.FITLAYOUT))
+        
+        AccordionLayout(new GenericLayoutParser(GxtClassnameConstants.ACCORDIONLAYOUT)),
+        FitLayout(new GenericLayoutParser(GxtClassnameConstants.FITLAYOUT)),
+        CardLayout(new GenericLayoutParser(GxtClassnameConstants.CARDLAYOUT)),
+        CenterLayout(new GenericLayoutParser(GxtClassnameConstants.CENTERLAYOUT)),
+        VBoxLayout(new GenericLayoutParser(GxtClassnameConstants.VBOXLAYOUT)),
+        HBoxLayout(new GenericLayoutParser(GxtClassnameConstants.HBOXLAYOUT))
+        
+        //RowLayout(new GenericLayoutParser(GxtClassnameConstants.ROWLAYOUT)),
         ;
         private final LayoutParser layoutParser;
         private Layout(LayoutParser layoutParser) {
