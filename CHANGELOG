@@ -1,0 +1,5 @@
+
+
+
+0.4
+  New functionality:  Support setting ToolTipConfig to any component by nesting a <ns:tooltipconfig /> element
