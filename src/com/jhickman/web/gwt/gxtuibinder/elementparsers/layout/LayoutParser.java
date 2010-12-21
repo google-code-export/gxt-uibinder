@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.jhickman.web.gwt.gxtuibinder.elementparsers;
+package com.jhickman.web.gwt.gxtuibinder.elementparsers.layout;
 
 import com.google.gwt.uibinder.elementparsers.ElementParser;
 
