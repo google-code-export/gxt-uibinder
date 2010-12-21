@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.jhickman.web.gwt.gxtuibinder.elementparsers;
+package com.jhickman.web.gwt.gxtuibinder.elementparsers.layout;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -13,6 +13,7 @@ import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLAttribute;
 import com.google.gwt.uibinder.rebind.XMLElement;
+import com.jhickman.web.gwt.gxtuibinder.elementparsers.GxtClassnameConstants;
 
 /**
  * @author hickman
