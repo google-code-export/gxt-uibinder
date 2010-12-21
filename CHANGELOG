@@ -5,3 +5,5 @@
   New functionality:     added maven pom file for easier jar builds
   Updated functionality: Added more Layout's for the LayoutContainer
   New functionality:     Support setting ToolTipConfig to any component by nesting a <ns:tooltipconfig /> element
+  New functionality:     FormLayout support
+  New functionality:     RadioGroup
