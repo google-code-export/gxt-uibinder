@@ -25,6 +25,13 @@ public class ComponentParser implements ElementParser {
 	@Override
 	public void parse(XMLElement elem, String fieldName, JClassType type,UiBinderWriter writer) throws UnableToCompleteException {
 		
+		ElementParserUtil.consumeStyleAttribute(elem, fieldName, writer);
+		
+		handleToolTips(elem, fieldName, writer);
+	}
+	
+	protected void handleToolTips(XMLElement elem, String fieldName,
+			UiBinderWriter writer) throws UnableToCompleteException {
 		Interpreter<Boolean> toolTipConfigInterpreter = new ToolTipConfigInterpreter(elem.getNamespaceUri());
 		Collection<XMLElement> toolTipConfigs = elem.consumeChildElements(toolTipConfigInterpreter);
 		if (toolTipConfigs.isEmpty()) return;
