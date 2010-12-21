@@ -24,6 +24,7 @@ public interface GxtClassnameConstants {
 	public static final String CARDLAYOUT = "com.extjs.gxt.ui.client.widget.layout.CardLayout";
 	public static final String CENTERLAYOUT = "com.extjs.gxt.ui.client.widget.layout.CenterLayout";
 	public static final String ROWLAYOUT = "com.extjs.gxt.ui.client.widget.layout.RowLayout";
+	public static final String ROWDATA = "com.extjs.gxt.ui.client.widget.layout.RowData";
 	public static final String VBOXLAYOUT= "com.extjs.gxt.ui.client.widget.layout.VBoxLayout";
 	public static final String HBOXLAYOUT= "com.extjs.gxt.ui.client.widget.layout.HBoxLayout";
 	public static final String FORMLAYOUT = "com.extjs.gxt.ui.client.widget.layout.FormLayout";
@@ -43,4 +44,10 @@ public interface GxtClassnameConstants {
 	public static final String COLUMNCONFIG = "com.extjs.gxt.ui.client.widget.grid.ColumnConfig";
 
 	public static final String TOOLTIPCONFIG = "com.extjs.gxt.ui.client.widget.tips.ToolTipConfig";
+
+
+	public static final String STYLEORIENTATION = "com.extjs.gxt.ui.client.Style.Orientation";
+
+
+
 }

@@ -13,6 +13,7 @@ import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.AbsoluteLayoutPars
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.BorderLayoutParser;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.GenericLayoutParser;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.LayoutParser;
+import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.RowLayoutParser;
 
 
 /**
@@ -32,9 +33,8 @@ public class LayoutContainerParser implements ElementParser {
         VBoxLayout(new GenericLayoutParser(GxtClassnameConstants.VBOXLAYOUT)),
         HBoxLayout(new GenericLayoutParser(GxtClassnameConstants.HBOXLAYOUT)),
         FormLayout(new GenericLayoutParser(GxtClassnameConstants.FORMLAYOUT)),
-        AbsoluteLayout(new AbsoluteLayoutParser(GxtClassnameConstants.ABSOLUTELAYOUT))
-        
-        //RowLayout(new GenericLayoutParser(GxtClassnameConstants.ROWLAYOUT)),
+        AbsoluteLayout(new AbsoluteLayoutParser(GxtClassnameConstants.ABSOLUTELAYOUT)),
+        RowLayout(new RowLayoutParser(GxtClassnameConstants.ROWLAYOUT))
         ;
         private final LayoutParser layoutParser;
         private Layout(LayoutParser layoutParser) {
