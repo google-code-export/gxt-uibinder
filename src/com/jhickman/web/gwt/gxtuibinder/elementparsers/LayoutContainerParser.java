@@ -26,7 +26,8 @@ public class LayoutContainerParser implements ElementParser {
         CardLayout(new GenericLayoutParser(GxtClassnameConstants.CARDLAYOUT)),
         CenterLayout(new GenericLayoutParser(GxtClassnameConstants.CENTERLAYOUT)),
         VBoxLayout(new GenericLayoutParser(GxtClassnameConstants.VBOXLAYOUT)),
-        HBoxLayout(new GenericLayoutParser(GxtClassnameConstants.HBOXLAYOUT))
+        HBoxLayout(new GenericLayoutParser(GxtClassnameConstants.HBOXLAYOUT)),
+        FormLayout(new GenericLayoutParser(GxtClassnameConstants.FORMLAYOUT))
         
         //RowLayout(new GenericLayoutParser(GxtClassnameConstants.ROWLAYOUT)),
         ;
