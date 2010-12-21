@@ -27,6 +27,8 @@ public interface GxtClassnameConstants {
 	public static final String VBOXLAYOUT= "com.extjs.gxt.ui.client.widget.layout.VBoxLayout";
 	public static final String HBOXLAYOUT= "com.extjs.gxt.ui.client.widget.layout.HBoxLayout";
 	public static final String FORMLAYOUT = "com.extjs.gxt.ui.client.widget.layout.FormLayout";
+	public static final String ABSOLUTELAYOUT = "com.extjs.gxt.ui.client.widget.layout.AbsoluteLayout";
+	public static final String ABSOLUTEDATA = "com.extjs.gxt.ui.client.widget.layout.AbsoluteData";
 	
 	public static final String MENU = "com.extjs.gxt.ui.client.widget.menu.Menu";
 	
@@ -41,7 +43,4 @@ public interface GxtClassnameConstants {
 	public static final String COLUMNCONFIG = "com.extjs.gxt.ui.client.widget.grid.ColumnConfig";
 
 	public static final String TOOLTIPCONFIG = "com.extjs.gxt.ui.client.widget.tips.ToolTipConfig";
-
-
-
 }
