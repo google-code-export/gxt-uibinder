@@ -13,6 +13,7 @@ import com.google.gwt.core.ext.typeinfo.JType;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLAttribute;
 import com.google.gwt.uibinder.rebind.XMLElement;
+import com.jhickman.web.gwt.gxtuibinder.elementparsers.GxtClassnameConstants;
 
 /**
  * @author hickman
@@ -30,6 +31,10 @@ public final class ElementParserUtil {
 	 * @throws UnableToCompleteException
 	 */
 	public static void applyAttributes(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
+
+		// first get the special Margin attribute
+		ElementParserUtil.consumeMarginAttribute(elem, fieldName, writer);
+
 		
 		Map<String, JType> setterMethods = fetchSetterMethods(type);
 		writer.addStatement("// %s", setterMethods);
@@ -79,6 +84,61 @@ public final class ElementParserUtil {
 			+ text.substring(1);
 	}
 	
+	
+	/**
+	 * Consumes the margins attribute from provided element and constructs
+	 * a proper Margins object from the comma separated data.
+	 * @param elem - Element that contains the margins attribute
+	 * @param fieldName - variable name of the object to receive the new Margins object
+	 * @param writer
+	 * @return fieldName of Margins object
+	 * @throws UnableToCompleteException
+	 */
+	public static String consumeMarginAttribute(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+		String[] margins = elem.consumeRawArrayAttribute("margins");
+		
+		if (margins != null && margins.length > 0) {
+			JClassType marginsType = writer.getOracle().findType(GxtClassnameConstants.MARGINS);
+			String marginsField = writer.declareField(GxtClassnameConstants.MARGINS, elem);
+			writer.setFieldInitializerAsConstructor(marginsField, marginsType, margins);
+			
+			writer.addStatement("%s.setMargins(%s);", fieldName, marginsField);
+			
+			return marginsField;
+		}
+		return null;
+	}
+
+	/**
+	 * Consumes the styleAttribute attribute from the provided elements.
+	 * 
+	 * Allowed value format is:
+	 * styleName:value;styleName:value
+	 * 
+	 * 
+	 * @param elem
+	 * @param fieldName
+	 * @param writer
+	 * @return
+	 * @throws UnableToCompleteException
+	 */
+	public static void consumeStyleAttribute(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+		String styleAttributes = elem.consumeRawAttribute("styleAttribute");
+		if (styleAttributes == null) return;
+		
+		String[] styles = styleAttributes.split("\\s*;\\s*");
+		for (String style : styles) {
+			String[] keyValue = style.split("\\s*:\\s*");
+			if (keyValue.length != 2) {
+				writer.die(elem, "styleAttribute should be in format: styleName:styleValue;styleName:styleValue  but found %s", styleAttributes);
+			}
+			
+			writer.addStatement("%s.setStyleAttribute(\"%s\", \"%s\");", fieldName, keyValue[0], keyValue[1]);
+		}
+		
+		
+		
+	}	
 	
 	private ElementParserUtil() {
 		throw new UnsupportedOperationException("Utility class cannot be instantiated");
