@@ -1,11 +1,18 @@
 
 0.5
-  New functionality:     support for AbsoluteLayout
-
+  * New Functionality
+    * support for AbsoluteLayout
+    * support for RowLayout
+    * Added support for using styleAttribute="" for all Components
+  * Defect fix
+    * ElementParserUtil had defect in that it always assumed attributes are being consumed.  Fixed by reversing order of attribute consumption. 
 
 0.4
-  New functionality:     added maven pom file for easier jar builds
-  Updated functionality: Added more Layout's for the LayoutContainer
-  New functionality:     Support setting ToolTipConfig to any component by nesting a <ns:tooltipconfig /> element
-  New functionality:     FormLayout support
-  New functionality:     RadioGroup
+  * New Functionality
+    * added maven pom file for easier jar builds
+    * Support setting ToolTipConfig to any component by nesting a <ns:tooltipconfig /> element
+    * FormLayout support
+    * RadioGroup
+  * Updated functionality
+    * Added more Layout's for the LayoutContainer
+  
