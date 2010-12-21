@@ -34,15 +34,20 @@ public final class ElementParserUtil {
 		Map<String, JType> setterMethods = fetchSetterMethods(type);
 		writer.addStatement("// %s", setterMethods);
 		int attributeCount = elem.getAttributeCount();
-		for (int i = 0; i < attributeCount; i++) {
+		
+		
+		// count backwards since we're consuming as we go
+		for (int i = attributeCount-1; i >= 0; i--) {
 			// always get 0 because we're consuming them
-			XMLAttribute attribute = elem.getAttribute(0);
+			XMLAttribute attribute = elem.getAttribute(i);
 			
 			String setterMethod = "set" + initialCap(attribute.getName());
 			
 			if (setterMethods.containsKey(setterMethod)) {
 				String value = elem.consumeAttribute(attribute.getName(), setterMethods.get(setterMethod));
 				writer.addStatement("%s.%s(%s);", fieldName, setterMethod, value);
+			} else {
+				writer.warn(elem, "Found attribute without associated setter method: %s.  IGNORING", attribute.getName());
 			}
 		}
 	}
