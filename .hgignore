@@ -1,6 +1,6 @@
 syntax: glob
-target
+gxt-uibinder/target
+gxt-uibinder/bin
 
 syntax: regexp
-^bin$
 
