@@ -48,7 +48,10 @@ public class AppModule extends AbstractGinModule {
 						case overview:
 							return new GenericActivity(ginjector.getOverviewView());
 						case buttons:
-							return new ButtonsActivity(new ButtonsViewImpl());
+							return new ButtonsActivity(ginjector.getButtonsView());
+						case absolutelayout:
+							return new GenericActivity(ginjector.getAbsoluteLayoutView());
+						
 					}
 				}
 				return null;
