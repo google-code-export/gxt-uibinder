@@ -2,27 +2,20 @@
 <module rename-to='gxt_uibinder_test'>
 
 
-  <!-- Inherit the core Web Toolkit stuff.                        -->
-  <inherits name='com.google.gwt.user.User'/>
 
-  <!-- Inherit the default GWT style sheet.  You can change       -->
-  <!-- the theme of your GWT application by uncommenting          -->
-  <!-- any one of the following lines.                            -->
-  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
-  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
-  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
-
-  <!-- Other module inherits                                      -->
+  <inherits name="com.google.gwt.activity.Activity" />  
+  <inherits name="com.google.gwt.user.User" />
+  <inherits name="com.google.gwt.user.theme.standard.Standard" />
   
   
+  <inherits name="com.google.gwt.inject.Inject" />
+  <inherits name="com.extjs.gxt.ui.GXT" />
   <inherits name="com.jhickman.web.gwt.gxtuibinder.GxtUiBinder" />
   
 
-
-  <!-- Specify the app entry point class.                         -->
   <entry-point class='com.jhickman.web.gwt.gxtuibindertest.client.GxtUiBinderTest'/>
 
-  <!-- Specify the paths for translatable code                    -->
+  
   <source path='client'/>
   <source path='shared'/>
 
