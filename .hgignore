@@ -2,5 +2,9 @@ syntax: glob
 gxt-uibinder/target
 gxt-uibinder/bin
 
+gxt-uibinder-test/war/WEB-INF/classes
+gxt-uibinder-test/war/gxt_uibinder_test
+
+
 syntax: regexp
 
