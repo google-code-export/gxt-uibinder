@@ -4,6 +4,8 @@ gxt-uibinder/bin
 
 gxt-uibinder-test/war/WEB-INF/classes
 gxt-uibinder-test/war/gxt_uibinder_test
+gxt-uibinder-test/www-test
+gxt-uibinder-test/test-classes
 
 
 syntax: regexp
