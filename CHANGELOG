@@ -1,3 +1,7 @@
+0.6
+  * Reorganized repository layout to add new test project
+    * Added Simple Unit Tests
+      * AbsoluteLayout
 
 0.5
   * New Functionality
@@ -16,3 +20,6 @@
   * Updated functionality
     * Added more Layout's for the LayoutContainer
   
+
+
+
