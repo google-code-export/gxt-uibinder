@@ -6,6 +6,7 @@ package com.jhickman.web.gwt.gxtuibindertest.client.place;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
@@ -40,23 +41,44 @@ public class MyPlace extends Place {
 	
 	
 	public static enum Token {
-		overview(OverviewViewImpl.class),
-		absolutelayout(AbsoluteLayoutView.class),
-		borderlayout(BorderLayoutView.class),
-		buttons(ButtonsView.class), 
-		tooltips(ToolTipsView.class), 
-		datepicker(DatePickerView.class), 
-		basictabs(BasicTabsView.class),
+		overview {
+			public View getView() {
+				return new OverviewViewImpl();
+			}
+		},
+		absolutelayout{
+			public View getView() {
+				return new AbsoluteLayoutView();
+			}
+		},
+		borderlayout{
+			public View getView() {
+				return new BorderLayoutView();
+			}
+		},
+		buttons{
+			public View getView() {
+				return new ButtonsView();
+			}
+		},
+		tooltips{
+			public View getView() {
+				return new ToolTipsView();
+			}
+		},
+		datepicker{
+			public View getView() {
+				return new DatePickerView();
+			}
+		},
+		basictabs{
+			public View getView() {
+				return new BasicTabsView();
+			}
+		}
 		;
 
-		private final Class<?> viewClass;
-		private Token(Class<?> viewClass) {
-			this.viewClass = viewClass;
-		}
-		
-		public Class<?> getViewClass() {
-			return viewClass;
-		}
+		public abstract View getView();
 	}
 
 	

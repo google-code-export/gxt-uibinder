@@ -12,12 +12,14 @@ import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
+import com.google.gwt.user.client.Window;
 import com.jhickman.web.gwt.gxtuibindertest.client.AppController;
 import com.jhickman.web.gwt.gxtuibindertest.client.activity.GenericActivity;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace.Token;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlaceHistoryMapper;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.GxtUiBinderTestShell;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 
 /**
@@ -72,7 +74,8 @@ public class AppFactory {
 				public Activity getActivity(Place place) {
 					if (place instanceof MyPlace) {
 						Token token = ((MyPlace) place).getToken();
-						View view = GWT.create(token.getViewClass());
+						View view = token.getView();
+						
 						return new GenericActivity(view);
 					}
 					return null;
