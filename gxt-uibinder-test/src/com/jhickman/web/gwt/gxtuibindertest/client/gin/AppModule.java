@@ -6,6 +6,7 @@ package com.jhickman.web.gwt.gxtuibindertest.client.gin;
 import com.google.gwt.activity.shared.Activity;
 import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.activity.shared.ActivityMapper;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.inject.client.AbstractGinModule;
@@ -14,12 +15,12 @@ import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
-import com.jhickman.web.gwt.gxtuibindertest.client.activity.ButtonsActivity;
 import com.jhickman.web.gwt.gxtuibindertest.client.activity.GenericActivity;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace;
-import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlaceHistoryMapper;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace.Token;
-import com.jhickman.web.gwt.gxtuibindertest.client.view.impl.ButtonsViewImpl;
+import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlaceHistoryMapper;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
 
 /**
  * @author hickman
@@ -44,15 +45,8 @@ public class AppModule extends AbstractGinModule {
 			public Activity getActivity(Place place) {
 				if (place instanceof MyPlace) {
 					Token token = ((MyPlace) place).getToken();
-					switch (token) {
-						case overview:
-							return new GenericActivity(ginjector.getOverviewView());
-						case buttons:
-							return new ButtonsActivity(ginjector.getButtonsView());
-						case absolutelayout:
-							return new GenericActivity(ginjector.getAbsoluteLayoutView());
-						
-					}
+					View view = GWT.create(token.getViewClass());
+					return new GenericActivity(view);
 				}
 				return null;
 			}

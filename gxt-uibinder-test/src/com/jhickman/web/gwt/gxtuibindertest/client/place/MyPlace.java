@@ -5,6 +5,10 @@ package com.jhickman.web.gwt.gxtuibindertest.client.place;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.impl.OverviewViewImpl;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
 
 /**
  * @author hickman
@@ -33,9 +37,20 @@ public class MyPlace extends Place {
 	
 	
 	public static enum Token {
-		overview,
-		absolutelayout,
-		buttons
+		overview(OverviewViewImpl.class),
+		absolutelayout(AbsoluteLayoutView.class),
+		borderlayout(BorderLayoutView.class),
+		buttons(ButtonsView.class),
+		;
+
+		private final Class<?> viewClass;
+		private Token(Class<?> viewClass) {
+			this.viewClass = viewClass;
+		}
+		
+		public Class<?> getViewClass() {
+			return viewClass;
+		}
 	}
 
 	
