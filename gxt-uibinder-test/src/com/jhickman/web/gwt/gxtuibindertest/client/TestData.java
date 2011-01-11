@@ -18,6 +18,11 @@ public class TestData {
 	public static Folder getNavigationModel() {
 		ModelData[] items = new ModelData[] {
 				new Navigation("Overview", new MyPlace(Token.overview)),
+				new Folder("Tabs",
+						new Navigation[] {
+						new Navigation("Basic Tabs", new MyPlace(Token.basictabs))
+						
+				}),
 				new Folder("Layouts",
 						new Navigation[] {
 						new Navigation("AbsoluteLayout", new MyPlace(Token.absolutelayout)),
