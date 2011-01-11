@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.jhickman.web.gwt.gxtuibindertest.client.view.impl;
+package com.jhickman.web.gwt.gxtuibindertest.client.view;
 
 import java.util.List;
 
@@ -24,8 +24,6 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.IsWidget;
-import com.google.gwt.user.client.ui.SimplePanel;
-import com.google.inject.Inject;
 import com.jhickman.web.gwt.gxtuibindertest.client.TestData;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Folder;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Navigation;
@@ -42,7 +40,6 @@ public class GxtUiBinderTestShell extends Composite {
 	@UiField ContentPanel navigationContainer;
 	@UiField LayoutContainer contentContainer;
 	
-	@Inject
 	public GxtUiBinderTestShell(EventBus eventBus, final PlaceController placeController) {
 		
 		initComponent(BINDER.createAndBindUi(this));

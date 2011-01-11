@@ -7,9 +7,8 @@ import com.google.gwt.activity.shared.ActivityManager;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.inject.Inject;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlaceHistoryMapper;
-import com.jhickman.web.gwt.gxtuibindertest.client.view.impl.GxtUiBinderTestShell;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.GxtUiBinderTestShell;
 
 /**
  * @author hickman
@@ -19,7 +18,6 @@ public class AppController {
 	private final GxtUiBinderTestShell shell;
 	
 	
-	@Inject
 	public AppController(
 			EventBus eventBus,
 			GxtUiBinderTestShell shell,

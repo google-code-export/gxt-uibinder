@@ -4,8 +4,7 @@
 package com.jhickman.web.gwt.gxtuibindertest.client;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
-import com.jhickman.web.gwt.gxtuibindertest.client.gin.AppGinjector;
+import com.jhickman.web.gwt.gxtuibindertest.client.factory.AppFactory;
 
 /**
  * @author hickman
@@ -15,7 +14,7 @@ public class GxtUiBinderTest implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
-		AppGinjector ginjector = GWT.create(AppGinjector.class);
-		ginjector.getAppController().go();
+		AppFactory factory = new AppFactory();
+		factory.getAppController().go();
 	}
 }

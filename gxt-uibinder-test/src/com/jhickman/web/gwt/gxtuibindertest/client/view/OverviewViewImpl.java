@@ -1,11 +1,10 @@
 /**
  * 
  */
-package com.jhickman.web.gwt.gxtuibindertest.client.view.impl;
+package com.jhickman.web.gwt.gxtuibindertest.client.view;
 
 import com.extjs.gxt.ui.client.widget.Composite;
 import com.extjs.gxt.ui.client.widget.Label;
-import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 
 /**
  * @author hickman

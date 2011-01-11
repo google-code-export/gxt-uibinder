@@ -5,8 +5,8 @@ package com.jhickman.web.gwt.gxtuibindertest.client.place;
 
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
-import com.jhickman.web.gwt.gxtuibindertest.client.view.impl.OverviewViewImpl;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
 

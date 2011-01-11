@@ -3,9 +3,8 @@
  */
 package com.jhickman.web.gwt.gxtuibindertest.client;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.junit.client.GWTTestCase;
-import com.jhickman.web.gwt.gxtuibindertest.client.gin.AppGinjector;
+import com.jhickman.web.gwt.gxtuibindertest.client.factory.AppFactory;
 
 
 /**
@@ -19,13 +18,11 @@ public class GxtUiBinderGwtTest extends GWTTestCase {
 		return "com.jhickman.web.gwt.gxtuibindertest.GxtUiBinderTest";
 	}
 
-	private AppGinjector ginjector;
-	
-	
-	protected AppGinjector getAppGinjector() {
-		if (ginjector == null) {
-			ginjector = GWT.create(AppGinjector.class);
+	private AppFactory factory;
+	protected AppFactory getAppFactory() {
+		if (factory == null) {
+			factory = new AppFactory();
 		}
-		return ginjector;
+		return factory;
 	}
 }
