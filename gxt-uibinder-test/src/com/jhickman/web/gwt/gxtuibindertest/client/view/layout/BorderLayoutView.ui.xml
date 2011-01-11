@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget">
+
+
+  	<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding,10px">
+    	<gxt:north size="100" collapsible="true" floatable="true" hideCollapseTool="true" split="true" margins="0,0,5,0">
+    		<gxt:ContentPanel>
+    		</gxt:ContentPanel>
+    	</gxt:north>
+    	<gxt:south size="100" split="true" collapsible="true" floatable="true" margins="5,0,0,0">
+    		<gxt:ContentPanel>
+    		</gxt:ContentPanel>
+    	</gxt:south>
+    	<gxt:east size="150" split="true" collapsible="true" margins="0,0,0,5">
+    		<gxt:ContentPanel>
+    		</gxt:ContentPanel>
+    	</gxt:east>
+    	<gxt:west size="150" split="true" collapsible="true" margins="0,5,0,0">
+    		<gxt:ContentPanel>
+    		</gxt:ContentPanel>
+    	</gxt:west>
+    	<gxt:center margins="0">
+    		<gxt:ContentPanel heading="BorderLayout Example" scrollMode="AUTOX">
+    		  <gxt:Label text="TODO - add buttons and event handlers." />
+    		</gxt:ContentPanel>
+    	</gxt:center>
+  	</gxt:LayoutContainer>
+  	
+</ui:UiBinder>
