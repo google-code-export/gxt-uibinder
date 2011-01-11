@@ -1,4 +1,6 @@
 0.6
+  * New Functionality
+    * FlowLayout
   * Reorganized repository layout to add new test project
     * Added Simple Unit Tests
       * AbsoluteLayout
