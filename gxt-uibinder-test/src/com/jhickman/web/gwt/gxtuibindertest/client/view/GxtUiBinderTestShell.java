@@ -5,11 +5,13 @@ package com.jhickman.web.gwt.gxtuibindertest.client.view;
 
 import java.util.List;
 
+import com.extjs.gxt.ui.client.Style.SelectionMode;
 import com.extjs.gxt.ui.client.data.ModelData;
 import com.extjs.gxt.ui.client.event.Events;
 import com.extjs.gxt.ui.client.event.Listener;
 import com.extjs.gxt.ui.client.event.TreePanelEvent;
 import com.extjs.gxt.ui.client.store.TreeStore;
+import com.extjs.gxt.ui.client.util.IconHelper;
 import com.extjs.gxt.ui.client.widget.Component;
 import com.extjs.gxt.ui.client.widget.Composite;
 import com.extjs.gxt.ui.client.widget.ContentPanel;
@@ -54,6 +56,9 @@ public class GxtUiBinderTestShell extends Composite {
 		final TreePanel<ModelData> tree = new TreePanel<ModelData>(store);
 		tree.setWidth(300);
 		tree.setDisplayProperty("name");
+		tree.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+		tree.getStyle().setLeafIcon(IconHelper.createStyle("icon-list"));
+		tree.setAutoLoad(true);
 		
 		
 		tree.addListener(Events.OnClick, new Listener<TreePanelEvent<ModelData>>() {
