@@ -29,7 +29,7 @@ public class AppController {
 			) {
 		this.shell = shell;
 		
-		activityManager.setDisplay(shell.getContentContainer());
+		activityManager.setDisplay(shell.getDisplay());
 		
 		historyHandler.handleCurrentHistory();
 	}

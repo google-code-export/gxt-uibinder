@@ -13,6 +13,7 @@ import com.extjs.gxt.ui.client.store.TreeStore;
 import com.extjs.gxt.ui.client.widget.Component;
 import com.extjs.gxt.ui.client.widget.Composite;
 import com.extjs.gxt.ui.client.widget.ContentPanel;
+import com.extjs.gxt.ui.client.widget.LayoutContainer;
 import com.extjs.gxt.ui.client.widget.treepanel.TreePanel;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.EventBus;
@@ -21,6 +22,8 @@ import com.google.gwt.place.shared.PlaceChangeEvent;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.AcceptsOneWidget;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.inject.Inject;
 import com.jhickman.web.gwt.gxtuibindertest.client.TestData;
@@ -37,7 +40,7 @@ public class GxtUiBinderTestShell extends Composite {
 	static Binder BINDER = GWT.create(Binder.class);
 	
 	@UiField ContentPanel navigationContainer;
-	@UiField SimplePanel contentContainer;
+	@UiField LayoutContainer contentContainer;
 	
 	@Inject
 	public GxtUiBinderTestShell(EventBus eventBus, final PlaceController placeController) {
@@ -82,7 +85,28 @@ public class GxtUiBinderTestShell extends Composite {
 	/**
 	 * @return the contentContainer
 	 */
-	public SimplePanel getContentContainer() {
+	public LayoutContainer getContentContainer() {
 		return contentContainer;
 	}
+	
+	
+	public AcceptsOneWidget getDisplay() {
+		return new ViewArea(contentContainer);
+	}
+	
+
+	private static final class ViewArea implements AcceptsOneWidget {
+		private final LayoutContainer container;
+		public ViewArea(LayoutContainer container) {
+			this.container = container;
+		}
+		public void setWidget(IsWidget w) {
+			container.removeAll();
+			if (w != null) {
+				container.add(w.asWidget());
+			}
+			container.layout(true);
+		}
+	}
+
 }
