@@ -1,0 +1,39 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget" xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button">
+
+
+	<ui:with type="com.extjs.gxt.ui.client.core.Template" field="template" />
+
+	<gxt:LayoutContainer>
+		<gxt:HorizontalPanel spacing="10">
+			<button:Button text="Basic">
+			  	<button:tooltipconfig title="Information" text="Prints the current document" />
+			</button:Button>
+			
+			<button:Button text="Closable">
+				<button:tooltipconfig title="Information" text="Prints the current document" closeable="true"/>
+			</button:Button>
+			
+			<button:Button text="Mouse Tracking">
+				<button:tooltipconfig title="Information" text="Prints the current document" trackMouse="true"/>
+			</button:Button>
+			
+			<!--
+			  Can't handle arguments that take arrays yet
+			<button:Button>
+				<button:tooltipconfig title="Information" text="Prints the current document" mouseOffset="new int[] {0,0}" anchor="left" />
+			</button:Button>
+			 --> 
+
+			<!-- need mouse offset below too: mouseOffset="new int[] {0,0}" -->
+			<button:Button text="Custom">
+				<button:tooltipconfig title="Template Tip" text="Prints the current document"  anchor="left" template="{template}" closeable="true" maxWidth="415" />
+			</button:Button>			 
+		</gxt:HorizontalPanel>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>
