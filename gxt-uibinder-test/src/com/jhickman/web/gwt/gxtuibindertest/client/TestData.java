@@ -20,7 +20,8 @@ public class TestData {
 				new Navigation("Overview", new MyPlace(Token.overview)),
 				new Folder("Layouts",
 						new Navigation[] {
-						new Navigation("AbsoluteLayout", new MyPlace(Token.absolutelayout))
+						new Navigation("AbsoluteLayout", new MyPlace(Token.absolutelayout)),
+						new Navigation("BorderLayout", new MyPlace(Token.borderlayout))
 				}),
 				new Folder("Button", 
 						new Navigation[] {
