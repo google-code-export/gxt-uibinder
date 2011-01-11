@@ -9,6 +9,8 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.DatePickerView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.ToolTipsView;
 
 /**
  * @author hickman
@@ -40,7 +42,9 @@ public class MyPlace extends Place {
 		overview(OverviewViewImpl.class),
 		absolutelayout(AbsoluteLayoutView.class),
 		borderlayout(BorderLayoutView.class),
-		buttons(ButtonsView.class),
+		buttons(ButtonsView.class), 
+		tooltips(ToolTipsView.class), 
+		datepicker(DatePickerView.class),
 		;
 
 		private final Class<?> viewClass;

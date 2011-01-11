@@ -4,6 +4,10 @@
   * Reorganized repository layout to add new test project
     * Added Simple Unit Tests
       * AbsoluteLayout
+    * Adding demo pages
+      * BorderLayout
+      * ToolTips
+      * DatePicker
 
 0.5
   * New Functionality

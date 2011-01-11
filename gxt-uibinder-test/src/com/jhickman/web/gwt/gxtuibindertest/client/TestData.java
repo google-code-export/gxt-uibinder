@@ -26,7 +26,12 @@ public class TestData {
 				new Folder("Button", 
 						new Navigation[] {
 						new Navigation("Buttons", new MyPlace(Token.buttons))
-				})
+				}),
+				new Folder("Misc",
+						new Navigation[] {
+						new Navigation("ToolTips", new MyPlace(Token.tooltips)),
+						new Navigation("DatePicker", new MyPlace(Token.datepicker))
+				}),
 		};
 		
 		Folder root = new Folder("root");
