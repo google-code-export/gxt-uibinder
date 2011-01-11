@@ -13,9 +13,7 @@
 					</gxt:ContentPanel>
 				</gxt:west>
 				<gxt:center margins="5,5,5,0">
-					<gxt:ContentPanel headerVisible="false" layout="FitLayout">
-						<g:SimplePanel ui:field="contentContainer" />
-					</gxt:ContentPanel>
+					<gxt:ContentPanel headerVisible="false" layout="FitLayout"  ui:field="contentContainer"  />
 				</gxt:center>
 			</gxt:LayoutContainer>
 		</gxt:ContentPanel>
