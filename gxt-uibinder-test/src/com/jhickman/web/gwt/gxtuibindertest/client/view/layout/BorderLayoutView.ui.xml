@@ -6,7 +6,7 @@
     xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget">
 
 
-  	<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding,10px">
+  	<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding,10px" ui:field="container">
     	<gxt:north size="100" collapsible="true" floatable="true" hideCollapseTool="true" split="true" margins="0,0,5,0">
     		<gxt:ContentPanel>
     		</gxt:ContentPanel>
@@ -25,7 +25,7 @@
     	</gxt:west>
     	<gxt:center margins="0">
     		<gxt:ContentPanel heading="BorderLayout Example" scrollMode="AUTOX">
-    		  <gxt:Label text="TODO - add buttons and event handlers." />
+				<g:FlexTable ui:field="table" cellSpacing="8" cellPadding="4"></g:FlexTable>
     		</gxt:ContentPanel>
     	</gxt:center>
   	</gxt:LayoutContainer>
