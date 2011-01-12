@@ -12,28 +12,28 @@ import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
-import com.google.gwt.user.client.Window;
 import com.jhickman.web.gwt.gxtuibindertest.client.AppController;
 import com.jhickman.web.gwt.gxtuibindertest.client.activity.GenericActivity;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace.Token;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlaceHistoryMapper;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.GxtUiBinderTestShell;
-import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
-import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 
 /**
  * @author hickman
  *
  */
-public class AppFactory {
+public final class AppFactory {
 	
 	private static final MyPlace DEFAULT_PLACE = new MyPlace(Token.overview);
+	public static final AppFactory INSTANCE = new AppFactory();
 	private AppController appController;
 	private EventBus eventBus;
 	private ActivityManager activityManager;
 	private PlaceController placeController;
 	private PlaceHistoryHandler placeHistoryHandler;
+	
+	private AppFactory() {}
 	
 
 	public AppController getAppController() {
