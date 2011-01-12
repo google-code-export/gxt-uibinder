@@ -46,38 +46,39 @@ public class MyPlace extends Place {
 				return new OverviewViewImpl();
 			}
 		},
-		absolutelayout{
+		absolutelayout {
 			public View getView() {
 				return new AbsoluteLayoutView();
 			}
 		},
-		borderlayout{
+		borderlayout {
 			public View getView() {
 				return new BorderLayoutView();
 			}
 		},
-		buttons{
+		buttons {
 			public View getView() {
 				return new ButtonsView();
 			}
 		},
-		tooltips{
+		tooltips {
 			public View getView() {
 				return new ToolTipsView();
 			}
 		},
-		datepicker{
+		datepicker {
 			public View getView() {
 				return new DatePickerView();
 			}
 		},
-		basictabs{
+		basictabs {
 			public View getView() {
 				return new BasicTabsView();
 			}
 		}
 		;
 
+		
 		public abstract View getView();
 	}
 
