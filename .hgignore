@@ -9,6 +9,8 @@ gxt-uibinder-test/test-classes
 
 gxt-uibinder-test/war/com.jhickman.web.gwt.gxtuibindertest.GxtUiBinderTest.JUnit
 
+gxt-uibinder-test/war/WEB-INF/lib
+
 
 syntax: regexp
 
