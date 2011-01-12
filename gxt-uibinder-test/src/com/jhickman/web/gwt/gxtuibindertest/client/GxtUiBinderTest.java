@@ -14,7 +14,7 @@ public class GxtUiBinderTest implements EntryPoint {
 
 	@Override
 	public void onModuleLoad() {
-		AppFactory factory = new AppFactory();
+		AppFactory factory = AppFactory.INSTANCE;
 		factory.getAppController().go();
 	}
 }

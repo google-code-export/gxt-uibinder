@@ -26,7 +26,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
 import com.google.gwt.user.client.ui.IsWidget;
-import com.jhickman.web.gwt.gxtuibindertest.client.TestData;
+import com.jhickman.web.gwt.gxtuibindertest.client.ExamplesModel;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Folder;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Navigation;
 
@@ -47,7 +47,7 @@ public class GxtUiBinderTestShell extends Composite {
 		initComponent(BINDER.createAndBindUi(this));
 		
 		
-		final Folder model = TestData.getNavigationModel();
+		final Folder model = ExamplesModel.getNavigationModel();
 		
 		TreeStore<ModelData> store = new TreeStore<ModelData>();
 		store.add(model.getChildren(), true);
@@ -75,7 +75,7 @@ public class GxtUiBinderTestShell extends Composite {
 		eventBus.addHandler(PlaceChangeEvent.TYPE, new PlaceChangeEvent.Handler(){
 			public void onPlaceChange(PlaceChangeEvent event) {
 				Place newPlace = event.getNewPlace();
-				Navigation navigation = new Navigation("", newPlace);
+				Navigation navigation = new Navigation("", newPlace, null);
 				List<ModelData> currentSelection = tree.getSelectionModel().getSelection();
 				if (currentSelection.isEmpty() || ! currentSelection.get(0).equals(navigation)) {
 					tree.getSelectionModel().select(navigation, false);	

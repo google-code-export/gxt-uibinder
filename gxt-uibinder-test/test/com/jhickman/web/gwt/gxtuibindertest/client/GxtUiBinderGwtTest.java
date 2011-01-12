@@ -21,7 +21,7 @@ public class GxtUiBinderGwtTest extends GWTTestCase {
 	private AppFactory factory;
 	protected AppFactory getAppFactory() {
 		if (factory == null) {
-			factory = new AppFactory();
+			factory = AppFactory.INSTANCE;
 		}
 		return factory;
 	}

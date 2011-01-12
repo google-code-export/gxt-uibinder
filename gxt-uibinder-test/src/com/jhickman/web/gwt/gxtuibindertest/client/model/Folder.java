@@ -4,8 +4,10 @@
 package com.jhickman.web.gwt.gxtuibindertest.client.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.extjs.gxt.ui.client.data.BaseTreeModel;
+import com.extjs.gxt.ui.client.data.ModelData;
 
 /**
  * @author hickman

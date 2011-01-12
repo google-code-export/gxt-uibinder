@@ -14,18 +14,11 @@ import com.google.gwt.place.shared.Place;
  */
 public class Navigation extends BaseTreeModel implements Serializable {
 	private static final long serialVersionUID = -3100932286728420736L;
-	
-	public Navigation() {
-	}
-	
-	public Navigation(String name) {
-		this();
+			
+	public Navigation(String name, Place place, String image) {
 		set("name", name);
-	}
-
-	public Navigation(String name, Place place) {
-		this(name);
 		set("place", place);
+		set("image", image);
 	}
 	
 	public String getName() {
