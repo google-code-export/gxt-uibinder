@@ -73,10 +73,7 @@ public class AppFactory {
 			ActivityMapper activityMapper = new ActivityMapper() {
 				public Activity getActivity(Place place) {
 					if (place instanceof MyPlace) {
-						Token token = ((MyPlace) place).getToken();
-						View view = token.getView();
-						
-						return new GenericActivity(view);
+						return new GenericActivity((MyPlace) place);
 					}
 					return null;
 				}

@@ -6,6 +6,10 @@ package com.jhickman.web.gwt.gxtuibindertest.client.activity;
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
+import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace;
+import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace.Token;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.DemoView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.SourceView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 
 /**
@@ -15,9 +19,24 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 public class GenericActivity extends AbstractActivity {
 
 	private final View view;
-
-	public GenericActivity(View view) {
-		this.view = view;
+	private final MyPlace place;
+	
+	/**
+	 * @param place
+	 */
+	public GenericActivity(MyPlace place) {
+		this.place = place;
+		
+		Token placeToken = place.getToken();
+		View demoView = placeToken.getView();
+		
+		if (Token.overview.equals(placeToken)) {
+			this.view = placeToken.getView();
+		} else {
+			this.view = new DemoView(
+					demoView,
+					new SourceView(demoView.getClass()));
+		}
 	}
 
 	@Override
