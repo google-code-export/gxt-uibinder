@@ -46,7 +46,8 @@ public class ExamplesModel {
 				new Folder("Misc",
 						new Navigation[] {
 						new Navigation("ToolTips", new MyPlace(Token.tooltips), g.tooltips().getHTML()),
-						new Navigation("DatePicker", new MyPlace(Token.datepicker), g.datepicker().getHTML())
+						new Navigation("DatePicker", new MyPlace(Token.datepicker), g.datepicker().getHTML()),
+						new Navigation("Slider", new MyPlace(Token.slider), g.slider().getHTML())
 				}),
 		};
 		

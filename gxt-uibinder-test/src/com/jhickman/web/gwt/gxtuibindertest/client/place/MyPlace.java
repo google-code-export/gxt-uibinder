@@ -11,6 +11,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.DatePickerView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.SliderView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.ToolTipsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tabs.BasicTabsView;
 
@@ -75,6 +76,12 @@ public class MyPlace extends Place {
 			public View getView() {
 				return new BasicTabsView();
 			}
+		}, 
+		slider {
+			public View getView() {
+				return new SliderView();
+			}
+			
 		}
 		;
 
