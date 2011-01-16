@@ -29,9 +29,13 @@
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.form.RadioGroup:com.jhickman.web.gwt.gxtuibinder.elementparsers.form.RadioGroupParser"/>        
 
-<extend-configuration-property name="gwt.uibinder.elementparser"
+  <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.Component:com.jhickman.web.gwt.gxtuibinder.elementparsers.ComponentParser"/>
-           
+
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.Html:com.jhickman.web.gwt.gxtuibinder.elementparsers.HtmlParser"/>
+
+
 
   <extend-configuration-property name="gwt.uibinder.customHandlerEvaluator"
         value="com.jhickman.web.gwt.gxtuibinder.rebind.GxtHandlerEvaluator" />
