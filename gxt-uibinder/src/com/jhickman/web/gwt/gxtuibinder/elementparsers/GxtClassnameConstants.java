@@ -34,6 +34,8 @@ public interface GxtClassnameConstants {
 	
 	public static final String MENU = "com.extjs.gxt.ui.client.widget.menu.Menu";
 	
+	public static final String BUTTON = "com.extjs.gxt.ui.client.widget.button.Button";
+	
 	
 	public static final String EVENTTYPE = "com.extjs.gxt.ui.client.event.EventType";
 	public static final String EVENTS = "com.extjs.gxt.ui.client.event.Events";

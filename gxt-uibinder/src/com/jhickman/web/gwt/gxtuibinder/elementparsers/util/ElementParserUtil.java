@@ -10,6 +10,7 @@ import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.core.ext.typeinfo.JMethod;
 import com.google.gwt.core.ext.typeinfo.JType;
+import com.google.gwt.core.ext.typeinfo.NotFoundException;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLAttribute;
 import com.google.gwt.uibinder.rebind.XMLElement;
@@ -142,5 +143,22 @@ public final class ElementParserUtil {
 	
 	private ElementParserUtil() {
 		throw new UnsupportedOperationException("Utility class cannot be instantiated");
+	}
+
+	/**
+	 * @param button
+	 * @param button2
+	 * @return
+	 */
+	public static boolean isElementOfType(UiBinderWriter writer, XMLElement elem, String typeName) throws UnableToCompleteException {
+		JClassType elemType = writer.findFieldType(elem);
+		JClassType componentType;
+		try {
+			componentType = writer.getOracle().getType(typeName);
+		} catch (NotFoundException e) {
+			throw new UnableToCompleteException();
+		}
+
+		return componentType.isAssignableFrom(elemType);
 	}
 }
