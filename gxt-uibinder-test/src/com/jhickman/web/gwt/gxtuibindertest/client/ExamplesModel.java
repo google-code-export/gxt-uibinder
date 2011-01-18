@@ -41,7 +41,8 @@ public class ExamplesModel {
 				}),
 				new Folder("Button", 
 						new Navigation[] {
-						new Navigation("Buttons", new MyPlace(Token.buttons), g.buttons().getHTML())
+						new Navigation("Buttons", new MyPlace(Token.buttons), g.buttons().getHTML()),
+						new Navigation("Button Aligning", new MyPlace(Token.buttonaligning), g.buttonaligning().getHTML())
 				}),
 				new Folder("Misc",
 						new Navigation[] {
