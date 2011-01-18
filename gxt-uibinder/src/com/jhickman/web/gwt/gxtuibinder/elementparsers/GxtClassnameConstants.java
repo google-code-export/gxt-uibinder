@@ -25,12 +25,14 @@ public interface GxtClassnameConstants {
 	public static final String CARDLAYOUT = "com.extjs.gxt.ui.client.widget.layout.CardLayout";
 	public static final String CENTERLAYOUT = "com.extjs.gxt.ui.client.widget.layout.CenterLayout";
 	public static final String ROWLAYOUT = "com.extjs.gxt.ui.client.widget.layout.RowLayout";
-	public static final String ROWDATA = "com.extjs.gxt.ui.client.widget.layout.RowData";
 	public static final String VBOXLAYOUT= "com.extjs.gxt.ui.client.widget.layout.VBoxLayout";
 	public static final String HBOXLAYOUT= "com.extjs.gxt.ui.client.widget.layout.HBoxLayout";
 	public static final String FORMLAYOUT = "com.extjs.gxt.ui.client.widget.layout.FormLayout";
 	public static final String ABSOLUTELAYOUT = "com.extjs.gxt.ui.client.widget.layout.AbsoluteLayout";
 	public static final String ABSOLUTEDATA = "com.extjs.gxt.ui.client.widget.layout.AbsoluteData";
+	
+	public static final String ROWDATA = "com.extjs.gxt.ui.client.widget.layout.RowData";
+	public static final String FLOWDATA = "com.extjs.gxt.ui.client.widget.layout.FlowData";
 	
 	public static final String MENU = "com.extjs.gxt.ui.client.widget.menu.Menu";
 	

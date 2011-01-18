@@ -96,17 +96,26 @@ public final class ElementParserUtil {
 	 * @throws UnableToCompleteException
 	 */
 	public static String consumeMarginAttribute(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+		String marginsField = parseMarginsAttribute(elem, writer);
+		if (marginsField != null) {
+			writer.addStatement("%s.setMargins(%s);", fieldName, marginsField);
+			
+			return marginsField;
+		}
+		return null;
+	}
+	
+	
+	public static String parseMarginsAttribute(XMLElement elem, UiBinderWriter writer) throws UnableToCompleteException {
 		String[] margins = elem.consumeRawArrayAttribute("margins");
 		
 		if (margins != null && margins.length > 0) {
 			JClassType marginsType = writer.getOracle().findType(GxtClassnameConstants.MARGINS);
 			String marginsField = writer.declareField(GxtClassnameConstants.MARGINS, elem);
 			writer.setFieldInitializerAsConstructor(marginsField, marginsType, margins);
-			
-			writer.addStatement("%s.setMargins(%s);", fieldName, marginsField);
-			
 			return marginsField;
 		}
+		
 		return null;
 	}
 
