@@ -6,7 +6,9 @@
     xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget">
 
 	<gxt:LayoutContainer layout="FlowLayout">
-		<gxt:DatePicker ui:field="datePicker" />
+		<gxt:layoutdata type="FlowData" margins="10">
+			<gxt:DatePicker ui:field="datePicker" />
+		</gxt:layoutdata>
 	</gxt:LayoutContainer>
 	
 </ui:UiBinder>
