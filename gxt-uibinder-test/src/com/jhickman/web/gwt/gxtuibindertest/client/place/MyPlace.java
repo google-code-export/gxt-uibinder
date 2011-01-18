@@ -7,6 +7,7 @@ import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceTokenizer;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonAligningView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
@@ -82,6 +83,11 @@ public class MyPlace extends Place {
 				return new SliderView();
 			}
 			
+		},
+		buttonaligning {
+			public View getView() {
+				return new ButtonAligningView();
+			}
 		}
 		;
 
