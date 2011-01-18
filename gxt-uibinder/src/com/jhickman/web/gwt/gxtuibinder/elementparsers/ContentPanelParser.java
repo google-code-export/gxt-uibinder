@@ -10,6 +10,7 @@ import com.google.gwt.uibinder.elementparsers.ElementParser;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLElement;
 import com.google.gwt.uibinder.rebind.XMLElement.Interpreter;
+import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.ElementParserUtil;
 
 /**
  * Provides custom parsing for ContentPanel components.
@@ -25,9 +26,26 @@ public class ContentPanelParser implements ElementParser {
     
 
     public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
-        Interpreter<Boolean> interpreter = new TopBottomComponentInterpreter(elem.getNamespaceUri());
+        handleTopBottomComponents(elem, fieldName, writer);
         
-        for(XMLElement child : elem.consumeChildElements(interpreter)) {
+        
+        Interpreter<Boolean> buttonsInterpreter = new ButtonsInterpreter(elem.getNamespaceUri());
+        for(XMLElement buttonsElem : elem.consumeChildElements(buttonsInterpreter)) {
+        	for(XMLElement button : buttonsElem.consumeChildElements()) {
+        		if ( ! ElementParserUtil.isElementOfType(writer, button, GxtClassnameConstants.BUTTON)) {
+        			writer.die("Element buttons can only contain Button children.", elem);
+        		}
+        		String buttonField = writer.parseElementToField(button);
+        		writer.addStatement("%s.addButton(%s);", fieldName, buttonField);
+        	}
+        }
+    }
+
+	protected void handleTopBottomComponents(XMLElement elem, String fieldName,
+			UiBinderWriter writer) throws UnableToCompleteException {
+		Interpreter<Boolean> topBottomComponentInterpreter = new TopBottomComponentInterpreter(elem.getNamespaceUri());
+        
+        for(XMLElement child : elem.consumeChildElements(topBottomComponentInterpreter)) {
             XMLElement widget = child.consumeSingleChildElement();
             
             if ( ! isComponentElement(writer, widget)) {
@@ -40,7 +58,7 @@ public class ContentPanelParser implements ElementParser {
             String methodName = SupportedChildLocalNames.valueOf(child.getLocalName()).getMethodName();
             writer.addStatement("%s.%s(%s);", fieldName, methodName, widgetName);
         }
-    }
+	}
 
     private boolean isComponentElement(UiBinderWriter writer, XMLElement widget) throws UnableToCompleteException {
         JClassType fieldType = writer.findFieldType(widget);
@@ -88,5 +106,22 @@ public class ContentPanelParser implements ElementParser {
             return methodName;
         }
     }
+    
+    
+    private static final class ButtonsInterpreter implements Interpreter<Boolean> {
+    	private final String namespaceUri;
+		public ButtonsInterpreter(String namespaceUri) {
+			this.namespaceUri = namespaceUri;
+    	}
 
+		@Override
+		public Boolean interpretElement(XMLElement elem) throws UnableToCompleteException {
+			if ( namespaceUri != null && namespaceUri.equals(elem.getNamespaceUri())) {
+				if ("buttons".equals(elem.getLocalName())) {
+					return true;
+				}
+			}
+			return false;
+		}
+    }
 }
