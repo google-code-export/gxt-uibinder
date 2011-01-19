@@ -1,6 +1,9 @@
 0.6
   * New Functionality
     * FlowLayout
+    * Html
+    * Ability to "addButton" on ContentPanel's by using child element <gxt:buttons>
+    * Adding LayoutData abilities with nested <xx:layoutdata> child elements of LayoutContainers
   * Reorganized repository layout to add new test project
     * Added Simple Unit Tests
       * AbsoluteLayout
@@ -9,6 +12,10 @@
       * ToolTips
       * DatePicker
       * Basic Tabs
+      * Slider
+      * Buttons
+      * ButtonAligning
+
 
 0.5
   * New Functionality
