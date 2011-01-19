@@ -36,7 +36,7 @@ public class ExamplesModel {
 				}),
 				new Folder("Layouts",
 						new Navigation[] {
-						new Navigation("AbsoluteLayout", new MyPlace(Token.absolutelayout), g.centerlayout().getHTML()),
+						//new Navigation("AbsoluteLayout", new MyPlace(Token.absolutelayout), g.centerlayout().getHTML()),
 						new Navigation("BorderLayout", new MyPlace(Token.borderlayout), g.borderlayout().getHTML()),
 				}),
 				new Folder("ToolBar & Menus",
