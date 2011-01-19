@@ -33,6 +33,9 @@ public interface GxtClassnameConstants {
 	
 	public static final String ROWDATA = "com.extjs.gxt.ui.client.widget.layout.RowData";
 	public static final String FLOWDATA = "com.extjs.gxt.ui.client.widget.layout.FlowData";
+	public static final String FILLDATA = "com.extjs.gxt.ui.client.widget.layout.FillData";
+
+
 	
 	public static final String MENU = "com.extjs.gxt.ui.client.widget.menu.Menu";
 	
