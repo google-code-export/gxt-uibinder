@@ -15,6 +15,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.DatePickerView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.SliderView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.ToolTipsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tabs.BasicTabsView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.toolbarmenu.MenuBarView;
 
 /**
  * @author hickman
@@ -87,6 +88,11 @@ public class MyPlace extends Place {
 		buttonaligning {
 			public View getView() {
 				return new ButtonAligningView();
+			}
+		},
+		menubar {
+			public View getView() {
+				return new MenuBarView();
 			}
 		}
 		;
