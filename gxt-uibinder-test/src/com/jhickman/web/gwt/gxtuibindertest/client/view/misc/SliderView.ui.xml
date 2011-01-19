@@ -1,17 +1,27 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'
-    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget" xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button" xmlns:layout="urn:import:com.extjs.gxt.ui.client.widget.layout">
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
+    xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button"
+    xmlns:layout="urn:import:com.extjs.gxt.ui.client.widget.layout">
 
 	<gxt:LayoutContainer scrollMode="AUTO">
-		<!-- TODO - missing FillData settings for margin -->
-
-		<gxt:Slider width="200" increment="1" maxValue="200" clickToChange="false"  ui:field="topSlider" />
-		<button:Button text="set value to 40" ui:field="topSliderButton" />
+		<gxt:layoutdata type="FillData" margins="30">
+			<gxt:Slider width="200" increment="1" maxValue="200" clickToChange="false"  ui:field="topSlider" />
+		</gxt:layoutdata>
 		
+		<gxt:layoutdata type="FillData" margins="30">
+			<button:Button text="set value to 40" ui:field="topSliderButton" />
+		</gxt:layoutdata>
 		
-		<gxt:Slider height="207" vertical="true" ui:field="bottomSlider"/>
-		<button:Button text="set value to 40" ui:field="bottomSliderButton" />
+		<gxt:layoutdata type="FillData" margins="30">
+			<gxt:Slider height="207" vertical="true" ui:field="bottomSlider"/>
+		</gxt:layoutdata>
+		
+		<gxt:layoutdata type="FillData" margins="30">
+			<button:Button text="set value to 40" ui:field="bottomSliderButton" />
+		</gxt:layoutdata>
+		
 	</gxt:LayoutContainer>
 	
 </ui:UiBinder>
