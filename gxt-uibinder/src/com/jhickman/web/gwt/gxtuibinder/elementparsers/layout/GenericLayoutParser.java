@@ -49,22 +49,8 @@ public class GenericLayoutParser implements LayoutParser {
 	}
 
 	private enum LayoutDataType {
-		FlowData(GxtClassnameConstants.FLOWDATA) {
-			@Override
-			public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException {
-				String marginsAttribute = ElementParserUtil.parseMarginsAttribute(layoutDataElem, writer);
-				if (marginsAttribute == null) {
-					writer.die("For FlowData layoutdata object, attribute 'margins' is required.", layoutDataElem);
-				}
-				
-				String field = writer.declareField(this.className, layoutDataElem);
-				JClassType flowDataType = writer.getOracle().findType(GxtClassnameConstants.FLOWDATA);
-				writer.setFieldInitializerAsConstructor(field, flowDataType, marginsAttribute);
-				
-				ElementParserUtil.applyAttributes(layoutDataElem, field, flowDataType, writer);
-				return field;
-			}
-		},
+		FlowData(GxtClassnameConstants.FLOWDATA),
+		FillData(GxtClassnameConstants.FILLDATA),
 		RowData(GxtClassnameConstants.ROWDATA) {
 			@Override
 			public String declareField(UiBinderWriter writer,
@@ -72,7 +58,7 @@ public class GenericLayoutParser implements LayoutParser {
 				// TODO Auto-generated method stub
 				return null;
 			}
-		}
+		},
 		;
 		
 		protected final String className;
@@ -81,6 +67,19 @@ public class GenericLayoutParser implements LayoutParser {
 			this.className = className;
 		}
 
-		public abstract String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException;
+		public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException {
+			String marginsAttribute = ElementParserUtil.parseMarginsAttribute(layoutDataElem, writer);
+			
+			String field = writer.declareField(this.className, layoutDataElem);
+			JClassType dataType = writer.getOracle().findType(this.className);
+			
+			
+			if (marginsAttribute != null) {
+				writer.setFieldInitializerAsConstructor(field, dataType, marginsAttribute);
+			}
+			
+			ElementParserUtil.applyAttributes(layoutDataElem, field, dataType, writer);
+			return field;
+		}
 	}
 }

@@ -36,9 +36,7 @@ public final class ElementParserUtil {
 		// first get the special Margin attribute
 		ElementParserUtil.consumeMarginAttribute(elem, fieldName, writer);
 
-		
 		Map<String, JType> setterMethods = fetchSetterMethods(type);
-		writer.addStatement("// %s", setterMethods);
 		int attributeCount = elem.getAttributeCount();
 		
 		
