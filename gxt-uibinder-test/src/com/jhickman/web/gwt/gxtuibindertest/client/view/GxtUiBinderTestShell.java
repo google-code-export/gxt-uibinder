@@ -29,6 +29,7 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.jhickman.web.gwt.gxtuibindertest.client.ExamplesModel;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Folder;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Navigation;
+import com.jhickman.web.gwt.gxtuibindertest.client.resources.Resources;
 
 /**
  * @author hickman
@@ -57,7 +58,7 @@ public class GxtUiBinderTestShell extends Composite {
 		tree.setWidth(300);
 		tree.setDisplayProperty("name");
 		tree.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-		tree.getStyle().setLeafIcon(IconHelper.createStyle("icon-list"));
+		tree.getStyle().setLeafIcon(Resources.ICONS.table());
 		tree.setAutoLoad(true);
 		
 		
