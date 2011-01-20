@@ -14,5 +14,6 @@ package com.jhickman.web.gwt.gxtuibinder.client;
  *
  */
 public enum GxtEvent {
-    Select
+    Select, 
+    Change
 }
