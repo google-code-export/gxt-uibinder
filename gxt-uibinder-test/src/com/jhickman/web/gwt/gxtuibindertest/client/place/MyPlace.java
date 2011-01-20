@@ -9,6 +9,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonAligningView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.grids.BasicGridView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.DatePickerView;
@@ -93,6 +94,11 @@ public class MyPlace extends Place {
 		menubar {
 			public View getView() {
 				return new MenuBarView();
+			}
+		},
+		basicgrid {
+			public View getView() {
+				return new BasicGridView();
 			}
 		}
 		;
