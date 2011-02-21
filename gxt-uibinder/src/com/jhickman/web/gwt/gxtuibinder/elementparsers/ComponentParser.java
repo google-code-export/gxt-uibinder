@@ -26,6 +26,7 @@ public class ComponentParser implements ElementParser {
 	public void parse(XMLElement elem, String fieldName, JClassType type,UiBinderWriter writer) throws UnableToCompleteException {
 		
 		ElementParserUtil.consumeStyleAttribute(elem, fieldName, writer);
+		ElementParserUtil.applyAttributes(elem, fieldName, type, writer);
 		
 		handleToolTips(elem, fieldName, writer);
 	}
