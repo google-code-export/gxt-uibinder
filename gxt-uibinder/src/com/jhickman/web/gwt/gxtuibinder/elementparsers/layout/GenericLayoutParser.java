@@ -51,11 +51,10 @@ public class GenericLayoutParser implements LayoutParser {
 	private enum LayoutDataType {
 		FlowData(GxtClassnameConstants.FLOWDATA),
 		FillData(GxtClassnameConstants.FILLDATA),
+		FormData(GxtClassnameConstants.FORMDATA),
 		RowData(GxtClassnameConstants.ROWDATA) {
 			@Override
-			public String declareField(UiBinderWriter writer,
-					XMLElement layoutDataElem) {
-				// TODO Auto-generated method stub
+			public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) {
 				return null;
 			}
 		},
