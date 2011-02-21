@@ -2,10 +2,12 @@
 <!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.1.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.1.0/distro-source/core/src/gwt-module.dtd">
 <module>
   <inherits name="com.jhickman.web.gwt.customuibinder.CustomUiBinder" />
-  
+
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.Component:com.jhickman.web.gwt.gxtuibinder.elementparsers.ComponentParser"/>
+
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.Container:com.jhickman.web.gwt.gxtuibinder.elementparsers.ContainerParser" />
-        
 
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.LayoutContainer:com.jhickman.web.gwt.gxtuibinder.elementparsers.LayoutContainerParser" />    
@@ -28,9 +30,12 @@
 
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.form.RadioGroup:com.jhickman.web.gwt.gxtuibinder.elementparsers.form.RadioGroupParser"/>        
-
   <extend-configuration-property name="gwt.uibinder.elementparser"
-        value="com.extjs.gxt.ui.client.widget.Component:com.jhickman.web.gwt.gxtuibinder.elementparsers.ComponentParser"/>
+        value="com.extjs.gxt.ui.client.widget.form.CheckBoxGroup:com.jhickman.web.gwt.gxtuibinder.elementparsers.form.CheckBoxGroupParser"/>        
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.form.SliderField:com.jhickman.web.gwt.gxtuibinder.elementparsers.form.SliderFieldParser"/>        
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.Slider:com.jhickman.web.gwt.gxtuibinder.elementparsers.SliderParser"/>        
 
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.Html:com.jhickman.web.gwt.gxtuibinder.elementparsers.HtmlParser"/>
