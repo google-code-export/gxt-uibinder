@@ -73,6 +73,9 @@ public class LayoutContainerParser implements ElementParser {
             Layout layout = Layout.valueOf(layoutName); 
             
             layout.layoutParser.parse(elem, fieldName, type, writer);
+        } else if (GxtClassnameConstants.FORMPANEL.equals(type.getQualifiedSourceName())) {
+        	// default layout for FormLayou
+        	Layout.FormLayout.layoutParser.parse(elem, fieldName, type, writer);
         } else {
         	// FlowLayout is the default as per Sencha Javadoc
         	Layout.FlowLayout.layoutParser.parse(elem, fieldName, type, writer);
