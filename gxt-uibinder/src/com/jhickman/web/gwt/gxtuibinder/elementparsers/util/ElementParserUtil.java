@@ -70,6 +70,9 @@ public final class ElementParserUtil {
 				columnConfigSetterTypes.put(jMethod.getName(), jMethod.getParameters()[0].getType());
 			}
 		}
+		if (type.getSuperclass() != null) {
+			columnConfigSetterTypes.putAll(fetchSetterMethods(type.getSuperclass()));
+		}
 		return columnConfigSetterTypes;
 	}
 	
