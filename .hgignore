@@ -6,6 +6,7 @@ gxt-uibinder-test/war/WEB-INF/classes
 gxt-uibinder-test/war/gxt_uibinder_test
 gxt-uibinder-test/www-test
 gxt-uibinder-test/test-classes
+gxt-uibinder-test/.gwt
 
 gxt-uibinder-test/war/com.jhickman.web.gwt.gxtuibindertest.GxtUiBinderTest.JUnit
 
