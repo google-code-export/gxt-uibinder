@@ -3,6 +3,7 @@
  */
 package com.jhickman.web.gwt.gxtuibindertest.client.view;
 
+import com.extjs.gxt.ui.client.Style.Scroll;
 import com.extjs.gxt.ui.client.widget.Composite;
 import com.extjs.gxt.ui.client.widget.TabItem;
 import com.extjs.gxt.ui.client.widget.TabPanel;
@@ -23,6 +24,7 @@ public class DemoView extends Composite implements View {
 		
 		TabItem demo = new TabItem("Demo");
 		demo.setLayout(new FitLayout());
+		demo.setScrollMode(Scroll.AUTO);
 		demo.add(demoView.asWidget());
 		
 		TabItem source = new TabItem("Source");
