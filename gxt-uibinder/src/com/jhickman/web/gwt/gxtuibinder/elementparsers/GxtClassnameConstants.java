@@ -18,6 +18,8 @@ public interface GxtClassnameConstants {
 	public static final String LAYOUTCONTAINER = "com.extjs.gxt.ui.client.widget.LayoutContainer";
 	public static final String FORMPANEL = "com.extjs.gxt.ui.client.widget.form.FormPanel";
 	
+	public static final String FORMBUTTONBINDING = "com.extjs.gxt.ui.client.widget.form.FormButtonBinding";
+	
 	public static final String ACCORDIONLAYOUT= "com.extjs.gxt.ui.client.widget.layout.AccordionLayout";
 	public static final String BORDERLAYOUT = "com.extjs.gxt.ui.client.widget.layout.BorderLayout";
 	public static final String BORDERLAYOUTDATA = "com.extjs.gxt.ui.client.widget.layout.BorderLayoutData";
@@ -55,13 +57,5 @@ public interface GxtClassnameConstants {
 
 
 	public static final String STYLEORIENTATION = "com.extjs.gxt.ui.client.Style.Orientation";
-
-
-
-
-
-
-
-
 
 }
