@@ -36,6 +36,8 @@
         value="com.extjs.gxt.ui.client.widget.form.SliderField:com.jhickman.web.gwt.gxtuibinder.elementparsers.form.SliderFieldParser"/>        
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.Slider:com.jhickman.web.gwt.gxtuibinder.elementparsers.SliderParser"/>        
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.form.FormPanel:com.jhickman.web.gwt.gxtuibinder.elementparsers.form.FormPanelParser"/>
 
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.Html:com.jhickman.web.gwt.gxtuibinder.elementparsers.HtmlParser"/>
