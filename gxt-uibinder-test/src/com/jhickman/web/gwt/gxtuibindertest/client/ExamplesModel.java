@@ -44,6 +44,10 @@ public class ExamplesModel {
 						//new Navigation("AbsoluteLayout", new MyPlace(Token.absolutelayout), g.centerlayout().getHTML()),
 						new Navigation("BorderLayout", new MyPlace(Token.borderlayout), g.borderlayout().getHTML()),
 				}),
+				new Folder("Forms",
+						new Navigation[] {
+						new Navigation("Forms", new MyPlace(Token.forms), g.forms().getHTML()),
+				}),
 				new Folder("ToolBar & Menus",
 						new Navigation[] {
 						new Navigation("MenuBar", new MyPlace(Token.menubar), g.menubar().getHTML()),

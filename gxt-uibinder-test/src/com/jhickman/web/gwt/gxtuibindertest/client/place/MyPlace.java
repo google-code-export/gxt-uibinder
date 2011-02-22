@@ -9,6 +9,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonAligningView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.forms.FormsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.grids.BasicGridView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
@@ -99,6 +100,11 @@ public class MyPlace extends Place {
 		basicgrid {
 			public View getView() {
 				return new BasicGridView();
+			}
+		}, 
+		forms {
+			public View getView() {
+				return new FormsView();
 			}
 		}
 		;
