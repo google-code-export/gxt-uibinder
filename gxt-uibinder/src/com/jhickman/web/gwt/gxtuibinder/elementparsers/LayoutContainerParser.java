@@ -35,7 +35,8 @@ public class LayoutContainerParser implements ElementParser {
         HBoxLayout(new GenericLayoutParser(GxtClassnameConstants.HBOXLAYOUT)),
         FormLayout(new GenericLayoutParser(GxtClassnameConstants.FORMLAYOUT)),
         AbsoluteLayout(new AbsoluteLayoutParser(GxtClassnameConstants.ABSOLUTELAYOUT)),
-        RowLayout(new RowLayoutParser(GxtClassnameConstants.ROWLAYOUT))
+        RowLayout(new RowLayoutParser(GxtClassnameConstants.ROWLAYOUT)),
+        FillLayout(new RowLayoutParser(GxtClassnameConstants.FILLLAYOUT))
         ;
         private final LayoutParser layoutParser;
         private Layout(LayoutParser layoutParser) {
