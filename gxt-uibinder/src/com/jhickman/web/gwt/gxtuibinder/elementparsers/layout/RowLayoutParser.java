@@ -22,29 +22,25 @@ public class RowLayoutParser extends GenericLayoutParser {
 	
 	@Override
 	public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
-		
+
 		String layout = writer.declareField(layoutClassName, elem);
 		writer.addStatement("%s.setLayout(%s);", fieldName, layout);
 		
-		
 		JClassType orientationType = writer.getOracle().findType(GxtClassnameConstants.STYLEORIENTATION);
-		String rowLayoutOrientation = elem.consumeAttribute("rowLayoutOrientation", orientationType);
-		if (rowLayoutOrientation != null) {
-			writer.addStatement("%s.setOrientation(%s);", layout, rowLayoutOrientation);
+		
+		String layoutOrientation = elem.consumeAttribute("rowLayoutOrientation", orientationType);
+		if (layoutOrientation != null) {
+			writer.warn("rowLayoutOrientation has been deprecated. Please use layoutOrientation instead.");
+			writer.addStatement("%s.setOrientation(%s);", layout, layoutOrientation);
 		}
 		
-		JClassType rowDataType = writer.getOracle().findType(GxtClassnameConstants.ROWDATA);
-		
-		for(XMLElement layoutdata : consumeChildLayoutData(elem)) {
-			String layoutData = writer.declareField(GxtClassnameConstants.ROWDATA, layoutdata);
-			ElementParserUtil.applyAttributes(layoutdata, layoutData, rowDataType, writer);
-			
-			for(XMLElement child : layoutdata.consumeChildElements()) {
-				String childName = writer.parseElementToField(child);
-				
-				writer.addStatement("%s.add(%s, %s);", fieldName, childName, layoutData);
-			}			
+		// override with layoutOrientation
+		layoutOrientation = elem.consumeAttribute("layoutOrientation", orientationType);
+		if (layoutOrientation != null) {
+			writer.addStatement("%s.setOrientation(%s);", layout, layoutOrientation);
 		}
+		
+		handleLayoutDataChildren(elem, fieldName, writer);
 	}
 
 }

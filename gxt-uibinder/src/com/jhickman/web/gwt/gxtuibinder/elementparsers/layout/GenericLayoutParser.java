@@ -30,6 +30,11 @@ public class GenericLayoutParser implements LayoutParser {
 	public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
 		writer.addStatement("%s.setLayout(new %s());", fieldName, layoutClassName);
 		
+		handleLayoutDataChildren(elem, fieldName, writer);
+	}
+
+	protected void handleLayoutDataChildren(XMLElement elem, String fieldName,
+			UiBinderWriter writer) throws UnableToCompleteException {
 		for(XMLElement layoutDataElem : elem.consumeChildElements(new SimpleInterpreter(elem.getNamespaceUri(), "layoutdata"))) {
 			XMLAttribute typeAttribute = layoutDataElem.getAttribute("type");
 			if (typeAttribute != null) {
@@ -54,8 +59,12 @@ public class GenericLayoutParser implements LayoutParser {
 		FormData(GxtClassnameConstants.FORMDATA),
 		RowData(GxtClassnameConstants.ROWDATA) {
 			@Override
-			public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) {
-				return null;
+			public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException {
+				JClassType rowDataType = writer.getOracle().findType(GxtClassnameConstants.ROWDATA);
+				String layoutData = writer.declareField(GxtClassnameConstants.ROWDATA, layoutDataElem);
+				ElementParserUtil.applyAttributes(layoutDataElem, layoutData, rowDataType, writer);
+				
+				return layoutData;
 			}
 		},
 		;
