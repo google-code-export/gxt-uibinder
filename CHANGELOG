@@ -2,6 +2,7 @@
   * New Demo's
     * Basic Grid
     * Forms
+    * RowLayout
   * Fixed Defect
     * FormPanel requires FormLayout to be the default
     * Fixed issue with Slider having "value" attribute as it's ambiguous
@@ -10,6 +11,7 @@
     * Custom ElementParser for SliderField.  Allows for single nested widget of type Slider
     * Added support for CheckBoxGroup
     * Modification of the ComponentParser to support Number property values.
+    * Deprecated rowLayoutOrientation attribute (for RowLayout containers) in favor of layoutOrientation
 
 0.6
   * New Functionality
