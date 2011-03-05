@@ -43,6 +43,7 @@ public class ExamplesModel {
 						new Navigation[] {
 						//new Navigation("AbsoluteLayout", new MyPlace(Token.absolutelayout), g.centerlayout().getHTML()),
 						new Navigation("BorderLayout", new MyPlace(Token.borderlayout), g.borderlayout().getHTML()),
+						new Navigation("RowLayout", new MyPlace(Token.rowlayout), g.rowlayout().getHTML()),
 				}),
 				new Folder("Forms",
 						new Navigation[] {

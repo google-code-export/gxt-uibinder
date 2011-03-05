@@ -32,3 +32,9 @@ h1 {
 #closeButton {
   margin: 15px 6px 6px;
 }
+
+
+.pad-text {
+  font-size: 12px;
+  padding: 5px;
+}
