@@ -4,7 +4,8 @@
     * Forms
     * RowLayout
   * Fixed Defect
-    * FormPanel requires FormLayout to be the default
+    * Issue 6: FormPanel requires FormLayout to be the default
+    * Issue 7: Support for AdapterField
     * Fixed issue with Slider having "value" attribute as it's ambiguous
   * New functionality
     * Added support for FormData
