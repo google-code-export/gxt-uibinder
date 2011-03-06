@@ -19,6 +19,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.SliderView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.ToolTipsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tabs.BasicTabsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.toolbarmenu.MenuBarView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.work.WorkInProgressView;
 
 /**
  * @author hickman
@@ -50,6 +51,11 @@ public class MyPlace extends Place {
 		overview {
 			public View getView() {
 				return new OverviewViewImpl();
+			}
+		},
+		wip {
+			public View getView() {
+				return new WorkInProgressView();
 			}
 		},
 		absolutelayout {
