@@ -46,6 +46,7 @@ public class ExamplesModel {
 						new Navigation("CardLayout", new MyPlace(Token.cardlayout), g.cardlayout().getHTML()),
 						new Navigation("CenterLayout", new MyPlace(Token.centerlayout), g.centerlayout().getHTML()),
 						new Navigation("RowLayout", new MyPlace(Token.rowlayout), g.rowlayout().getHTML()),
+						new Navigation("Portal", new MyPlace(Token.portal), g.portal().getHTML()),
 				}),
 				new Folder("Forms",
 						new Navigation[] {
