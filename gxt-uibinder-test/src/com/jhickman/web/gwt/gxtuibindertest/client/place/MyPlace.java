@@ -15,6 +15,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutVie
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.CardLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.CenterLayoutView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.PortalView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.RowLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.DatePickerView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.SliderView;
@@ -132,6 +133,11 @@ public class MyPlace extends Place {
 				return new CenterLayoutView();
 			}
 			
+		}, 
+		portal {
+			public View getView() {
+				return new PortalView();
+			}
 		}
 		;
 

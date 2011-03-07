@@ -5,6 +5,7 @@
     * RowLayout
     * CardLayout
     * CenterLayout
+    * Portal
   * Fixed Defect
     * Issue 6: FormPanel requires FormLayout to be the default
     * Issue 7: Support for AdapterField
@@ -15,6 +16,7 @@
     * Added support for CheckBoxGroup
     * Modification of the ComponentParser to support Number property values.
     * Deprecated rowLayoutOrientation attribute (for RowLayout containers) in favor of layoutOrientation
+    * Portal support with ability to setColumnWidth
 
 0.6
   * New Functionality
