@@ -41,6 +41,10 @@
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.form.AdapterField:com.jhickman.web.gwt.gxtuibinder.elementparsers.form.AdapterFieldParser"/>
 
+
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.custom.Portal:com.jhickman.web.gwt.gxtuibinder.elementparsers.custom.PortalParser"/>
+
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.Html:com.jhickman.web.gwt.gxtuibinder.elementparsers.HtmlParser"/>
 
