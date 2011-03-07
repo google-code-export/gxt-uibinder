@@ -3,6 +3,8 @@
     * Basic Grid
     * Forms
     * RowLayout
+    * CardLayout
+    * CenterLayout
   * Fixed Defect
     * Issue 6: FormPanel requires FormLayout to be the default
     * Issue 7: Support for AdapterField

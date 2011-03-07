@@ -1,0 +1,12 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget">
+
+	<gxt:LayoutContainer layout="CenterLayout">
+		<gxt:ContentPanel bodyStyle="padding:6px" frame="true" heading="CenterLayout" width="200">
+			<gxt:Label text="I should be centered" />
+		</gxt:ContentPanel>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>
