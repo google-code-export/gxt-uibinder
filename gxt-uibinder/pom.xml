@@ -5,13 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jhickman</groupId>
     <artifactId>gxt-uibinder</artifactId>
-    <version>0.7-SNAPSHOT</version>
+    <version>0.7</version>
     <packaging>jar</packaging>
 
     <properties>
         <gwtVersion>2.1.0</gwtVersion>
         <javac.source>1.5</javac.source>
         <javac.target>1.5</javac.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
  
     <build>
