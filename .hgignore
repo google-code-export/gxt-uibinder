@@ -13,5 +13,8 @@ gxt-uibinder-test/war/com.jhickman.web.gwt.gxtuibindertest.GxtUiBinderTest.JUnit
 gxt-uibinder-test/war/WEB-INF/lib
 
 
+.DS_Store
+*.swp
+
 syntax: regexp
 
