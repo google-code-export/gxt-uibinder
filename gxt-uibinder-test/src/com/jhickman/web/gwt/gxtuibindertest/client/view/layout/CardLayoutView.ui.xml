@@ -3,9 +3,6 @@
     xmlns:g='urn:import:com.google.gwt.user.client.ui'
     xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget" xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button">
 
-
-	<ui:with type="com.extjs.gxt.ui.client.widget.button.Button" field="b"></ui:with>
-
 	<gxt:LayoutContainer styleAttribute="margin:10px">
 		<gxt:ContentPanel layout="CardLayout" width="400" height="100" frame="true" heading="CardLayout Example" buttonAlign="CENTER" ui:field="panel">
 			<gxt:LayoutContainer>
