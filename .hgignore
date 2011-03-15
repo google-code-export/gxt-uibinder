@@ -9,6 +9,7 @@ gxt-uibinder-test/test-classes
 gxt-uibinder-test/.gwt
 
 gxt-uibinder-test/war/com.jhickman.web.gwt.gxtuibindertest.GxtUiBinderTest.JUnit
+gxt-uibinder-test/war/WEB-INF/deploy/gxt_uibinder_test/rpcPolicyManifest/manifest.txt
 
 gxt-uibinder-test/war/WEB-INF/lib
 
