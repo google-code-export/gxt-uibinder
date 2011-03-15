@@ -34,7 +34,7 @@ public final class ElementParserUtil {
 	public static void applyAttributes(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
 
 		// first get the special Margin attribute
-		ElementParserUtil.consumeMarginAttribute(elem, fieldName, writer);
+		ElementParserUtil.consumeRegionAttributes(elem, fieldName, writer);
 
 		Map<String, JType> setterMethods = fetchSetterMethods(type);
 		int attributeCount = elem.getAttributeCount();
@@ -93,6 +93,12 @@ public final class ElementParserUtil {
 	}
 	
 	
+	public static void consumeRegionAttributes(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+		consumeMarginAttribute(elem, fieldName, writer);
+		consumePaddingAttribute(elem, fieldName, writer);
+	}
+		
+	
 	/**
 	 * Consumes the margins attribute from provided element and constructs
 	 * a proper Margins object from the comma separated data.
@@ -112,15 +118,34 @@ public final class ElementParserUtil {
 		return null;
 	}
 	
+	public static String consumePaddingAttribute(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+		String paddingField = parsePaddingAttribute(elem, writer);
+		if (paddingField != null) {
+			writer.addStatement("%s.setPadding(%s);", fieldName, paddingField);
+			
+			return paddingField;
+		}
+		return null;
+	}
 	
 	public static String parseMarginsAttribute(XMLElement elem, UiBinderWriter writer) throws UnableToCompleteException {
-		String[] margins = elem.consumeRawArrayAttribute("margins");
+		return parseAttributeWithArrayConstructor(elem, "margins", GxtClassnameConstants.MARGINS, writer);
+	}
+	
+	public static String parsePaddingAttribute(XMLElement elem, UiBinderWriter writer) throws UnableToCompleteException {
+		return parseAttributeWithArrayConstructor(elem, "padding", GxtClassnameConstants.PADDING, writer);
+	}
+	
+	
+	
+	public static String parseAttributeWithArrayConstructor(XMLElement elem, String attributeName, String typeName, UiBinderWriter writer) throws UnableToCompleteException {
+		String[] arrayData = elem.consumeRawArrayAttribute(attributeName);
 		
-		if (margins != null && margins.length > 0) {
-			JClassType marginsType = writer.getOracle().findType(GxtClassnameConstants.MARGINS);
-			String marginsField = writer.declareField(GxtClassnameConstants.MARGINS, elem);
-			writer.setFieldInitializerAsConstructor(marginsField, marginsType, margins);
-			return marginsField;
+		if (arrayData != null && arrayData.length > 0) {
+			JClassType type = writer.getOracle().findType(typeName);
+			String fieldName = writer.declareField(typeName, elem);
+			writer.setFieldInitializerAsConstructor(fieldName, type, arrayData);
+			return fieldName;
 		}
 		
 		return null;
