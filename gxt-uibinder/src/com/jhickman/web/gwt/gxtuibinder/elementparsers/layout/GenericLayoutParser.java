@@ -28,7 +28,8 @@ public class GenericLayoutParser implements LayoutParser {
 	
     public void parse(XMLElement layoutElem, XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
     	createAndSetLayout(layoutElem, elem, fieldName, writer);
-		handleLayoutDataChildren(elem, fieldName, writer);
+    	
+		handleChildren(elem, fieldName, writer);
     }
 
 
@@ -37,9 +38,7 @@ public class GenericLayoutParser implements LayoutParser {
 		parse(null, elem, fieldName, type, writer);
 	}
 
-	protected void createAndSetLayout(XMLElement layoutElem, XMLElement elem,
-			String fieldName, UiBinderWriter writer)
-			throws UnableToCompleteException {
+	protected String createAndSetLayout(XMLElement layoutElem, XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
 		String layoutField = writer.declareField(layoutClassName, elem);
     	writer.addStatement("%s.setLayout(%s);", fieldName, layoutField);
     	
@@ -47,24 +46,45 @@ public class GenericLayoutParser implements LayoutParser {
     		JClassType layoutType = writer.getOracle().findType(layoutClassName);
 			ElementParserUtil.applyAttributes(layoutElem, layoutField, layoutType , writer);
     	}
+    	
+    	return layoutField;
+	}
+	
+	
+	protected void handleChildren(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+		SimpleInterpreter layoutDataInterpreter = new SimpleInterpreter(elem.getNamespaceUri(), "layoutdata");
+		
+		for(XMLElement child : elem.consumeChildElements()) {
+			if (layoutDataInterpreter.interpretElement(child)) {
+				handleLayoutData(child, fieldName, writer);
+			} else {
+				String childField = writer.parseElementToField(child);
+				writer.addStatement("%s.add(%s);", fieldName, childField);
+			}
+		}
 	}
 
-	protected void handleLayoutDataChildren(XMLElement elem, String fieldName,
-			UiBinderWriter writer) throws UnableToCompleteException {
+	@Deprecated
+	protected void handleLayoutDataChildren(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
 		for(XMLElement layoutDataElem : elem.consumeChildElements(new SimpleInterpreter(elem.getNamespaceUri(), "layoutdata"))) {
-			XMLAttribute typeAttribute = layoutDataElem.getAttribute("type");
-			if (typeAttribute != null) {
-				LayoutDataType layoutDataType = LayoutDataType.valueOf(typeAttribute.consumeRawValue());
-				String layoutData = layoutDataType.declareField(writer, layoutDataElem);
+			handleLayoutData(layoutDataElem, fieldName, writer);
+		}
+	}
+	
+	private void handleLayoutData(XMLElement layoutDataElem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+		XMLAttribute typeAttribute = layoutDataElem.getAttribute("type");
+		if (typeAttribute != null) {
+			LayoutDataType layoutDataType = LayoutDataType.valueOf(typeAttribute.consumeRawValue());
+			String layoutData = layoutDataType.declareField(writer, layoutDataElem);
 
-				for(XMLElement child : layoutDataElem.consumeChildElements()) {
-					String childField = writer.parseElementToField(child);
-					writer.addStatement("%s.add(%s, %s);", fieldName, childField, layoutData);
-				}
+			for(XMLElement child : layoutDataElem.consumeChildElements()) {
+				String childField = writer.parseElementToField(child);
+				writer.addStatement("%s.add(%s, %s);", fieldName, childField, layoutData);
 			}
 		}
 	}
 	
+	@Deprecated
 	protected Collection<XMLElement> consumeChildLayoutData(XMLElement elem) throws UnableToCompleteException {
 		return elem.consumeChildElements(new SimpleInterpreter(elem.getNamespaceUri(), "layoutdata"));
 	}

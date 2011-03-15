@@ -8,12 +8,12 @@ import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLElement;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.GxtClassnameConstants;
-import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.ElementParserUtil;
 
 /**
  * @author hickman
  *
  */
+@Deprecated
 public class RowLayoutParser extends GenericLayoutParser {
 
 	public RowLayoutParser(String layoutClassName) {
@@ -21,26 +21,25 @@ public class RowLayoutParser extends GenericLayoutParser {
 	}
 	
 	@Override
-	public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
-
-		String layout = writer.declareField(layoutClassName, elem);
-		writer.addStatement("%s.setLayout(%s);", fieldName, layout);
+	public void parse(XMLElement layoutElem, XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
+		String layout = createAndSetLayout(layoutElem, elem, fieldName, writer);
 		
 		JClassType orientationType = writer.getOracle().findType(GxtClassnameConstants.STYLEORIENTATION);
 		
 		String layoutOrientation = elem.consumeAttribute("rowLayoutOrientation", orientationType);
 		if (layoutOrientation != null) {
-			writer.warn("rowLayoutOrientation has been deprecated. Please use layoutOrientation instead.");
+			writer.warn(elem, "rowLayoutOrientation has been deprecated. Please use nested <%s:layout orientation='%s'> instead.", elem.getPrefix(), layoutOrientation);
 			writer.addStatement("%s.setOrientation(%s);", layout, layoutOrientation);
 		}
 		
 		// override with layoutOrientation
 		layoutOrientation = elem.consumeAttribute("layoutOrientation", orientationType);
 		if (layoutOrientation != null) {
+			writer.warn(elem, "layoutOrientation has been deprecated. Please use nested <%s:layout orientation='%s'> instead.", elem.getPrefix(), layoutOrientation);
 			writer.addStatement("%s.setOrientation(%s);", layout, layoutOrientation);
 		}
 		
-		handleLayoutDataChildren(elem, fieldName, writer);
+		handleChildren(elem, fieldName, writer);
 	}
 
 }
