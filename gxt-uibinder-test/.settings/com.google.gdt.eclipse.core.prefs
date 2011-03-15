@@ -1,5 +1,6 @@
-#Wed Dec 22 22:04:29 CST 2010
+#Mon Mar 14 09:12:42 CDT 2011
 eclipse.preferences.version=1
 jarsExcludedFromWebInfLib=
+launchConfigExternalUrlPrefix=gxt-uibinder
 warSrcDir=war
 warSrcDirIsOutput=true
