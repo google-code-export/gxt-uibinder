@@ -23,6 +23,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.SliderView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.ToolTipsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tabs.BasicTabsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.toolbarmenu.MenuBarView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.tree.BasicTreeView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.work.WorkInProgressView;
 
 /**
@@ -145,6 +146,11 @@ public class MyPlace extends Place {
 				return new HBoxLayoutView();
 			}
 			
+		}, 
+		basictree {
+			public View getView() {
+				return new BasicTreeView();
+			}
 		}
 		;
 
