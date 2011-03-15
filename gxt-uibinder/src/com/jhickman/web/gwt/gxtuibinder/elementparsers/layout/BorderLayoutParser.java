@@ -18,7 +18,7 @@ import com.jhickman.web.gwt.gxtuibinder.elementparsers.GxtClassnameConstants;
 /**
  * @author hickman
   */
-public class BorderLayoutParser implements LayoutParser {
+public class BorderLayoutParser extends GenericLayoutParser {
     
     private static final List<String> DOCK_NAMES = new ArrayList<String>();
     static {
@@ -29,12 +29,14 @@ public class BorderLayoutParser implements LayoutParser {
         DOCK_NAMES.add("center");
     }
     
-
-    public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
-
-        //writer.setFieldInitializerAsConstructor(fieldName, writer.getOracle().findType(LayoutContainer.class.getName()));
-        // set the layout
-        writer.addStatement("%s.setLayout(new %s());", fieldName, GxtClassnameConstants.BORDERLAYOUT);
+    public BorderLayoutParser() {
+    	super(GxtClassnameConstants.BORDERLAYOUT);
+    }
+    
+    public void parse(XMLElement layoutElem, XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
+    	createAndSetLayout(layoutElem, elem, fieldName, writer);
+    	
+    	
 
         XMLAttribute styleAttribute = elem.getAttribute("styleAttribute");
         if (styleAttribute != null) {
