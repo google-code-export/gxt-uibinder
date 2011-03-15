@@ -3,12 +3,10 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget">
 
 
-	<gxt:LayoutContainer layout="FitLayout">
-		<gxt:LayoutContainer layout="AbsoluteLayout" ui:field="item1">
-			<gxt:layoutdata left="67" top="101">
-				<gxt:Label text="foo" />
-			</gxt:layoutdata>
-		</gxt:LayoutContainer>
+	<gxt:LayoutContainer layout="AbsoluteLayout" ui:field="item1">
+		<gxt:layoutdata type="AbsoluteData" left="67" top="101">
+			<gxt:Label text="foo" />
+		</gxt:layoutdata>
 	</gxt:LayoutContainer>
 
 
