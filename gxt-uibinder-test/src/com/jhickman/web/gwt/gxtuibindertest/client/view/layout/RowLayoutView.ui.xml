@@ -5,7 +5,10 @@
 
 	<gxt:LayoutContainer>
 	 	<gxt:layoutdata type="FlowData" margins="10">
-			<gxt:ContentPanel layout="RowLayout" width="400" height="300" frame="true" collapsible="true" heading="RowLayout: Orientation set to vertical">
+			<gxt:ContentPanel width="400" height="300" frame="true" collapsible="true" heading="RowLayout: Orientation set to vertical">
+			
+				<gxt:layout type="RowLayout" />
+			
 				<gxt:layoutdata type="RowData" width="1" height="-1" margins="4">
 					<gxt:Text text="Test Label 1" styleName="pad-text" styleAttribute="backgroundColor:white" borders="true" />
 				</gxt:layoutdata>
@@ -21,7 +24,10 @@
 		</gxt:layoutdata>
 		
 		<gxt:layoutdata type="FlowData" margins="10">
-			<gxt:ContentPanel layout="RowLayout" width="400" height="300" frame="true" collapsible="true" heading="RowLayout: Orientation set to horizontal" layoutOrientation="HORIZONTAL">
+			<gxt:ContentPanel width="400" height="300" frame="true" collapsible="true" heading="RowLayout: Orientation set to horizontal">
+			
+				<gxt:layout type="RowLayout" orientation="HORIZONTAL" />
+			
 				<gxt:layoutdata type="RowData" width="-1" height="1" margins="4">
 					<gxt:Text text="Test Label 1" styleName="pad-text" styleAttribute="backgroundColor:white" borders="true" />
 				</gxt:layoutdata>
