@@ -26,11 +26,27 @@ public class GenericLayoutParser implements LayoutParser {
 		this.layoutClassName = layoutClassName;
 	}
 	
+    public void parse(XMLElement layoutElem, XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
+    	createAndSetLayout(layoutElem, elem, fieldName, writer);
+		handleLayoutDataChildren(elem, fieldName, writer);
+    }
+
+
 	@Override
 	public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
-		writer.addStatement("%s.setLayout(new %s());", fieldName, layoutClassName);
-		
-		handleLayoutDataChildren(elem, fieldName, writer);
+		parse(null, elem, fieldName, type, writer);
+	}
+
+	protected void createAndSetLayout(XMLElement layoutElem, XMLElement elem,
+			String fieldName, UiBinderWriter writer)
+			throws UnableToCompleteException {
+		String layoutField = writer.declareField(layoutClassName, elem);
+    	writer.addStatement("%s.setLayout(%s);", fieldName, layoutField);
+    	
+    	if (layoutElem != null) {
+    		JClassType layoutType = writer.getOracle().findType(layoutClassName);
+			ElementParserUtil.applyAttributes(layoutElem, layoutField, layoutType , writer);
+    	}
 	}
 
 	protected void handleLayoutDataChildren(XMLElement elem, String fieldName,
@@ -57,6 +73,8 @@ public class GenericLayoutParser implements LayoutParser {
 		FlowData(GxtClassnameConstants.FLOWDATA),
 		FillData(GxtClassnameConstants.FILLDATA),
 		FormData(GxtClassnameConstants.FORMDATA),
+		HBoxLayoutData(GxtClassnameConstants.HBOXLAYOUTDATA),
+		VBoxLayoutData(GxtClassnameConstants.VBOXLAYOUTDATA),
 		RowData(GxtClassnameConstants.ROWDATA) {
 			@Override
 			public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException {
