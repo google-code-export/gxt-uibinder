@@ -3,8 +3,6 @@
  */
 package com.jhickman.web.gwt.gxtuibinder.elementparsers.layout;
 
-import java.util.Collection;
-
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
@@ -63,13 +61,6 @@ public class GenericLayoutParser implements LayoutParser {
 			}
 		}
 	}
-
-	@Deprecated
-	protected void handleLayoutDataChildren(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
-		for(XMLElement layoutDataElem : elem.consumeChildElements(new SimpleInterpreter(elem.getNamespaceUri(), "layoutdata"))) {
-			handleLayoutData(layoutDataElem, fieldName, writer);
-		}
-	}
 	
 	private void handleLayoutData(XMLElement layoutDataElem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
 		XMLAttribute typeAttribute = layoutDataElem.getAttribute("type");
@@ -81,15 +72,13 @@ public class GenericLayoutParser implements LayoutParser {
 				String childField = writer.parseElementToField(child);
 				writer.addStatement("%s.add(%s, %s);", fieldName, childField, layoutData);
 			}
+		} else {
+			writer.die(layoutDataElem, "layoutdata missing type attribute");
 		}
-	}
-	
-	@Deprecated
-	protected Collection<XMLElement> consumeChildLayoutData(XMLElement elem) throws UnableToCompleteException {
-		return elem.consumeChildElements(new SimpleInterpreter(elem.getNamespaceUri(), "layoutdata"));
 	}
 
 	private enum LayoutDataType {
+		AbsoluteData(GxtClassnameConstants.ABSOLUTEDATA),
 		FlowData(GxtClassnameConstants.FLOWDATA),
 		FillData(GxtClassnameConstants.FILLDATA),
 		FormData(GxtClassnameConstants.FORMDATA),

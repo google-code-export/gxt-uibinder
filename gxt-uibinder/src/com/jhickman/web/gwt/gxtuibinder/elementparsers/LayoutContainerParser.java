@@ -9,7 +9,6 @@ import com.google.gwt.uibinder.elementparsers.ElementParser;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLAttribute;
 import com.google.gwt.uibinder.rebind.XMLElement;
-import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.AbsoluteLayoutParser;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.BorderLayoutParser;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.GenericLayoutParser;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.LayoutParser;
@@ -35,7 +34,7 @@ public class LayoutContainerParser implements ElementParser {
         VBoxLayout(new GenericLayoutParser(GxtClassnameConstants.VBOXLAYOUT)),
         HBoxLayout(new GenericLayoutParser(GxtClassnameConstants.HBOXLAYOUT)),
         FormLayout(new GenericLayoutParser(GxtClassnameConstants.FORMLAYOUT)),
-        AbsoluteLayout(new AbsoluteLayoutParser(GxtClassnameConstants.ABSOLUTELAYOUT)),
+        AbsoluteLayout(new GenericLayoutParser(GxtClassnameConstants.ABSOLUTELAYOUT)),
         RowLayout(new RowLayoutParser(GxtClassnameConstants.ROWLAYOUT)),
         FillLayout(new RowLayoutParser(GxtClassnameConstants.FILLLAYOUT))
         ;
