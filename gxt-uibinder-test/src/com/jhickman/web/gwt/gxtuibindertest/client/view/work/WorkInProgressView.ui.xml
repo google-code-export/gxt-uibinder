@@ -18,6 +18,22 @@
 			
 			
 			
+			<!-- Issue 13 -->
+			<gxt:ContentPanel heading="Issue 13" frame="true" width="350">
+				<gxt:layout type="HBoxLayout" padding="5" />
+				
+				<gxt:layoutdata type="HBoxLayoutData" margins="10">
+					<button:Button text="Button 1" />
+				</gxt:layoutdata>
+				
+				<button:Button text="Button 2" />
+				<button:Button text="Button 3" />
+				
+				<gxt:layoutdata type="HBoxLayoutData" margins="5">
+					<button:Button text="Button 4" />
+				</gxt:layoutdata>
+				
+			</gxt:ContentPanel>
 			
 			
 		</gxt:layoutdata>
