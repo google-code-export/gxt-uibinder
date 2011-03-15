@@ -1,5 +1,19 @@
+0.8
+  * New Demos
+    * HBoxLayout
+    * Basic Tree
+  * Defects
+    * Issue 12 - Full support for GXT events via GxtUiHandler annotation
+    * Issue 13 - nested <gxt:layoutdata> elements cause incorrect "add" ordering
+  * New Functionality
+    * ElementParser for ToggleButton.  Allows attribute toggle="<boolean>", which will call toggle(boolean)
+    * Issue 10 - HBoxLayout support
+      * HBoxLayout was already there, but didn't support the nested HBoxLayoutData elements, nor the ability set data on the Layout object itself.
+    * Issue 11 - Support for TreePanel
+      * Added very basic support.  Just enough to construct with a store as constructor parameter
+
 0.7
-  * New Demo's
+  * New Demos
     * Basic Grid
     * Forms
     * RowLayout
