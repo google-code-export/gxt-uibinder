@@ -38,6 +38,7 @@ public class ExamplesModel {
 				new Folder("TreePanel",
 						new Navigation[] {
 						new Navigation("Basic Tree", new MyPlace(Token.basictree), g.basictree().getHTML()),
+						new Navigation("Checkbox Tree", new MyPlace(Token.checkboxtree), g.checkboxtree().getHTML()),
 				}),
 				new Folder("Tabs",
 						new Navigation[] {
