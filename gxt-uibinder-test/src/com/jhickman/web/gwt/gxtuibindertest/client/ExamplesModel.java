@@ -48,6 +48,8 @@ public class ExamplesModel {
 				new Folder("Layouts",
 						new Navigation[] {
 						//new Navigation("AbsoluteLayout", new MyPlace(Token.absolutelayout), g.centerlayout().getHTML()),
+						new Navigation("AccordionLayout", new MyPlace(Token.accordionlayout), g.accordionlayout().getHTML()),
+						//new Navigation("AnchorLayout", new MyPlace(Token.anchorlayout), g.anchorlayout().getHTML()),
 						new Navigation("BorderLayout", new MyPlace(Token.borderlayout), g.borderlayout().getHTML()),
 						new Navigation("CardLayout", new MyPlace(Token.cardlayout), g.cardlayout().getHTML()),
 						new Navigation("CenterLayout", new MyPlace(Token.centerlayout), g.centerlayout().getHTML()),

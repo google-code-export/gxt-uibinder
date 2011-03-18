@@ -12,6 +12,8 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.forms.FormsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.grids.BasicGridView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AccordionLayoutView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AnchorLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.BorderLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.CardLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.CenterLayoutView;
@@ -162,7 +164,17 @@ public class MyPlace extends Place {
 			public View getView() {
 				return new CheckboxTreeView();
 			}
-		}, 
+		},
+		anchorlayout {
+			public View getView() {
+				return new AnchorLayoutView();
+			}
+		},
+		accordionlayout {
+			public View getView() {
+				return new AccordionLayoutView();
+			}
+		}
 		;
 
 		
