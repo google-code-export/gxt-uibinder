@@ -3,6 +3,8 @@
  */
 package com.jhickman.web.gwt.gxtuibinder.elementparsers;
 
+import com.google.gwt.core.ext.typeinfo.JClassType;
+
 
 /**
  * Provides class names of all used GXT components.  This avoids GXT dependencies.
@@ -66,5 +68,5 @@ public interface GxtClassnameConstants {
 
 	public static final String TREEPANEL = "com.extjs.gxt.ui.client.widget.treepanel.TreePanel";
 
-
+	public static final String HEADER = "com.extjs.gxt.ui.client.widget.Header";
 }
