@@ -19,3 +19,6 @@ gxt-uibinder-test/war/WEB-INF/lib
 
 syntax: regexp
 
+
+syntax: regexp
+^gxt-uibinder-test/war/WEB-INF/deploy/gxt_uibinder_test/symbolMaps$
