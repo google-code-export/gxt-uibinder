@@ -15,150 +15,150 @@
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(bottom)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button scale="SMALL" iconAlign="BOTTOM" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="MEDIUM" iconAlign="BOTTOM" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="LARGE" iconAlign="BOTTOM" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 			
 				<gxt:Html><span class='text' style='margin: 10px'>Icon Only</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button scale="SMALL" icon="{icons.add16}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="MEDIUM" icon="{icons.add24}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="LARGE" icon="{icons.add32}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 			
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(left)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button scale="SMALL" iconAlign="LEFT" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="MEDIUM" iconAlign="LEFT" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="LARGE" iconAlign="LEFT" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(right)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button scale="SMALL" iconAlign="RIGHT" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="MEDIUM" iconAlign="RIGHT" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="LARGE" iconAlign="RIGHT" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 				
 				<gxt:Html><span class='text' style='margin: 10px'>Text Only</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button scale="SMALL" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="MEDIUM" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="LARGE" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text (top)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button scale="SMALL" iconAlign="TOP" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="MEDIUM" iconAlign="TOP" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button scale="LARGE" iconAlign="TOP" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 			</gxt:LayoutContainer>			
@@ -173,150 +173,150 @@
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(bottom)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button arrowAlign="BOTTOM" scale="SMALL" iconAlign="BOTTOM" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="MEDIUM" iconAlign="BOTTOM" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="LARGE" iconAlign="BOTTOM" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 			
 				<gxt:Html><span class='text' style='margin: 10px'>Icon Only</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button arrowAlign="BOTTOM"  scale="SMALL" icon="{icons.add16}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="MEDIUM" icon="{icons.add24}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="LARGE" icon="{icons.add32}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 			
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(left)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button arrowAlign="BOTTOM"  scale="SMALL" iconAlign="LEFT" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="MEDIUM" iconAlign="LEFT" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="LARGE" iconAlign="LEFT" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(right)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button arrowAlign="BOTTOM"  scale="SMALL" iconAlign="RIGHT" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="MEDIUM" iconAlign="RIGHT" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="LARGE" iconAlign="RIGHT" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 				
 				<gxt:Html><span class='text' style='margin: 10px'>Text Only</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button arrowAlign="BOTTOM"  scale="SMALL" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="MEDIUM" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="LARGE" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text (top)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:Button arrowAlign="BOTTOM"  scale="SMALL" iconAlign="TOP" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="MEDIUM" iconAlign="TOP" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 					<button:Button arrowAlign="BOTTOM"  scale="LARGE" iconAlign="TOP" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:Button>
 				</button:ButtonBar>
 			</gxt:LayoutContainer>
@@ -382,150 +382,150 @@
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(bottom)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton scale="SMALL" iconAlign="BOTTOM" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="MEDIUM" iconAlign="BOTTOM" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="LARGE" iconAlign="BOTTOM" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 			
 				<gxt:Html><span class='text' style='margin: 10px'>Icon Only</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton scale="SMALL" icon="{icons.add16}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="MEDIUM" icon="{icons.add24}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="LARGE" icon="{icons.add32}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 			
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(left)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton scale="SMALL" iconAlign="LEFT" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="MEDIUM" iconAlign="LEFT" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="LARGE" iconAlign="LEFT" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(right)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton scale="SMALL" iconAlign="RIGHT" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="MEDIUM" iconAlign="RIGHT" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="LARGE" iconAlign="RIGHT" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 				
 				<gxt:Html><span class='text' style='margin: 10px'>Text Only</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton scale="SMALL" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="MEDIUM" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="LARGE" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text (top)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton scale="SMALL" iconAlign="TOP" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="MEDIUM" iconAlign="TOP" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton scale="LARGE" iconAlign="TOP" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 			</gxt:LayoutContainer>			
@@ -540,150 +540,150 @@
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(bottom)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton arrowAlign="BOTTOM" scale="SMALL" iconAlign="BOTTOM" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="MEDIUM" iconAlign="BOTTOM" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="LARGE" iconAlign="BOTTOM" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 			
 				<gxt:Html><span class='text' style='margin: 10px'>Icon Only</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton arrowAlign="BOTTOM" scale="SMALL" icon="{icons.add16}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="MEDIUM" icon="{icons.add24}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="LARGE" icon="{icons.add32}">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 			
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(left)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton arrowAlign="BOTTOM" scale="SMALL" iconAlign="LEFT" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="MEDIUM" iconAlign="LEFT" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="LARGE" iconAlign="LEFT" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text(right)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton arrowAlign="BOTTOM" scale="SMALL" iconAlign="RIGHT" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="MEDIUM" iconAlign="RIGHT" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="LARGE" iconAlign="RIGHT" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 				
 				<gxt:Html><span class='text' style='margin: 10px'>Text Only</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton arrowAlign="BOTTOM" scale="SMALL" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="MEDIUM" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="LARGE" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 
 				<gxt:Html><span class='text' style='margin: 10px'>Icon and Text (top)</span></gxt:Html>
 				<button:ButtonBar>
 					<button:SplitButton arrowAlign="BOTTOM" scale="SMALL" iconAlign="TOP" icon="{icons.add16}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="MEDIUM" iconAlign="TOP" icon="{icons.add24}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 					<button:SplitButton arrowAlign="BOTTOM" scale="LARGE" iconAlign="TOP" icon="{icons.add32}" text="Add User">
-						<button:menu>
+						<menu:Menu>
 							<menu:MenuItem text="Menu Item 1" />
 							<menu:MenuItem text="Menu Item 2" />
 							<menu:MenuItem text="Menu Item 3" />
-						</button:menu>
+						</menu:Menu>
 					</button:SplitButton>
 				</button:ButtonBar>
 			</gxt:LayoutContainer>			
