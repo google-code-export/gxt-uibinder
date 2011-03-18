@@ -7,10 +7,10 @@ import java.util.Collection;
 
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
-import com.google.gwt.uibinder.elementparsers.ElementParser;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLElement;
 import com.google.gwt.uibinder.rebind.XMLElement.Interpreter;
+import com.jhickman.web.gwt.gxtuibinder.elementparsers.ComponentParser;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.GxtClassnameConstants;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.SimpleInterpreter;
 
@@ -18,10 +18,13 @@ import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.SimpleInterpreter;
  * @author hickman
  *
  */
-public class ButtonParser implements ElementParser {
+public class ButtonParser extends ComponentParser {
 
 	@Override
 	public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
+		// parse as component first.  FIXME figure out the parser order on class hierarchy. should the superclass ones should parse first?
+		super.parse(elem, fieldName, type, writer);
+		
 		handleBackwardsCompatibleMenu(elem, fieldName, writer);
 		
 		JClassType menuType = writer.getOracle().findType(GxtClassnameConstants.MENU);
