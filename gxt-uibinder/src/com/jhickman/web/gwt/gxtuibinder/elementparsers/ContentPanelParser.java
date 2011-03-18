@@ -11,6 +11,7 @@ import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLElement;
 import com.google.gwt.uibinder.rebind.XMLElement.Interpreter;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.ElementParserUtil;
+import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.SimpleInterpreter;
 
 /**
  * Provides custom parsing for ContentPanel components.
@@ -28,9 +29,7 @@ public class ContentPanelParser implements ElementParser {
     public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
         handleTopBottomComponents(elem, fieldName, writer);
         
-        
-        Interpreter<Boolean> buttonsInterpreter = new ButtonsInterpreter(elem.getNamespaceUri());
-        for(XMLElement buttonsElem : elem.consumeChildElements(buttonsInterpreter)) {
+        for(XMLElement buttonsElem : elem.consumeChildElements(new SimpleInterpreter(elem.getNamespaceUri(), "buttons"))) {
         	for(XMLElement button : buttonsElem.consumeChildElements()) {
         		if ( ! ElementParserUtil.isElementOfType(writer, button, GxtClassnameConstants.BUTTON)) {
         			writer.die("Element buttons can only contain Button children.", elem);
@@ -39,8 +38,24 @@ public class ContentPanelParser implements ElementParser {
         		writer.addStatement("%s.addButton(%s);", fieldName, buttonField);
         	}
         }
+        
+
+        for(XMLElement header : elem.consumeChildElements(new SimpleInterpreter(elem.getNamespaceUri(), "header"))) {
+        	String headerFieldName = writer.declareField(GxtClassnameConstants.HEADER, header);
+        	// set to null at first.  assign with addStatement
+        	writer.setFieldInitializer(headerFieldName, "null");
+        	writer.addStatement("%s = %s.getHeader();", headerFieldName, fieldName);
+			ElementParserUtil.applyAttributes(header, headerFieldName , GxtClassnameConstants.HEADER, writer);
+			
+			for(XMLElement headerChild : header.consumeChildElements()) {
+				String childField = writer.parseElementToField(headerChild);
+				writer.addStatement("%s.addTool(%s);", headerFieldName, childField);
+			}
+        }
     }
 
+    
+    
 	protected void handleTopBottomComponents(XMLElement elem, String fieldName,
 			UiBinderWriter writer) throws UnableToCompleteException {
 		Interpreter<Boolean> topBottomComponentInterpreter = new TopBottomComponentInterpreter(elem.getNamespaceUri());
@@ -105,23 +120,5 @@ public class ContentPanelParser implements ElementParser {
         public String getMethodName() {
             return methodName;
         }
-    }
-    
-    
-    private static final class ButtonsInterpreter implements Interpreter<Boolean> {
-    	private final String namespaceUri;
-		public ButtonsInterpreter(String namespaceUri) {
-			this.namespaceUri = namespaceUri;
-    	}
-
-		@Override
-		public Boolean interpretElement(XMLElement elem) throws UnableToCompleteException {
-			if ( namespaceUri != null && namespaceUri.equals(elem.getNamespaceUri())) {
-				if ("buttons".equals(elem.getLocalName())) {
-					return true;
-				}
-			}
-			return false;
-		}
     }
 }

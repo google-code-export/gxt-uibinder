@@ -22,6 +22,19 @@ import com.jhickman.web.gwt.gxtuibinder.elementparsers.GxtClassnameConstants;
  */
 public final class ElementParserUtil {
 	
+
+	/**
+	 * @param elem
+	 * @param fieldName
+	 * @param typeName
+	 * @param writer
+	 */
+	public static void applyAttributes(XMLElement elem, String fieldName, String typeName, UiBinderWriter writer) throws UnableToCompleteException {
+		JClassType type = writer.getOracle().findType(typeName);
+		applyAttributes(elem, fieldName, type, writer);
+	}
+
+	
 	/**
 	 * Consumes and applies attributes to given element
 	 * 

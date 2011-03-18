@@ -17,6 +17,14 @@
 			</form:FormPanel>
 			
 			
+			<!-- Issue 9 -->
+			<gxt:ContentPanel heading="Issue 9" frame="true" width="350" height="200">
+				<gxt:header>
+					<button:Button text="foo" />
+				</gxt:header>
+			</gxt:ContentPanel>
+			
+			
 			
 			<!-- Issue 13 -->
 			<gxt:ContentPanel heading="Issue 13" frame="true" width="350">
