@@ -1,7 +1,12 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'
-    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget" xmlns:form="urn:import:com.extjs.gxt.ui.client.widget.form" xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button">
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
+    xmlns:form="urn:import:com.extjs.gxt.ui.client.widget.form"
+    xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button"
+    xmlns:menu="urn:import:com.extjs.gxt.ui.client.widget.menu">
+
+	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.resources.icons.ExampleIcons" field="icons" />
 
 	<gxt:LayoutContainer>
 		<gxt:layoutdata type="FlowData" margins="10">
@@ -43,6 +48,16 @@
 				
 			</gxt:ContentPanel>
 			
+			
+			<gxt:ContentPanel heading="Issue 15" frame="true" width="350">
+				<button:Button scale="SMALL" iconAlign="BOTTOM" icon="{icons.add16}" text="Test Button">
+					<menu:Menu>
+						<menu:MenuItem text="Menu Item 1" />
+						<menu:MenuItem text="Menu Item 2" />
+					</menu:Menu>
+
+				</button:Button>
+			</gxt:ContentPanel>
 			
 		</gxt:layoutdata>
 	</gxt:LayoutContainer>
