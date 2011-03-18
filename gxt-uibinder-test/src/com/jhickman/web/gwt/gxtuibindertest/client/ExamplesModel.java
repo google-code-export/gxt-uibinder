@@ -53,6 +53,7 @@ public class ExamplesModel {
 						new Navigation("CenterLayout", new MyPlace(Token.centerlayout), g.centerlayout().getHTML()),
 						new Navigation("RowLayout", new MyPlace(Token.rowlayout), g.rowlayout().getHTML()),
 						new Navigation("Portal", new MyPlace(Token.portal), g.portal().getHTML()),
+						new Navigation("VBoxLayout", new MyPlace(Token.vboxlayout), g.vboxlayout().getHTML()),
 						new Navigation("HBoxLayout", new MyPlace(Token.hboxlayout), g.hboxlayout().getHTML()),
 				}),
 				new Folder("Forms",
