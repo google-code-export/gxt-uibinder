@@ -7,10 +7,8 @@ import java.util.Collection;
 
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
-import com.google.gwt.uibinder.attributeparsers.FieldReferenceConverter;
 import com.google.gwt.uibinder.elementparsers.ElementParser;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
-import com.google.gwt.uibinder.rebind.XMLAttribute;
 import com.google.gwt.uibinder.rebind.XMLElement;
 import com.google.gwt.uibinder.rebind.XMLElement.Interpreter;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.ElementParserUtil;
@@ -27,7 +25,6 @@ public class ComponentParser implements ElementParser {
 	 */
 	@Override
 	public void parse(XMLElement elem, String fieldName, JClassType type,UiBinderWriter writer) throws UnableToCompleteException {
-		
 		consumeDataChildren(elem, fieldName, writer);
 		ElementParserUtil.consumeStyleAttribute(elem, fieldName, writer);
 		ElementParserUtil.applyAttributes(elem, fieldName, type, writer);
@@ -55,9 +52,8 @@ public class ComponentParser implements ElementParser {
 		}
 	}
 
-	protected void handleToolTips(XMLElement elem, String fieldName,
-			UiBinderWriter writer) throws UnableToCompleteException {
-		Interpreter<Boolean> toolTipConfigInterpreter = new ToolTipConfigInterpreter(elem.getNamespaceUri());
+	protected void handleToolTips(XMLElement elem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+		Interpreter<Boolean> toolTipConfigInterpreter = new SimpleInterpreter(elem.getNamespaceUri(), "tooltipconfig");
 		Collection<XMLElement> toolTipConfigs = elem.consumeChildElements(toolTipConfigInterpreter);
 		if (toolTipConfigs.isEmpty()) return;
 		if (toolTipConfigs.size() > 1) {
@@ -72,19 +68,5 @@ public class ComponentParser implements ElementParser {
 		ElementParserUtil.applyAttributes(toolTipConfigElem, toolTipConfig, toolTipConfigType, writer);
 		
 		writer.addStatement("%s.setToolTip(%s);", fieldName, toolTipConfig);
-	}
-
-	
-	private static final class ToolTipConfigInterpreter implements Interpreter<Boolean> {
-		private final String namespaceUri;
-		public  ToolTipConfigInterpreter(String namespaceUri) {
-			this.namespaceUri = namespaceUri;
-		}
-		
-		@Override
-		public Boolean interpretElement(XMLElement elem) throws UnableToCompleteException {
-			if (namespaceUri == null) return false;
-			return "tooltipconfig".equals(elem.getLocalName());
-		}
 	}
 }
