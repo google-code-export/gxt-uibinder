@@ -18,6 +18,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.CenterLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.HBoxLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.PortalView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.RowLayoutView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.VBoxLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.DatePickerView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.SliderView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.ToolTipsView;
@@ -146,8 +147,12 @@ public class MyPlace extends Place {
 			public View getView() {
 				return new HBoxLayoutView();
 			}
-			
 		}, 
+		vboxlayout {
+			public View getView() {
+				return new VBoxLayoutView();
+			}
+		},
 		basictree {
 			public View getView() {
 				return new BasicTreeView();
@@ -157,7 +162,7 @@ public class MyPlace extends Place {
 			public View getView() {
 				return new CheckboxTreeView();
 			}
-		}
+		}, 
 		;
 
 		
