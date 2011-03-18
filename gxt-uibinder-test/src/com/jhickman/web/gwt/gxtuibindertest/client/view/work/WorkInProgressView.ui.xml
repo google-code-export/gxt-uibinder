@@ -55,7 +55,12 @@
 						<menu:MenuItem text="Menu Item 1" />
 						<menu:MenuItem text="Menu Item 2" />
 					</menu:Menu>
-
+				</button:Button>
+				<button:Button scale="SMALL" iconAlign="BOTTOM" icon="{icons.menu_show}" text="Color Menu">
+					<menu:ColorMenu />
+				</button:Button>
+				<button:Button scale="SMALL" iconAlign="BOTTOM" icon="{icons.menu_show}" text="Date Menu">
+					<menu:DateMenu />
 				</button:Button>
 			</gxt:ContentPanel>
 			
