@@ -1,3 +1,15 @@
+0.9
+  * Closed Issues
+    * Issue 9 - Add support for tool buttons in ContentPanel headers
+    * Issue 14 - Support for SimpleComboBox
+    * Issue 15 - Support other Menu types in Buttons
+  * New Demos
+    * CheckboxTreeView
+    * VBoxLayout
+    * AccordionLayout
+  * Misc
+    * Upgraded GXT in demo from 2.2.0 to 2.2.3
+
 0.8
   * New Demos
     * HBoxLayout
