@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget" xmlns:tree="urn:import:com.extjs.gxt.ui.client.widget.treepanel">
+
+	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.resources.icons.ExampleIcons" field="icons"></ui:with>
+	<ui:with type="com.extjs.gxt.ui.client.store.TreeStore" field="treeStore" />
+	<ui:with type="com.extjs.gxt.ui.client.data.ModelIconProvider" field="iconProvider" />
+	
+	
+	<gxt:LayoutContainer>
+		<gxt:layout type="FlowLayout" margins="10" />
+		
+		<gxt:ContentPanel heading="AccordionLayout" bodyBorder="false" layout="AccordionLayout" icon="{icons.accordion}" width="200" height="325">
+			<gxt:ContentPanel animCollapse="false" heading="Online Users" layout="FitLayout">
+				<tree:TreePanel
+					store="{treeStore}"
+					displayProperty="name"
+					iconProvider="{iconProvider}" />
+			</gxt:ContentPanel>
+			<gxt:ContentPanel animCollapse="false" bodyStyleName="pad-text" heading="Settings">
+				<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
+			</gxt:ContentPanel>
+			<gxt:ContentPanel animCollapse="false" bodyStyleName="pad-text" heading="Stuff">
+				<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
+			</gxt:ContentPanel>
+			<gxt:ContentPanel animCollapse="false" bodyStyleName="pad-text" heading="More Stuff">
+				<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
+			</gxt:ContentPanel>
+		</gxt:ContentPanel>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>

@@ -1,0 +1,24 @@
+syntax: glob
+gxt-uibinder/target
+gxt-uibinder/bin
+
+gxt-uibinder-test/war/WEB-INF/classes
+gxt-uibinder-test/war/gxt_uibinder_test
+gxt-uibinder-test/www-test
+gxt-uibinder-test/test-classes
+gxt-uibinder-test/.gwt
+
+gxt-uibinder-test/war/com.jhickman.web.gwt.gxtuibindertest.GxtUiBinderTest.JUnit
+gxt-uibinder-test/war/WEB-INF/deploy/gxt_uibinder_test/rpcPolicyManifest/manifest.txt
+
+gxt-uibinder-test/war/WEB-INF/lib
+
+
+.DS_Store
+*.swp
+
+syntax: regexp
+
+
+syntax: regexp
+^gxt-uibinder-test/war/WEB-INF/deploy/gxt_uibinder_test/symbolMaps$

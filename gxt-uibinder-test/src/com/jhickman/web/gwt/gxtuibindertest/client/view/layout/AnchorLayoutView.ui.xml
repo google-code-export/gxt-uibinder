@@ -1,0 +1,20 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
+    xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button"
+    xmlns:form="urn:import:com.extjs.gxt.ui.client.widget.form">
+
+	<gxt:LayoutContainer>
+		<gxt:layout type="FlowLayout" margins="10" />
+		
+		<button:Button text="Open" />
+		
+		
+		<gxt:Window  plain="true" width="500" height="300" heading="Resize Me" layout="FitLayout">
+			<form:FormPanel>
+			</form:FormPanel>
+		</gxt:Window>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>

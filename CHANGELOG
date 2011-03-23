@@ -1,0 +1,85 @@
+0.9
+  * Closed Issues
+    * Issue 9 - Add support for tool buttons in ContentPanel headers
+    * Issue 14 - Support for SimpleComboBox
+    * Issue 15 - Support other Menu types in Buttons
+  * New Demos
+    * CheckboxTreeView
+    * VBoxLayout
+    * AccordionLayout
+  * Misc
+    * Upgraded GXT in demo from 2.2.0 to 2.2.3
+
+0.8
+  * New Demos
+    * HBoxLayout
+    * Basic Tree
+  * Defects
+    * Issue 12 - Full support for GXT events via GxtUiHandler annotation
+    * Issue 13 - nested <gxt:layoutdata> elements cause incorrect "add" ordering
+  * New Functionality
+    * ElementParser for ToggleButton.  Allows attribute toggle="<boolean>", which will call toggle(boolean)
+    * Issue 10 - HBoxLayout support
+      * HBoxLayout was already there, but didn't support the nested HBoxLayoutData elements, nor the ability set data on the Layout object itself.
+    * Issue 11 - Support for TreePanel
+      * Added very basic support.  Just enough to construct with a store as constructor parameter
+
+0.7
+  * New Demos
+    * Basic Grid
+    * Forms
+    * RowLayout
+    * CardLayout
+    * CenterLayout
+    * Portal
+  * Fixed Defect
+    * Issue 6: FormPanel requires FormLayout to be the default
+    * Issue 7: Support for AdapterField
+    * Fixed issue with Slider having "value" attribute as it's ambiguous
+  * New functionality
+    * Added support for FormData
+    * Custom ElementParser for SliderField.  Allows for single nested widget of type Slider
+    * Added support for CheckBoxGroup
+    * Modification of the ComponentParser to support Number property values.
+    * Deprecated rowLayoutOrientation attribute (for RowLayout containers) in favor of layoutOrientation
+    * Portal support with ability to setColumnWidth
+
+0.6
+  * New Functionality
+    * FlowLayout
+    * Html
+    * Ability to "addButton" on ContentPanel's by using child element <gxt:buttons>
+    * Adding LayoutData abilities with nested <xx:layoutdata> child elements of LayoutContainers
+  * Reorganized repository layout to add new test project
+    * Added Simple Unit Tests
+      * AbsoluteLayout
+    * Adding demo pages
+      * BorderLayout
+      * ToolTips
+      * DatePicker
+      * Basic Tabs
+      * Slider
+      * Buttons
+      * ButtonAligning
+
+
+0.5
+  * New Functionality
+    * support for AbsoluteLayout
+    * support for RowLayout
+    * Added support for using styleAttribute="" for all Components
+  * Defect fix
+    * ElementParserUtil had defect in that it always assumed attributes are being consumed.  Fixed by reversing order of attribute consumption. 
+
+0.4
+  * New Functionality
+    * added maven pom file for easier jar builds
+    * Support setting ToolTipConfig to any component by nesting a <ns:tooltipconfig /> element
+    * FormLayout support
+    * RadioGroup
+  * Updated functionality
+    * Added more Layout's for the LayoutContainer
+  
+
+
+

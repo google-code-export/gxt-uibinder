@@ -1,0 +1,58 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget" xmlns:toolbar="urn:import:com.extjs.gxt.ui.client.widget.toolbar" xmlns:form="urn:import:com.extjs.gxt.ui.client.widget.form" xmlns:grid="urn:import:com.extjs.gxt.ui.client.widget.grid">
+    
+    <ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.resources.icons.ExampleIcons" field="icons" />
+    <ui:with type="com.extjs.gxt.ui.client.store.ListStore" field="store" />
+    <ui:with type="com.google.gwt.i18n.client.DateTimeFormat" field="dateformat" />
+    <ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.view.grids.BasicGridView.ChangeCellRenderer" field="change" />
+    <ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.view.grids.BasicGridView.GridNumberRenderer" field="gridNumber" />
+
+	<gxt:LayoutContainer layout="FlowLayout">
+		<gxt:layoutdata type="FlowData" margins="10">
+			<gxt:ContentPanel bodyBorder="true" icon="{icons.table}" heading="Basic Grid" buttonAlign="CENTER" layout="FitLayout" width="600" height="300">
+				<gxt:topcomponent>
+					<toolbar:ToolBar>
+						<toolbar:LabelToolItem label="Selection Mode:" />
+						<form:SimpleComboBox triggerAction="ALL" editable="false" fireChangeEventOnSetValue="true" width="100" ui:field="selectionModeComboBox" />
+					</toolbar:ToolBar>
+				</gxt:topcomponent>
+				
+				
+				<grid:Grid store="{store}" 
+						ui:field="grid" 
+						styleAttribute="borderTop:none"
+						autoExpandColumn="name"
+						borders="false"
+						stripeRows="true"
+						columnLines="true"
+						columnReordering="true">
+					<grid:column id="name"
+                    	header="Company"
+                    	width="200"
+                    	rowHeader="true" />
+      				<grid:column id="symbol"
+                    	header="Symbol"
+                    	width="100" />
+					<grid:column id="last"
+						header="Last"
+						alignment="RIGHT"
+						width="75"
+						renderer="{gridNumber}"/>
+					<grid:column id="change"
+						header="Change"
+						width="100"
+						alignment="RIGHT"
+						renderer="{change}" />
+					<grid:column id="date"
+						header="Last Updated"
+						width="100"
+						alignment="RIGHT"
+						dateTimeFormat="{dateformat}" />
+				</grid:Grid>
+			</gxt:ContentPanel>
+		</gxt:layoutdata>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>

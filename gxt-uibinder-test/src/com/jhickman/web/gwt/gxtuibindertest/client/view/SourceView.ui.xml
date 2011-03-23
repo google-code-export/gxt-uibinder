@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget">
+
+	<gxt:LayoutContainer layout="BorderLayout">
+		<gxt:center>
+			<gxt:ContentPanel heading="UiBinder Source" scrollMode="AUTO" >
+				<gxt:LayoutContainer ui:field="uiBinderSourceContainer" width="2000"/> 
+			</gxt:ContentPanel>
+		</gxt:center>
+		<gxt:south size="384" split="true" collapsible="true" margins="5,0,0,0">
+			<gxt:ContentPanel heading="Java Source" scrollMode="AUTO" >
+				<gxt:LayoutContainer ui:field="javaSourceContainer" width="2000" />
+			</gxt:ContentPanel>
+		</gxt:south>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>

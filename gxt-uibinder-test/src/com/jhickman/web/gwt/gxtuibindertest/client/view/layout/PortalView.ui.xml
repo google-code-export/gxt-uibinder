@@ -1,0 +1,68 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
+    xmlns:custom="urn:import:com.extjs.gxt.ui.client.widget.custom" xmlns:grid="urn:import:com.extjs.gxt.ui.client.widget.grid">
+
+	<ui:with type="com.extjs.gxt.ui.client.store.ListStore" field="store" />
+	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.view.grids.BasicGridView.GridNumberRenderer" field="gridNumber" />
+
+	<gxt:LayoutContainer layout="BorderLayout">
+		<gxt:north size="30">
+			<gxt:LayoutContainer ui:field="north" />
+		</gxt:north>
+		<gxt:west size="200" min="100" max="300" margins="5,0,5,5" collapsible="true">
+			<gxt:ContentPanel ui:field="west" bodyBorder="false" heading="West" layout="AccordionLayout">
+				<gxt:ContentPanel ui:field="nav" heading="Navigation" borders="false" bodyStyle="fontSize:12px; padding: 6px">
+					<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
+				</gxt:ContentPanel>
+				
+				<gxt:ContentPanel ui:field="settings" heading="Settings" borders="false">
+				</gxt:ContentPanel>
+			</gxt:ContentPanel>
+		</gxt:west>
+		
+		<gxt:center margins="5">
+			<custom:Portal borders="true" styleAttribute="backgroundColor: white" numColumns="3">
+				<custom:column width=".33">
+					<custom:Portlet heading="Grid in a Portlet" layout="FitLayout" height="250" collapsible="true" animCollapse="false">
+						<grid:Grid store="{store}"
+							autoExpandColumn="name"
+							borders="true">
+							<grid:column id="name"
+								header="Company"
+								width="200" />
+							<grid:column id="symbol"
+								header="Symbol"
+								width="50" />
+							<grid:column id="last"
+								header="Last"
+								alignment="RIGHT"
+								width="50"
+								renderer="{gridNumber}" />
+						</grid:Grid>							
+					</custom:Portlet>
+					<custom:Portlet heading="Another Panel 1" collapsible="true" animCollapse="false">
+						<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
+					</custom:Portlet>
+				</custom:column>
+				
+				<custom:column width=".33">
+					<custom:Portlet heading="Panel 2" collapsible="true" animCollapse="false">
+						<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
+					</custom:Portlet>
+					<custom:Portlet heading="Another Panel 2" collapsible="true" animCollapse="false">
+						<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
+					</custom:Portlet>
+				</custom:column>
+				
+				<custom:column width=".33">
+					<custom:Portlet heading="Panel 3" collapsible="true" animCollapse="false">
+						<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
+					</custom:Portlet>
+				</custom:column>
+			</custom:Portal>
+		</gxt:center>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>

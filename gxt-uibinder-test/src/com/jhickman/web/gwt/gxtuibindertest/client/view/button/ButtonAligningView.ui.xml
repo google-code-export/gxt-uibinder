@@ -1,0 +1,47 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
+    xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button" xmlns:layout="urn:import:com.extjs.gxt.ui.client.widget.layout">
+
+	<gxt:LayoutContainer>
+		<gxt:layoutdata type="FlowData" margins="10">
+			<gxt:ContentPanel heading="ButtonAligning Example: left" 
+					buttonAlign="LEFT" width="500" height="150" frame="true" layout="FitLayout">
+				<gxt:buttons>
+					<button:Button text="Button 1" ui:field="button1"/>
+					<button:Button text="Button 2" ui:field="button2" />
+					<button:Button text="Button 3" ui:field="button3" />
+				</gxt:buttons>
+				<gxt:LayoutContainer styleAttribute="backgroundColor:white" borders="true">
+				</gxt:LayoutContainer>
+			</gxt:ContentPanel>
+		</gxt:layoutdata>
+			
+		<gxt:layoutdata type="FlowData" margins="10">
+			<gxt:ContentPanel heading="ButtonAligning Example: center" 
+					buttonAlign="CENTER" width="500" height="150" frame="true" layout="FitLayout">
+				<gxt:buttons>
+					<button:Button text="Button 4" ui:field="button4"/>
+					<button:Button text="Button 5" ui:field="button5" />
+					<button:Button text="Button 6" ui:field="button6" />
+				</gxt:buttons>
+				<gxt:LayoutContainer styleAttribute="backgroundColor:white" borders="true">
+				</gxt:LayoutContainer>
+			</gxt:ContentPanel>
+		</gxt:layoutdata>
+
+		<gxt:layoutdata type="FlowData" margins="10">
+			<gxt:ContentPanel heading="ButtonAligning Example: right" 
+					buttonAlign="RIGHT" width="500" height="150" frame="true" layout="FitLayout">
+				<gxt:buttons>
+					<button:Button text="Button 7" ui:field="button7"/>
+					<button:Button text="Button 8" ui:field="button8" />
+					<button:Button text="Button 9" ui:field="button9" />
+				</gxt:buttons>
+				<gxt:LayoutContainer styleAttribute="backgroundColor:white" borders="true">
+				</gxt:LayoutContainer>
+			</gxt:ContentPanel>
+		</gxt:layoutdata>
+	</gxt:LayoutContainer>
+</ui:UiBinder>

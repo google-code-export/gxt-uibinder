@@ -1,0 +1,81 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
+    xmlns:form="urn:import:com.extjs.gxt.ui.client.widget.form"
+    xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button">
+
+    <ui:with type="com.extjs.gxt.ui.client.store.ListStore" field="companyStore" />
+
+	<gxt:LayoutContainer>
+		<gxt:VerticalPanel spacing="10">
+			<form:FormPanel heading="Simple Form" frame="true" width="350" buttonAlign="CENTER">
+				<form:layoutdata type="FormData" anchorSpec="-20">
+					<form:TextField fieldLabel="Name" allowBlank="false" />
+					<form:TextField fieldLabel="Email" allowBlank="false" />
+					<form:ComboBox fieldLabel="Company" displayField="name" triggerAction="ALL" store="{companyStore}" />
+					<form:DateField fieldLabel="Birthday" />
+					<form:TimeField fieldLabel="Time" />
+					
+					<form:SliderField fieldLabel="Size">
+						<gxt:Slider minValue="40" maxValue="90" value="60" increment="1" message="{0} inches tall" />
+					</form:SliderField>
+					
+					<form:CheckBoxGroup fieldLabel="Music">
+						<form:CheckBox boxLabel="Classical" />
+						<form:CheckBox boxLabel="Rock" value="true" />
+						<form:CheckBox boxLabel="Blue" />
+					</form:CheckBoxGroup>
+					
+					<form:RadioGroup fieldLabel="Favorite Color">
+						<form:Radio boxLabel="Red" value="true" />
+						<form:Radio boxLabel="Blue" />
+					</form:RadioGroup>
+					
+					<form:RadioGroup fieldLabel="Favorite Fruit">
+						<form:Radio boxLabel="Apple" value="true" />
+						<form:Radio boxLabel="Banana" />
+					</form:RadioGroup>
+					
+					<form:TextArea fieldLabel="Description" preventScrollbars="true" />
+					
+					<form:SpinnerField fieldLabel="Duration (s)" increment=".1d" minValue="-10d" maxValue="10d" ui:field="durationSpinner"/>
+				</form:layoutdata>
+
+				<form:buttons>
+					<button:Button text="Submit" ui:field="submitButton" />
+					<button:Button text="Cancel" />
+				</form:buttons>
+				
+				<form:formButtonBinding buttonField="submitButton" />
+			</form:FormPanel>
+			
+			
+			<form:FormPanel frame="true" heading="Simple Form with FieldSets" width="350" layout="FlowLayout" buttonAlign="CENTER">
+				<form:FieldSet heading="User Information" checkboxToggle="true" layout="FormLayout">
+					<form:layoutdata type="FormData" anchorSpec="-20">
+						<form:TextField fieldLabel="First Name" allowBlank="false" />
+						<form:TextField fieldLabel="Last Name" />
+						<form:TextField fieldLabel="Company" />
+						<form:TextField fieldLabel="Email" />
+					</form:layoutdata>
+				</form:FieldSet>
+				
+				<form:FieldSet heading="Phone Numbers" collapsible="true" layout="FormLayout">
+					<form:layoutdata type="FormData" anchorSpec="-20">
+						<form:TextField fieldLabel="Home" />
+						<form:TextField fieldLabel="Business" />
+						<form:TextField fieldLabel="Mobile" />
+						<form:TextField fieldLabel="Fax" />
+					</form:layoutdata>
+				</form:FieldSet>
+				
+				<form:buttons>
+					<button:Button text="Save" />
+					<button:Button text="Cancel" />
+				</form:buttons>
+			</form:FormPanel>
+		</gxt:VerticalPanel>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>

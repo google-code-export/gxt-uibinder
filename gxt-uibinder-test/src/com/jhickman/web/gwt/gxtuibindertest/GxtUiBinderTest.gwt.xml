@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "http://google-web-toolkit.googlecode.com/svn-history/r9523/releases/2.1/distro-source/core/src/gwt-module.dtd">
+<module rename-to='gxt_uibinder_test'>
+
+
+
+  <inherits name="com.google.gwt.activity.Activity" />  
+  <inherits name="com.google.gwt.user.User" />
+  <inherits name="com.google.gwt.user.theme.standard.Standard" />
+  
+   <inherits name="com.google.gwt.resources.Resources" />
+  
+  
+  <inherits name="com.extjs.gxt.ui.GXT" />
+  <inherits name="com.jhickman.web.gwt.gxtuibinder.GxtUiBinder" />
+  
+
+  <entry-point class='com.jhickman.web.gwt.gxtuibindertest.client.GxtUiBinderTest'/>
+
+  <source path='client'/>
+  <source path='shared'/>
+  
+  <public path="client/" includes="view/**/*.java,view/**/*.ui.xml" excludes="view/*.java,view/*.ui.xml" />
+  
+
+</module>
