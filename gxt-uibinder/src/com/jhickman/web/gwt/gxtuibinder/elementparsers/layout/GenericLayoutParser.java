@@ -62,7 +62,7 @@ public class GenericLayoutParser implements LayoutParser {
 		}
 	}
 	
-	private void handleLayoutData(XMLElement layoutDataElem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
+	protected void handleLayoutData(XMLElement layoutDataElem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
 		XMLAttribute typeAttribute = layoutDataElem.getAttribute("type");
 		if (typeAttribute != null) {
 			LayoutDataType layoutDataType = LayoutDataType.valueOf(typeAttribute.consumeRawValue());
@@ -94,6 +94,36 @@ public class GenericLayoutParser implements LayoutParser {
 				return layoutData;
 			}
 		},
+		BorderLayoutData(GxtClassnameConstants.BORDERLAYOUTDATA) {
+			@Override
+			public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException {
+				JClassType borderLayoutDataType = writer.getOracle().findType(GxtClassnameConstants.BORDERLAYOUTDATA);
+				String layoutData = writer.declareField(GxtClassnameConstants.BORDERLAYOUTDATA, layoutDataElem);
+				
+				String region = layoutDataElem.getLocalName().toUpperCase();
+				String parameter = GxtClassnameConstants.LAYOUTREGION + "." + region; 
+				writer.setFieldInitializerAsConstructor(layoutData, borderLayoutDataType, parameter);
+				
+				
+				XMLAttribute attribute = layoutDataElem.getAttribute("size");
+				if (attribute != null) {
+					String size = attribute.consumeRawValue();
+					if (size.trim().length() > 0) {
+						if ( ! size.toUpperCase().endsWith("f")) {
+							size += "f";
+						}
+						writer.addStatement("%s.setSize(%s);", layoutData, size);// found size=#%s#", size);	
+					} else {
+						writer.warn(layoutDataElem, "size attribute must have a float value.");
+					}
+				}
+
+				
+				ElementParserUtil.applyAttributes(layoutDataElem, layoutData, GxtClassnameConstants.BORDERLAYOUTDATA, writer);
+
+				return layoutData;
+			}
+		}
 		;
 		
 		protected final String className;
