@@ -104,21 +104,6 @@ public class GenericLayoutParser implements LayoutParser {
 				String parameter = GxtClassnameConstants.LAYOUTREGION + "." + region; 
 				writer.setFieldInitializerAsConstructor(layoutData, borderLayoutDataType, parameter);
 				
-				
-				XMLAttribute attribute = layoutDataElem.getAttribute("size");
-				if (attribute != null) {
-					String size = attribute.consumeRawValue();
-					if (size.trim().length() > 0) {
-						if ( ! size.toUpperCase().endsWith("f")) {
-							size += "f";
-						}
-						writer.addStatement("%s.setSize(%s);", layoutData, size);// found size=#%s#", size);	
-					} else {
-						writer.warn(layoutDataElem, "size attribute must have a float value.");
-					}
-				}
-
-				
 				ElementParserUtil.applyAttributes(layoutDataElem, layoutData, GxtClassnameConstants.BORDERLAYOUTDATA, writer);
 
 				return layoutData;

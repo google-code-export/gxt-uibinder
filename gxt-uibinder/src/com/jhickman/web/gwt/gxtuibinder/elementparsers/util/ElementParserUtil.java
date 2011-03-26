@@ -62,8 +62,19 @@ public final class ElementParserUtil {
 			if (setterMethods.containsKey(setterMethod)) {
 				JType setterType = setterMethods.get(setterMethod);
 				String value;
-				if ("java.lang.Number".equals(setterType.getQualifiedSourceName())) {
-					value=elem.consumeRawAttribute(attribute.getName());
+				
+				if ("float".equals(setterType.getQualifiedSourceName())) {
+					value = attribute.consumeRawValue();
+					float floatValue = 0;
+					try {
+						floatValue = Float.parseFloat(value);
+					} catch (NumberFormatException e) {
+						writer.die(elem, "Cannot parse float value for attribute '%s'.  Found %s.", attribute.getName(), value);
+					}
+					// assuming that we didn't die due to a NumberFormatException, we can use the value
+					value = floatValue + "f";
+				} else if ("java.lang.Number".equals(setterType.getQualifiedSourceName())) {
+					value = elem.consumeRawAttribute(attribute.getName());
 				} else {
 					value = elem.consumeAttribute(attribute.getName(), setterType);
 				}

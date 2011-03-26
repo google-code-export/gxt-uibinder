@@ -76,7 +76,7 @@
 							<gxt:Label text="lkjasdflkjasdlfkjlkasjdf" />
 						</gxt:ContentPanel>
 					</gxt:center>
-					<gxt:south split="true" collapsible="true" margins="5,0,0,0" size=".25">
+					<gxt:south split="true" collapsible="true" margins="5,0,0,0" size=".50f">
 						<gxt:ContentPanel>
 						</gxt:ContentPanel>
 					</gxt:south>
