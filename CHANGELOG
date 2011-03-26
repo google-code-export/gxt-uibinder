@@ -1,3 +1,12 @@
+0.10
+  * Closed Issues
+    * Issue 18 - BorderLayoutData should allow floats rather than int for size attribute
+    * Issue 20 - Need the SimpleComboBox to accept attribute values
+      * Adding support for nested <form:item value="{msg.foo}" />
+      * added a type attribute so that SimpleComboBox items can be values other than String type.
+  * Misc
+    * Updated pom with gwt version 2.2.0
+
 0.9
   * Closed Issues
     * Issue 9 - Add support for tool buttons in ContentPanel headers
