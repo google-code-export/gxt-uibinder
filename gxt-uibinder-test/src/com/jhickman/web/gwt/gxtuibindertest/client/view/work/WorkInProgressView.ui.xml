@@ -7,9 +7,63 @@
     xmlns:menu="urn:import:com.extjs.gxt.ui.client.widget.menu">
 
 	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.resources.icons.ExampleIcons" field="icons" />
+	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.view.work.WorkInProgressView.Issue20Constants" field="issue20constants" />
 
 	<gxt:LayoutContainer>
 		<gxt:layoutdata type="FlowData" margins="10">
+		
+			<gxt:ContentPanel heading="Issue 20" width="350">
+				<form:SimpleComboBox
+					ui:field="blah"
+					width="80"
+					triggerAction="ALL"
+					editable="false"
+					simpleValue="{issue20constants.after}">
+					<form:item value="{issue20constants.before}" />
+					<form:item value="{issue20constants.after}" />
+				</form:SimpleComboBox>
+				
+				<form:SimpleComboBox
+					width="80"
+					triggerAction="ALL"
+					editable="false"
+					simpleValue="item 2">
+					<form:value>item 1</form:value>
+					<form:value>item 2</form:value>
+				</form:SimpleComboBox>
+				
+				<form:SimpleComboBox
+					width="180"
+					triggerAction="ALL"
+					editable="false"
+					type="com.jhickman.web.gwt.gxtuibindertest.client.view.work.WorkInProgressView.Person"
+					simpleValue="{issue20constants.item2}">
+					<form:item value="{issue20constants.item1}" />
+					<form:item value="{issue20constants.item2}" />
+					<form:item value="{issue20constants.item3}" />
+				</form:SimpleComboBox>
+			</gxt:ContentPanel>
+
+
+			
+			<gxt:ContentPanel heading="Issue 18" width="350" height="300" layout="FitLayout">
+				<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding,10px">
+					<gxt:west split="true" collapsible="true" margins="0,5,0,0" size="150">
+						<gxt:ContentPanel>
+						</gxt:ContentPanel>
+					</gxt:west>
+					<gxt:center margins="0" size="100">
+						<gxt:ContentPanel>
+							<gxt:Label text="lkjasdflkjasdlfkjlkasjdf" />
+						</gxt:ContentPanel>
+					</gxt:center>
+					<gxt:south split="true" collapsible="true" margins="5,0,0,0" size=".50f">
+						<gxt:ContentPanel>
+						</gxt:ContentPanel>
+					</gxt:south>
+				</gxt:LayoutContainer>
+			</gxt:ContentPanel>
+			
 		
 			<!-- Issue 7 -->
 			<form:FormPanel heading="Issue 7" frame="true" width="350" buttonAlign="CENTER">
@@ -64,24 +118,9 @@
 				</button:Button>
 			</gxt:ContentPanel>
 			
+
 			
-			<gxt:ContentPanel heading="Issue 18" width="350" height="300" layout="FitLayout">
-				<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding,10px">
-					<gxt:west split="true" collapsible="true" margins="0,5,0,0" size="150">
-						<gxt:ContentPanel>
-						</gxt:ContentPanel>
-					</gxt:west>
-					<gxt:center margins="0" size="100">
-						<gxt:ContentPanel>
-							<gxt:Label text="lkjasdflkjasdlfkjlkasjdf" />
-						</gxt:ContentPanel>
-					</gxt:center>
-					<gxt:south split="true" collapsible="true" margins="5,0,0,0" size=".50f">
-						<gxt:ContentPanel>
-						</gxt:ContentPanel>
-					</gxt:south>
-				</gxt:LayoutContainer>
-			</gxt:ContentPanel>
+
 			
 		</gxt:layoutdata>
 	</gxt:LayoutContainer>

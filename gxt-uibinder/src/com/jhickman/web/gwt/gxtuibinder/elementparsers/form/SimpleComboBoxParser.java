@@ -8,7 +8,6 @@ import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.uibinder.elementparsers.ElementParser;
 import com.google.gwt.uibinder.elementparsers.TextInterpreter;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
-import com.google.gwt.uibinder.rebind.XMLAttribute;
 import com.google.gwt.uibinder.rebind.XMLElement;
 
 /**
@@ -19,20 +18,38 @@ public class SimpleComboBoxParser implements ElementParser {
 
 	@Override
 	public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
+		
+		String parameterizedType = elem.consumeRawAttribute("type", "java.lang.String");
+		JClassType valueType = writer.getOracle().findType(parameterizedType);
+		if (valueType == null) {
+			writer.die(elem, "Found type attribute, but unable to resolve the value: %s", parameterizedType);
+		}
+		
 		for(XMLElement child : elem.consumeChildElements()) {
-			
-			if ( ! ("value".equals(child.getLocalName()) &&	elem.getNamespaceUri().equals(child.getNamespaceUri()))) {
-				writer.die(elem, "SimpleComboBox currently on supports nested <form:value> children.  Found '%s'.", child);
+			if ( ! child.getNamespaceUri().equals(elem.getNamespaceUri())) {
+				writer.die(elem, "Children of SimpleComboBox must be in the same namespace.  Expected '%s' but found '%s'", elem.getPrefix(), child.getPrefix());
 			}
-			//child.consume
-			String data = child.consumeInnerTextEscapedAsHtmlStringLiteral(new TextInterpreter(writer));
-			writer.addStatement("%s.add(\"%s\");", fieldName, data);
+				
+			String data = parseChildElement(child, valueType, writer);
+			
+			writer.addStatement("%s.add(%s);", fieldName, data);
 		}
 		
-		
-		XMLAttribute simpleValue = elem.getAttribute("simpleValue");
-		if (simpleValue != null) {
-			writer.addStatement("%s.setSimpleValue(%s);", fieldName, simpleValue.consumeStringValue());
+		if (elem.getAttribute("simpleValue") != null) {
+			writer.addStatement("%s.setSimpleValue(%s);", fieldName, elem.consumeAttribute("simpleValue", valueType));
 		}
+	}
+	
+	
+	private String parseChildElement(XMLElement elem, JClassType valueType, UiBinderWriter writer) throws UnableToCompleteException {
+		if ("value".equals(elem.getLocalName())) {
+			return String.format("\"%s\"", elem.consumeInnerTextEscapedAsHtmlStringLiteral(new TextInterpreter(writer)));
+		} else if ("item".equals(elem.getLocalName())) {
+			return elem.consumeRequiredAttribute("value", valueType);
+		}
+		
+		writer.die(elem, "Unknown child element of SimpleComboBox");
+		
+		return null; // will never get here
 	}
 }
