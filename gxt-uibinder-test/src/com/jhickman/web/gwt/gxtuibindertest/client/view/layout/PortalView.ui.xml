@@ -11,7 +11,7 @@
 		<gxt:north size="30">
 			<gxt:LayoutContainer ui:field="north" />
 		</gxt:north>
-		<gxt:west size="200" min="100" max="300" margins="5,0,5,5" collapsible="true">
+		<gxt:west size="200" minSize="100" maxSize="300" margins="5,0,5,5" collapsible="true">
 			<gxt:ContentPanel ui:field="west" bodyBorder="false" heading="West" layout="AccordionLayout">
 				<gxt:ContentPanel ui:field="nav" heading="Navigation" borders="false" bodyStyle="fontSize:12px; padding: 6px">
 					<gxt:Label text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s." />
