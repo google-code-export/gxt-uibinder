@@ -6,7 +6,7 @@
 	<gxt:LayoutContainer>
 		<gxt:layoutdata type="FlowData" margins="10">
 			<gxt:ContentPanel heading="HorizontalBox Example" width="600" height="500" layout="BorderLayout">
-				<gxt:west size="150" min="100" max="250" margins="5" split="true">
+				<gxt:west size="150" minSize="100" maxSize="250" margins="5" split="true">
 					<gxt:ContentPanel headerVisible="false" ui:field="buttonBox">
 						<gxt:layout type="VBoxLayout" padding="5" vBoxLayoutAlign="STRETCH" />
 						
