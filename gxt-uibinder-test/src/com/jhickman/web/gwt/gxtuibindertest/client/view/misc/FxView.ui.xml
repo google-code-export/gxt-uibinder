@@ -26,11 +26,12 @@
 			heading="FX Demo"
 			icon="{icons.text}"
 			bodyStyleName="pad-text"
-			styleAttribute="position:relative"
+			
 			text="{shortText}"
 			position="10, 10"
-			width="200">
-		</gxt:ContentPanel>
+			width="200"
+			visible="true" />
+		
 		
 	</gxt:LayoutContainer>
 	
