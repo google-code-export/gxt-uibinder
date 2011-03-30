@@ -41,6 +41,7 @@ public class FxView extends Composite implements View {
 	
 	@GxtUiHandler(eventType=GxtEvent.Select, uiField="slideInOut")
 	public void onSlideInOutClicked(ButtonEvent ce) {
+		System.out.println(cp.isVisible());
 		if (cp.isVisible()) {
 			cp.el().slideOut(Direction.UP, FxConfig.NONE);
 		} else {
