@@ -3,7 +3,6 @@
  */
 package com.jhickman.web.gwt.gxtuibinder.elementparsers;
 
-import com.google.gwt.core.ext.typeinfo.JClassType;
 
 
 /**
@@ -38,6 +37,7 @@ public interface GxtClassnameConstants {
 	
 	public static final String BORDERLAYOUTDATA = "com.extjs.gxt.ui.client.widget.layout.BorderLayoutData";	
 	public static final String ABSOLUTEDATA = "com.extjs.gxt.ui.client.widget.layout.AbsoluteData";
+	public static final String MARGINDATA = "com.extjs.gxt.ui.client.widget.layout.MarginData";
 	public static final String ROWDATA = "com.extjs.gxt.ui.client.widget.layout.RowData";
 	public static final String FLOWDATA = "com.extjs.gxt.ui.client.widget.layout.FlowData";
 	public static final String FILLDATA = "com.extjs.gxt.ui.client.widget.layout.FillData";

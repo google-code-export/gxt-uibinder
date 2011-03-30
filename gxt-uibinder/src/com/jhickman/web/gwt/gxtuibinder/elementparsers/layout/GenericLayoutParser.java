@@ -78,6 +78,7 @@ public class GenericLayoutParser implements LayoutParser {
 	}
 
 	private enum LayoutDataType {
+		MarginData(GxtClassnameConstants.MARGINDATA),
 		AbsoluteData(GxtClassnameConstants.ABSOLUTEDATA),
 		FlowData(GxtClassnameConstants.FLOWDATA),
 		FillData(GxtClassnameConstants.FILLDATA),
