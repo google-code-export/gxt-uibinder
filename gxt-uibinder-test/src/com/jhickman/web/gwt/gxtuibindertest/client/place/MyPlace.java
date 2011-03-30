@@ -23,6 +23,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.PortalView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.RowLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.VBoxLayoutView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.DatePickerView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.FxView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.SliderView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.ToolTipsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tabs.BasicTabsView;
@@ -179,6 +180,11 @@ public class MyPlace extends Place {
 		combobox {
 			public View getView() {
 				return new ComboBoxView();
+			}
+		}, 
+		fx {
+			public View getView() {
+				return new FxView();
 			}
 		}
 		;
