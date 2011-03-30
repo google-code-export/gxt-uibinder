@@ -1,0 +1,40 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
+    xmlns:form="urn:import:com.extjs.gxt.ui.client.widget.form">
+
+	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.view.combos.ComboBoxView.ViewDataProvider" field="constants" />
+
+	<gxt:LayoutContainer>
+		<gxt:VerticalPanel spacing="10">
+			<form:ComboBox
+				emptyText="Select a state..."
+				displayField="name"
+				width="150"
+				store="{constants.stateStore}"
+				typeAhead="true"
+				triggerAction="ALL" />
+				
+			<form:ComboBox
+				emptyText="Select a state..."
+				displayField="name"
+				template="{constants.template}"
+				width="150"
+				store="{constants.stateStore}"
+				typeAhead="true"
+				triggerAction="ALL" />
+
+			<form:ComboBox
+				width="150"
+				store="{constants.countryStore}"
+				template="{constants.flagTemplate}"
+				displayField="name"
+				typeAhead="true"
+				triggerAction="ALL" />
+							
+		</gxt:VerticalPanel>
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>
+
