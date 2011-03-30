@@ -83,6 +83,7 @@ public class ExamplesModel {
 						new Navigation("ToolTips", new MyPlace(Token.tooltips), g.tooltips().getHTML()),
 						new Navigation("DatePicker", new MyPlace(Token.datepicker), g.datepicker().getHTML()),
 						new Navigation("Slider", new MyPlace(Token.slider), g.slider().getHTML()),
+						new Navigation("Fx", new MyPlace(Token.fx), g.fx().getHTML()),
 				}),
 		};
 		
@@ -360,4 +361,49 @@ public class ExamplesModel {
 		
 		return countries;
 	}
+	
+	  public static String DUMMY_TEXT_SHORT = "Lorem Ipsum is simply dummy text of the "
+	      + "printing and typesetting industry. Lorem Ipsum has been the industry's standard "
+	      + "dummy text ever since the 1500s.";
+
+	  public static String DUMMY_TEXT_LONG = "<div class=text style='padding:2 8px'><p>Lorem ipsum dolor sit amet, consectetuer "
+	      + "adipiscing elit. Suspendisse velit metus, ultricies nec, aliquam quis, porttitor "
+	      + "a, felis. Donec est. Pellentesque urna dolor, bibendum nec, commodo a, laoreet sed, "
+	      + "turpis. Morbi tristique orci ac felis. Suspendisse nec tellus. Donec vitae quam "
+	      + "sed nibh luctus auctor. Suspendisse rhoncus lacus non magna. Proin consectetuer "
+	      + "arcu ac metus. Integer tristique erat id leo. Sed interdum dictum quam. Integer "
+	      + "eros. Vivamus eget elit. Quisque eget urna. Mauris venenatis molestie enim. "
+	      + "Aenean justo nisi, sodales vitae, pellentesque scelerisque, gravida vitae, diam. "
+	      + "<p>Curabitur pellentesque nulla et tellus. Fusce suscipit. Phasellus diam dolor, "
+	      + "ullamcorper a, placerat ac, elementum sit amet, arcu. In commodo. Duis vitae "
+	      + "justo vel quam nonummy imperdiet. Nam hendrerit convallis nisl. Praesent eu arcu. "
+	      + "Morbi justo. Proin semper venenatis nulla. Pellentesque habitant morbi tristique "
+	      + "senectus et netus et malesuada fames ac turpis egestas. Vivamus feugiat odio vitae "
+	      + "tortor. Mauris augue enim, volutpat vitae, aliquet eu, feugiat congue, nisl. Maecenas "
+	      + "ac orci. Donec malesuada. Proin nunc. Sed vitae urna. Nam ut mi. Nullam tempus vulputate ipsum. "
+	      + "Integer lacinia nonummy mauris. Nullam rhoncus accumsan nibh.</p><p>Fusce mattis. Donec "
+	      + "feugiat, lectus sit amet aliquet feugiat, nisi ante aliquam lacus, id facilisis metus nisl et "
+	      + "eros. Vestibulum tempor. Proin augue dui, commodo ut, aliquet non, tristique a, nulla. "
+	      + "Fusce dolor enim, bibendum at, placerat vel, ultricies vitae, libero. Praesent eu sem suscipit "
+	      + "dolor cursus gravida. Quisque tortor mauris, aliquam at, placerat at, iaculis non, ante. In "
+	      + "hendrerit, enim sed facilisis blandit, turpis erat lobortis velit, quis dapibus mauris "
+	      + "sapien ut nisl. Aliquam non leo eget elit ultrices ullamcorper. Aliquam porta, purus in "
+	      + "euismod vulputate, tellus pede imperdiet elit, vulputate viverra ipsum purus ac dolor. "
+	      + "Vivamus tempor lorem quis lorem. Maecenas et felis. Integer accumsan convallis est. Etiam ut "
+	      + "augue quis augue congue hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et "
+	      + "ultrices posuere cubilia Curae; Cras sem.</p><p>In hac habitasse platea dictumst. Donec facilisis rhoncus purus. "
+	      + "Suspendisse vulputate, nunc et mattis scelerisque, enim nisi imperdiet lectus, sed aliquet sapien nisl "
+	      + "feugiat tortor. Cras sit amet nisi. Vivamus dignissim. Integer a ligula. Morbi euismod. Aenean malesuada. "
+	      + "Pellentesque ut nisi eu purus egestas aliquam. Phasellus dolor augue, tempor a, rhoncus ac, accumsan ut, urna. "
+	      + "Aenean aliquet semper elit. Sed porta eros ac orci. Proin mollis dui iaculis felis. Suspendisse tortor nisi, "
+	      + "scelerisque at, adipiscing sagittis, vehicula et, sem. Etiam vulputate. Nullam vestibulum eros sed sapien. "
+	      + "<p>Duis molestie tempor arcu. Nam eu nunc. Vivamus at neque eu mi lobortis euismod. Sed erat pede, luctus a, "
+	      + "gravida quis, varius quis, ipsum. Proin vel massa. Cras auctor risus non nunc semper semper. Lorem ipsum dolor "
+	      + "sit amet, consectetuer adipiscing elit. Sed vel arcu. Sed consectetuer. Duis libero eros, imperdiet sed, "
+	      + "condimentum a, pretium nec, diam. Cum sociis natoque penatibus et magnis dis parturient montes, "
+	      + "nascetur ridiculus mus. Nunc egestas, urna nec interdum interdum, risus justo malesuada quam, vitae "
+	      + "consequat urna turpis at metus. Sed id neque eget diam euismod aliquet. Nam sed tortor. Praesent hendrerit "
+	      + "scelerisque dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus semper, odio id "
+	      + "rutrum volutpat, mauris ante tempus metus, bibendum porta dolor ligula pretium tortor.</div>";
+	  
 }

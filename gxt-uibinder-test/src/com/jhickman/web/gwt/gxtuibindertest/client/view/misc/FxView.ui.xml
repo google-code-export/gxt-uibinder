@@ -1,0 +1,37 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget" 
+    xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button">
+
+	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.resources.icons.ExampleIcons" field="icons" />
+	<ui:with type="java.lang.String" field="shortText" />
+
+	<gxt:LayoutContainer>
+	
+		<gxt:layoutdata type="MarginData" margins="10">
+			<button:ButtonBar>
+				<button:Button ui:field="slideInOut" text="Slide In / Out" />
+				<button:Button ui:field="fadeInOut" text="Fade In / Out" />
+				<button:Button ui:field="move" text="Move" />
+				<button:Button ui:field="blink" text="Blink" />
+				<button:Button ui:field="reset" text="Reset" />
+				
+			</button:ButtonBar>
+		</gxt:layoutdata>
+	
+		<gxt:ContentPanel
+			ui:field="cp"
+			collapsible="true"
+			heading="FX Demo"
+			icon="{icons.text}"
+			bodyStyleName="pad-text"
+			styleAttribute="position:relative"
+			text="{shortText}"
+			position="10, 10"
+			width="200">
+		</gxt:ContentPanel>
+		
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>
