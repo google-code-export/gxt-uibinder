@@ -84,6 +84,13 @@ public class LayoutContainerParser implements ElementParser {
         	// FlowLayout is the default as per Sencha Javadoc
         	Layout.FlowLayout.layoutParser.parse(elem, fieldName, type, writer);
         }
+    	
+    	
+    	
+    	XMLAttribute attribute = elem.getAttribute("text");
+    	if (attribute != null) {
+    		writer.addStatement("%s.addText(%s);", fieldName, attribute.consumeStringValue());
+    	}
     }
     
     
