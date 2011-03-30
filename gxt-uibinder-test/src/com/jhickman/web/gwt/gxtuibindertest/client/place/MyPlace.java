@@ -9,6 +9,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.OverviewViewImpl;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.View;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonAligningView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.button.ButtonsView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.combos.ComboBoxView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.forms.FormsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.grids.BasicGridView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.layout.AbsoluteLayoutView;
@@ -173,6 +174,11 @@ public class MyPlace extends Place {
 		accordionlayout {
 			public View getView() {
 				return new AccordionLayoutView();
+			}
+		},
+		combobox {
+			public View getView() {
+				return new ComboBoxView();
 			}
 		}
 		;

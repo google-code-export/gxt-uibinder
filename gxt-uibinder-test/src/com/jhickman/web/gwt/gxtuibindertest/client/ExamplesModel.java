@@ -8,9 +8,12 @@ import java.util.List;
 
 import com.extjs.gxt.ui.client.data.ModelData;
 import com.extjs.gxt.ui.client.data.TreeModel;
+import com.google.gwt.user.client.Random;
+import com.jhickman.web.gwt.gxtuibindertest.client.model.Country;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Folder;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Music;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Navigation;
+import com.jhickman.web.gwt.gxtuibindertest.client.model.State;
 import com.jhickman.web.gwt.gxtuibindertest.client.model.Stock;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace.Token;
@@ -57,6 +60,10 @@ public class ExamplesModel {
 						new Navigation("Portal", new MyPlace(Token.portal), g.portal().getHTML()),
 						new Navigation("VBoxLayout", new MyPlace(Token.vboxlayout), g.vboxlayout().getHTML()),
 						new Navigation("HBoxLayout", new MyPlace(Token.hboxlayout), g.hboxlayout().getHTML()),
+				}),
+				new Folder("Combos",
+						new Navigation[] {
+						new Navigation("ComboBox", new MyPlace(Token.combobox), g.combobox().getHTML()),
 				}),
 				new Folder("Forms",
 						new Navigation[] {
@@ -281,5 +288,76 @@ public class ExamplesModel {
 		}
 
 		return root;
+	}
+	
+	public static List<State> getStates() {
+		List<State> states = new ArrayList<State>();
+		states.add(new State("AL", "Alabama", "The Heart of Dixie"));
+		states.add(new State("AK", "Alaska", "The Land of the Midnight Sun"));
+		states.add(new State("AZ", "Arizona", "The Grand Canyon State"));
+		states.add(new State("AR", "Arkansas", "The Natural State"));
+		states.add(new State("CA", "California", "The Golden State"));
+		states.add(new State("CO", "Colorado", "The Mountain State"));
+		states.add(new State("CT", "Connecticut", "The Constitution State"));
+		states.add(new State("DE", "Delaware", "The First State"));
+		states.add(new State("DC", "District of Columbia", "The Nations Capital"));
+		states.add(new State("FL", "Florida", "The Sunshine State"));
+		states.add(new State("GA", "Georgia", "The Peach State"));
+		states.add(new State("HI", "Hawaii", "The Aloha State"));
+		states.add(new State("ID", "Idaho", "Famous Potatoes"));
+		states.add(new State("IL", "Illinois", "The Prairie State"));
+		states.add(new State("IN", "Indiana", "The Hospitality State"));
+		states.add(new State("IA", "Iowa", "The Corn State"));
+		states.add(new State("KS", "Kansas", "The Sunflower State"));
+		states.add(new State("KY", "Kentucky", "The Bluegrass State"));
+		states.add(new State("LA", "Louisiana", "The Bayou State"));
+		states.add(new State("ME", "Maine", "The Pine Tree State"));
+		states.add(new State("MD", "Maryland", "Chesapeake State"));
+		states.add(new State("MA", "Massachusetts", "The Spirit of America"));
+		states.add(new State("MI", "Michigan", "Great Lakes State"));
+		states.add(new State("MN", "Minnesota", "North Star State"));
+		states.add(new State("MS", "Mississippi", "Magnolia State"));
+		states.add(new State("MO", "Missouri", "Show Me State"));
+		states.add(new State("MT", "Montana", "Big Sky Country"));
+		states.add(new State("NE", "Nebraska", "Beef State"));
+		states.add(new State("NV", "Nevada", "Silver State"));
+		states.add(new State("NH", "New Hampshire", "Granite State"));
+		states.add(new State("NJ", "New Jersey", "Garden State"));
+		states.add(new State("NM", "New Mexico", "Land of Enchantment"));
+		states.add(new State("NY", "New York", "Empire State"));
+		states.add(new State("NC", "North Carolina", "First in Freedom"));
+		states.add(new State("ND", "North Dakota", "Peace Garden State"));
+		states.add(new State("OH", "Ohio", "The Heart of it All"));
+		states.add(new State("OK", "Oklahoma", "Oklahoma is OK"));
+		states.add(new State("OR", "Oregon", "Pacific Wonderland"));
+		states.add(new State("PA", "Pennsylvania", "Keystone State"));
+		states.add(new State("RI", "Rhode Island", "Ocean State"));
+		states.add(new State("SC", "South Carolina", "Nothing Could be Finer"));
+		states.add(new State("SD", "South Dakota", "Great Faces, Great Places"));
+		states.add(new State("TN", "Tennessee", "Volunteer State"));
+		states.add(new State("TX", "Texas", "Lone Star State"));
+		states.add(new State("UT", "Utah", "Salt Lake State"));
+		states.add(new State("VT", "Vermont", "Green Mountain State"));
+		states.add(new State("VA", "Virginia", "Mother of States"));
+		states.add(new State("WA", "Washington", "Green Tree State"));
+		states.add(new State("WV", "West Virginia", "Mountain State"));
+		states.add(new State("WI", "Wisconsin", "Americas Dairyland"));
+		states.add(new State("WY", "Wyoming", "Like No Place on Earth"));
+		return states;
+	}
+
+	public static List<Country> getCountries() {
+		List<Country> countries = new ArrayList<Country>();
+		countries.add(new Country("ad", "Andora", 100 + (Random.nextInt(110) * 100)));
+		countries.add(new Country("ae", "Arab Emirates", 100 + (Random.nextInt(110) * 100)));
+		countries.add(new Country("ag", "Antigua And Barbuda", 100 + (Random.nextInt(110) * 100)));
+		countries.add(new Country("ai", "Anguilla", 100 + (Random.nextInt(110) * 100)));
+		countries.add(new Country("al", "Albania", 100 + (Random.nextInt(110) * 100)));
+		countries.add(new Country("am", "Armenia", 100 + (Random.nextInt(110) * 100)));
+		countries.add(new Country("an", "Neth. Antilles", 100 + (Random.nextInt(110) * 100)));
+		countries.add(new Country("ao", "Angola", 100 + (Random.nextInt(110) * 100)));
+		countries.add(new Country("ar", "Argentina", 100 + (Random.nextInt(110) * 100)));
+		
+		return countries;
 	}
 }
