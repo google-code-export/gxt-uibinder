@@ -65,72 +65,15 @@ public class GenericLayoutParser implements LayoutParser {
 	protected void handleLayoutData(XMLElement layoutDataElem, String fieldName, UiBinderWriter writer) throws UnableToCompleteException {
 		XMLAttribute typeAttribute = layoutDataElem.getAttribute("type");
 		if (typeAttribute != null) {
-			LayoutDataType layoutDataType = LayoutDataType.valueOf(typeAttribute.consumeRawValue());
-			String layoutData = layoutDataType.declareField(writer, layoutDataElem);
+			String layoutDataField = LayoutDataFieldFactory.declareField(layoutDataElem, typeAttribute.consumeRawValue(), writer);
 
 			for(XMLElement child : layoutDataElem.consumeChildElements()) {
 				String childField = writer.parseElementToField(child);
-				writer.addStatement("%s.add(%s, %s);", fieldName, childField, layoutData);
+				writer.addStatement("%s.add(%s, %s);", fieldName, childField, layoutDataField);
 			}
 		} else {
 			writer.die(layoutDataElem, "layoutdata missing type attribute");
 		}
 	}
 
-	private enum LayoutDataType {
-		MarginData(GxtClassnameConstants.MARGINDATA),
-		AbsoluteData(GxtClassnameConstants.ABSOLUTEDATA),
-		FlowData(GxtClassnameConstants.FLOWDATA),
-		FillData(GxtClassnameConstants.FILLDATA),
-		FormData(GxtClassnameConstants.FORMDATA),
-		HBoxLayoutData(GxtClassnameConstants.HBOXLAYOUTDATA),
-		VBoxLayoutData(GxtClassnameConstants.VBOXLAYOUTDATA),
-		RowData(GxtClassnameConstants.ROWDATA) {
-			@Override
-			public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException {
-				JClassType rowDataType = writer.getOracle().findType(GxtClassnameConstants.ROWDATA);
-				String layoutData = writer.declareField(GxtClassnameConstants.ROWDATA, layoutDataElem);
-				ElementParserUtil.applyAttributes(layoutDataElem, layoutData, rowDataType, writer);
-				
-				return layoutData;
-			}
-		},
-		BorderLayoutData(GxtClassnameConstants.BORDERLAYOUTDATA) {
-			@Override
-			public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException {
-				JClassType borderLayoutDataType = writer.getOracle().findType(GxtClassnameConstants.BORDERLAYOUTDATA);
-				String layoutData = writer.declareField(GxtClassnameConstants.BORDERLAYOUTDATA, layoutDataElem);
-				
-				String region = layoutDataElem.getLocalName().toUpperCase();
-				String parameter = GxtClassnameConstants.LAYOUTREGION + "." + region; 
-				writer.setFieldInitializerAsConstructor(layoutData, borderLayoutDataType, parameter);
-				
-				ElementParserUtil.applyAttributes(layoutDataElem, layoutData, GxtClassnameConstants.BORDERLAYOUTDATA, writer);
-
-				return layoutData;
-			}
-		}
-		;
-		
-		protected final String className;
-
-		private LayoutDataType(String className) {
-			this.className = className;
-		}
-
-		public String declareField(UiBinderWriter writer, XMLElement layoutDataElem) throws UnableToCompleteException {
-			String marginsAttribute = ElementParserUtil.parseMarginsAttribute(layoutDataElem, writer);
-			
-			String field = writer.declareField(this.className, layoutDataElem);
-			JClassType dataType = writer.getOracle().findType(this.className);
-			
-			
-			if (marginsAttribute != null) {
-				writer.setFieldInitializerAsConstructor(field, dataType, marginsAttribute);
-			}
-			
-			ElementParserUtil.applyAttributes(layoutDataElem, field, dataType, writer);
-			return field;
-		}
-	}
 }
