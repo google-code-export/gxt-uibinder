@@ -42,11 +42,14 @@ public class LayoutContainerParser implements ElementParser {
     	
     	layoutParser.parse(elem, fieldName, type, writer);
     	
-    	
+    	/*
+    	 * having problem with TabItem.setText because of this..  Removing
+
     	XMLAttribute attribute = elem.getAttribute("text");
     	if (attribute != null) {
     		writer.addStatement("%s.addText(%s);", fieldName, attribute.consumeStringValue());
     	}
+    	*/
     }
     
     
