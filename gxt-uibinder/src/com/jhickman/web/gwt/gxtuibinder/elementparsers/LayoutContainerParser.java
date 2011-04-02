@@ -9,10 +9,8 @@ import com.google.gwt.uibinder.elementparsers.ElementParser;
 import com.google.gwt.uibinder.rebind.UiBinderWriter;
 import com.google.gwt.uibinder.rebind.XMLAttribute;
 import com.google.gwt.uibinder.rebind.XMLElement;
-import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.BorderLayoutParser;
-import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.GenericLayoutParser;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.LayoutParser;
-import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.RowLayoutParser;
+import com.jhickman.web.gwt.gxtuibinder.elementparsers.layout.LayoutParserFactory;
 import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.SimpleInterpreter;
 
 
@@ -23,52 +21,7 @@ import com.jhickman.web.gwt.gxtuibinder.elementparsers.util.SimpleInterpreter;
  * @author hickman
  */
 public class LayoutContainerParser implements ElementParser {
-    private static enum Layout {
-        BorderLayout(new BorderLayoutParser()),
-        
-        AccordionLayout(new GenericLayoutParser(GxtClassnameConstants.ACCORDIONLAYOUT)),
-        FitLayout(new GenericLayoutParser(GxtClassnameConstants.FITLAYOUT)),
-        FlowLayout(new GenericLayoutParser(GxtClassnameConstants.FLOWLAYOUT)),
-        CardLayout(new GenericLayoutParser(GxtClassnameConstants.CARDLAYOUT)),
-        CenterLayout(new GenericLayoutParser(GxtClassnameConstants.CENTERLAYOUT)),
-        VBoxLayout(new GenericLayoutParser(GxtClassnameConstants.VBOXLAYOUT)),
-        HBoxLayout(new GenericLayoutParser(GxtClassnameConstants.HBOXLAYOUT)),
-        FormLayout(new GenericLayoutParser(GxtClassnameConstants.FORMLAYOUT)),
-        AbsoluteLayout(new GenericLayoutParser(GxtClassnameConstants.ABSOLUTELAYOUT)),
-        RowLayout(new RowLayoutParser(GxtClassnameConstants.ROWLAYOUT)),
-        FillLayout(new RowLayoutParser(GxtClassnameConstants.FILLLAYOUT))
-        ;
-        private final LayoutParser layoutParser;
-        private Layout(LayoutParser layoutParser) {
-            this.layoutParser = layoutParser;
-        }
-        
-        // no need for optimization here
-        public static boolean contains(String name) {
-            for(Layout l : values()) {
-                if (l.toString().equals(name)) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        
-        public static Layout valueOf(XMLElement elem, String type, UiBinderWriter writer) throws UnableToCompleteException {
-        	if ( ! Layout.contains(type)) {
-        		StringBuilder sb = new StringBuilder();
-        		sb.append("'layout' must be one of ");
-                for(Layout allowed : Layout.values()) {
-                    sb.append(allowed.toString()).append(", ");
-                }
-                sb.append("but found ").append(type);
-                writer.die(elem, sb.toString());
-        	}
-        	
-        	return Layout.valueOf(type);
-        }
-    }
-    
-    
+
     @Override
     public void parse(XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
     	
@@ -77,14 +30,17 @@ public class LayoutContainerParser implements ElementParser {
     		return;
     	}
     	
+    	LayoutParser layoutParser = null;
+    	
     	if (GxtClassnameConstants.FORMPANEL.equals(type.getQualifiedSourceName())) {
         	// default layout for FormPanel
-        	Layout.FormLayout.layoutParser.parse(elem, fieldName, type, writer);
+    		layoutParser = LayoutParserFactory.findLayoutParser(elem, GxtClassnameConstants.FORMLAYOUT, writer);
         } else {
         	// FlowLayout is the default as per Sencha Javadoc
-        	Layout.FlowLayout.layoutParser.parse(elem, fieldName, type, writer);
+        	layoutParser = LayoutParserFactory.findLayoutParser(elem, GxtClassnameConstants.FLOWLAYOUT, writer);
         }
     	
+    	layoutParser.parse(elem, fieldName, type, writer);
     	
     	
     	XMLAttribute attribute = elem.getAttribute("text");
@@ -103,8 +59,9 @@ public class LayoutContainerParser implements ElementParser {
     		}
     		
     		String layoutType = layoutChild.consumeRequiredRawAttribute("type");
-    		Layout layout = Layout.valueOf(elem, layoutType, writer);
-    		layout.layoutParser.parse(layoutChild, elem, layoutContainerFieldName, type, writer);
+    		
+    		LayoutParser layoutParser = LayoutParserFactory.findLayoutParserBySimpleName(elem, layoutType, writer);
+    		layoutParser.parse(layoutChild, elem, layoutContainerFieldName, type, writer);
     		
     		layoutFound = true;
     	}
@@ -117,11 +74,14 @@ public class LayoutContainerParser implements ElementParser {
     			writer.die(elem, "LayoutContainer can contain either a layout attribute or a single nested <%s:layout /> child.  Not both.", elem.getPrefix());
     		}
     		String layoutType = layoutAttribute.consumeRawValue();
-    		Layout layout = Layout.valueOf(elem, layoutType, writer);
-    		layout.layoutParser.parse(elem, layoutContainerFieldName, type, writer);
+    		
+    		LayoutParser layoutParser = LayoutParserFactory.findLayoutParserBySimpleName(elem, layoutType, writer);
+    		layoutParser.parse(elem, layoutContainerFieldName, type, writer);
     		layoutFound = true;
     	}
     	
     	return layoutFound;
     }
+    
+    
 }
