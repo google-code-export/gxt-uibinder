@@ -12,6 +12,42 @@
 	<gxt:LayoutContainer>
 		<gxt:layoutdata type="FlowData" margins="10">
 		
+		
+			<gxt:ContentPanel heading="Issue 24" width="350">
+				<gxt:LayoutContainer>
+					<gxt:layout type="TableLayout" columns="3" border="1" cellPadding="3" />
+					
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					<gxt:Label text="test" />
+					
+				
+				</gxt:LayoutContainer>
+				
+				<gxt:LayoutContainer layout="ColumnLayout">
+					<gxt:layoutdata type="ColumnData" width="100">
+						<button:Button text="100px" />
+					</gxt:layoutdata>
+					<gxt:layoutdata type="ColumnData" width=".3">
+						<button:Button text="30%" />
+					</gxt:layoutdata>
+					<gxt:layoutdata type="ColumnData" width="50">
+						<button:Button text="50px" />
+					</gxt:layoutdata>
+				</gxt:LayoutContainer>
+			</gxt:ContentPanel>
+		
 			<gxt:ContentPanel heading="Issue 20" width="350">
 				<form:SimpleComboBox
 					ui:field="blah"
