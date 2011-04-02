@@ -1,7 +1,6 @@
 0.11
   * Closed Issues
     * Issue 21 - Support MarginData for layout data
-    * Issue 22 - Support addText() method on LayoutContainer
     * Issue 24 - Support for TableLayout and ColumnLayout
   * New Demos
     * ComboBox
