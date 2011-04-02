@@ -81,11 +81,11 @@ public final class ElementParserUtil {
 				writer.addStatement("%s.%s(%s);", fieldName, setterMethod, value);
 				
 			} else {
-				//try {
-					//writer.findFieldType(elem);
-				//} catch (UnableToCompleteException e) {
+				try {
+					writer.findFieldType(elem);
+				} catch (UnableToCompleteException e) {
 					writer.warn(elem, "Found attribute without associated setter method: %s.  IGNORING", attribute.getName());
-				//}
+				}
 			}
 		}
 	}
