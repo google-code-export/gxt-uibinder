@@ -27,10 +27,12 @@
 			icon="{icons.text}"
 			bodyStyleName="pad-text"
 			
-			text="{shortText}"
+			
 			position="10, 10"
 			width="200"
-			visible="true" />
+			visible="true">
+			<gxt:Label text="{shortText}" />
+		</gxt:ContentPanel>
 		
 		
 	</gxt:LayoutContainer>
