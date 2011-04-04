@@ -12,13 +12,18 @@
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.LayoutContainer:com.jhickman.web.gwt.gxtuibinder.elementparsers.LayoutContainerParser" />    
   <extend-configuration-property name="gwt.uibinder.elementparser"
-        value="com.extjs.gxt.ui.client.widget.ContentPanel:com.jhickman.web.gwt.gxtuibinder.elementparsers.ContentPanelParser" />    
+        value="com.extjs.gxt.ui.client.widget.ContentPanel:com.jhickman.web.gwt.gxtuibinder.elementparsers.ContentPanelParser" />
+            
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.menu.MenuBarItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.MenuBarItemParser" />    
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.menu.CheckMenuItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.CheckMenuItemParser" />    
   <extend-configuration-property name="gwt.uibinder.elementparser"
-        value="com.extjs.gxt.ui.client.widget.menu.MenuItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.MenuItemParser" />    
+        value="com.extjs.gxt.ui.client.widget.menu.MenuItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.MenuItemParser" />
+  <extend-configuration-property name="gwt.uibinder.elementparser"
+        value="com.extjs.gxt.ui.client.widget.menu.AdapterMenuItem:com.jhickman.web.gwt.gxtuibinder.elementparsers.menu.AdapterMenuItemParser" />
+        
+            
   <extend-configuration-property name="gwt.uibinder.elementparser"
         value="com.extjs.gxt.ui.client.widget.button.ToolButton:com.jhickman.web.gwt.gxtuibinder.elementparsers.button.ToolButtonParser" />
   <extend-configuration-property name="gwt.uibinder.elementparser"
