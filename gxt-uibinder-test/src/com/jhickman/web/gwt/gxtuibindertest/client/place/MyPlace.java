@@ -27,6 +27,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.FxView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.SliderView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.misc.ToolTipsView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tabs.BasicTabsView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.toolbarmenu.BasicToolbarView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.toolbarmenu.MenuBarView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tree.BasicTreeView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tree.CheckboxTreeView;
@@ -185,6 +186,11 @@ public class MyPlace extends Place {
 		fx {
 			public View getView() {
 				return new FxView();
+			}
+		}, 
+		basictoolbar {
+			public View getView() {
+				return new BasicToolbarView();
 			}
 		}
 		;

@@ -71,6 +71,7 @@ public class ExamplesModel {
 				}),
 				new Folder("ToolBar & Menus",
 						new Navigation[] {
+						new Navigation("Basic Toolbar", new MyPlace(Token.basictoolbar), g.basictoolbar().getHTML()),
 						new Navigation("MenuBar", new MyPlace(Token.menubar), g.menubar().getHTML()),
 				}),
 				new Folder("Button", 

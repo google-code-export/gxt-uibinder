@@ -1,0 +1,84 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'
+    xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
+    xmlns:toolbar="urn:import:com.extjs.gxt.ui.client.widget.toolbar"
+    xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button"
+    xmlns:menu="urn:import:com.extjs.gxt.ui.client.widget.menu"
+    xmlns:form="urn:import:com.extjs.gxt.ui.client.widget.form"
+    xmlns:custom="urn:import:com.extjs.gxt.ui.client.widget.custom">
+
+	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.resources.icons.ExampleIcons" field="icons" />
+	<ui:with type="com.extjs.gxt.ui.client.store.ListStore" field="store" />
+
+	<gxt:LayoutContainer>
+		<gxt:layout type="FlowLayout" margins="10" />
+		
+		<gxt:ContentPanel collapsible="true" frame="true" heading="ToolBar &amp; Menu Demo" layout="FitLayout" width="550" height="300">
+			<gxt:topcomponent>
+				<toolbar:ToolBar>
+					<button:Button text="Button w/ Menu" icon="{icons.menu_show}">
+						<menu:Menu>
+							<menu:AdapterMenuItem manageFocus="true" canActivate="true">
+								<form:ComboBox store="{store}"
+									fieldLabel="Company"
+									displayField="name"
+									name="name"
+									valueField="symbol"
+									forceSelection="true"
+									triggerAction="ALL" />
+							</menu:AdapterMenuItem>
+							<menu:CheckMenuItem text="I Like Cats" checked="true" />
+							<menu:CheckMenuItem text="I Like Dogs" />
+							
+							<menu:SeparatorMenuItem />
+							
+							<menu:MenuItem ui:field="radios" text="Radio Options">
+								<menu:Menu>
+									<menu:CheckMenuItem text="Blue Theme" group="radios" checked="true" />
+									<menu:CheckMenuItem text="Gray Theme" group="radios" />
+								</menu:Menu>
+							</menu:MenuItem>
+							<menu:MenuItem text="Choose a Date" icon="{icons.calendar}">
+								<menu:DateMenu />
+							</menu:MenuItem>
+						</menu:Menu>
+					</button:Button>
+					
+					<toolbar:SeparatorToolItem />
+					
+					<button:SplitButton text="Split Button" icon="{icons.list_items}">
+						<menu:Menu>
+							<menu:MenuItem text="&lt;b&gt;Bold&lt;/b&gt;" />
+							<menu:MenuItem text="&lt;i&gt;Italic&lt;/i&gt;" />
+							<menu:MenuItem text="&lt;u&gt;Underline&lt;/u&gt;" />
+						</menu:Menu>
+					</button:SplitButton>
+					
+					<toolbar:SeparatorToolItem />
+					
+					<button:ToggleButton text="Toggle" toggle="true" />
+					
+					<toolbar:SeparatorToolItem />
+					
+					<button:Button text="Scrolling Menu">
+						<menu:Menu maxHeight="200" ui:field="scrollingMenu" />
+					</button:Button>
+					
+					<toolbar:SeparatorToolItem />
+					
+					<toolbar:FillToolItem />
+					
+					<custom:ThemeSelector />
+					
+				</toolbar:ToolBar>
+			</gxt:topcomponent>
+			
+			<gxt:LayoutContainer styleAttribute="backgroundColor:white" borders="true" />
+			
+  		</gxt:ContentPanel>
+		
+		
+	</gxt:LayoutContainer>
+	
+</ui:UiBinder>
