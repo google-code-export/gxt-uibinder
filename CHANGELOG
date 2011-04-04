@@ -1,9 +1,15 @@
+
+
+
+
 0.11
   * Closed Issues
     * Issue 21 - Support MarginData for layout data
     * Issue 24 - Support for TableLayout and ColumnLayout
+    * Issue 25 - Support for AdapterMenuItem
   * New Demos
     * ComboBox
+    * Basic Toolbar
   * Refactorings
     * Refactored LayoutContainerParser to pull out a LayoutParserFactory rather than using a hard coded enum
     * Refactored GenericLayoutParser to pull out a LayoutDataFieldFactory rather than using a hard coded enum
