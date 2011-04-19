@@ -13,6 +13,7 @@ import com.google.gwt.place.shared.Place;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.jhickman.web.gwt.gxtuibindertest.client.AppController;
+import com.jhickman.web.gwt.gxtuibindertest.client.activity.ExperimentActivity;
 import com.jhickman.web.gwt.gxtuibindertest.client.activity.GenericActivity;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace;
 import com.jhickman.web.gwt.gxtuibindertest.client.place.MyPlace.Token;
@@ -72,6 +73,9 @@ public final class AppFactory {
 		if (activityManager == null) {
 			ActivityMapper activityMapper = new ActivityMapper() {
 				public Activity getActivity(Place place) {
+					if (new MyPlace(Token.experiment).equals(place)) {
+						return new ExperimentActivity((MyPlace) place);
+					}
 					if (place instanceof MyPlace) {
 						return new GenericActivity((MyPlace) place);
 					}

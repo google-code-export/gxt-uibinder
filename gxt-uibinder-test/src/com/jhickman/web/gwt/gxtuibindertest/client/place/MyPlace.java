@@ -31,6 +31,7 @@ import com.jhickman.web.gwt.gxtuibindertest.client.view.toolbarmenu.BasicToolbar
 import com.jhickman.web.gwt.gxtuibindertest.client.view.toolbarmenu.MenuBarView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tree.BasicTreeView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.tree.CheckboxTreeView;
+import com.jhickman.web.gwt.gxtuibindertest.client.view.work.ExperimentView;
 import com.jhickman.web.gwt.gxtuibindertest.client.view.work.WorkInProgressView;
 
 /**
@@ -68,6 +69,11 @@ public class MyPlace extends Place {
 		wip {
 			public View getView() {
 				return new WorkInProgressView();
+			}
+		},
+		experiment {
+			public View getView() {
+				return new ExperimentView();
 			}
 		},
 		absolutelayout {
