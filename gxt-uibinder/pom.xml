@@ -6,8 +6,33 @@
     <groupId>com.jhickman</groupId>
     <artifactId>gxt-uibinder</artifactId>
     <inceptionYear>2010</inceptionYear>
-    <version>0.11</version>
+    <version>0.12-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <name>GXT UiBinder</name>
+    <description>Provides UiBinder support for ExtGWT projects</description>
+    <url>http://code.google.com/p/gxt-uibinder/</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:hg:https://gxt-uibinder.googlecode.com/hg/</connection>
+        <url>https://gxt-uibinder.googlecode.com/hg/</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>hickman</id>
+            <name>Justin Hickman</name>
+            <email>justin@jhickman.com</email>
+        </developer>
+    </developers>
 
     <properties>
         <gwtVersion>2.2.0</gwtVersion>
@@ -66,23 +91,8 @@
         <dependency>
             <groupId>com.jhickman</groupId>
             <artifactId>gwt-customuibinder</artifactId>
-            <version>0.1</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/gwt-customuibinder-0.1.jar</systemPath>
+            <version>1.0.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>mc-release</id>
-            <name>Local Maven repository of releases</name>
-            <url>http://mc-repo.googlecode.com/svn/maven2/releases</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
 </project>
