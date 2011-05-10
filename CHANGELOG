@@ -1,6 +1,6 @@
 
-
-
+1.0.0
+  * Issue 26 - Modified pom dependency to not use system path to gwt-customuibinder
 
 0.11
   * Closed Issues
