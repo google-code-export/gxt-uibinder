@@ -81,4 +81,10 @@
 
   <extend-configuration-property name="gwt.uibinder.customHandlerEvaluator"
         value="com.jhickman.web.gwt.gxtuibinder.rebind.GxtHandlerEvaluator" />
+        
+        
+  <!-- Experimental resource parser -->      
+  <extend-configuration-property name="gwt.uibinder.resourceparser"
+        value="com.jhickman.web.gwt.gxtuibinder.resourceparsers.XTemplateParser" />
+        
 </module>
