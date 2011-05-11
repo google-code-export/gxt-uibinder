@@ -1,6 +1,8 @@
 
 1.0.0
+  * Issue 19 - LayoutContainer with BorderLayout should change the styleAttribute attribute to be more consistent
   * Issue 26 - Modified pom dependency to not use system path to gwt-customuibinder
+  * Issue 27 - Add project to public maven repository
 
 0.11
   * Closed Issues
