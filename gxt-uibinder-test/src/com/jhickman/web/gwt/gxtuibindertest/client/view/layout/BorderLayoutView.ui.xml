@@ -6,7 +6,7 @@
     xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget">
 
 
-  	<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding,10px" ui:field="container">
+  	<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding:10px" ui:field="container">
     	<gxt:north size="100" collapsible="true" floatable="true" hideCollapseTool="true" split="true" margins="0,0,5,0">
     		<gxt:ContentPanel>
     		</gxt:ContentPanel>

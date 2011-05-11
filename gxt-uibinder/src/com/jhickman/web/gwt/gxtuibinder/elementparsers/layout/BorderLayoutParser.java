@@ -52,16 +52,6 @@ public class BorderLayoutParser extends GenericLayoutParser {
     public void parse(XMLElement layoutElem, XMLElement elem, String fieldName, JClassType type, UiBinderWriter writer) throws UnableToCompleteException {
     	createAndSetLayout(layoutElem, elem, fieldName, writer);
     	
-    	// FIXME - this should use the same method used in ElementParserUtil.  Can't change until major version due to backwards compatibility
-        XMLAttribute styleAttribute = elem.getAttribute("styleAttribute");
-        if (styleAttribute != null) {
-            String value = styleAttribute.consumeRawValue();
-            String[] parts = value.split(",");
-            if (parts.length == 2) {
-                writer.addStatement("%s.setStyleAttribute(\"%s\", \"%s\");", fieldName, parts[0].trim(), parts[1].trim());
-            }
-        }
-        
         Set<String> layoutRegionsSeen = new HashSet<String>();
         
         for (XMLElement layoutDataElem : elem.consumeChildElements()) {

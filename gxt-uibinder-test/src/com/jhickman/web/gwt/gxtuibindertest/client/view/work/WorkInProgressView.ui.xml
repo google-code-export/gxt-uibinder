@@ -83,7 +83,7 @@
 
 			
 			<gxt:ContentPanel heading="Issue 18" width="350" height="300" layout="FitLayout">
-				<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding,10px">
+				<gxt:LayoutContainer layout="BorderLayout" styleAttribute="padding:10px">
 					<gxt:west split="true" collapsible="true" margins="0,5,0,0" size="150">
 						<gxt:ContentPanel>
 						</gxt:ContentPanel>
