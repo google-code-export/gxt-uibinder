@@ -4,7 +4,7 @@
     xmlns:gxt="urn:import:com.extjs.gxt.ui.client.widget"
     xmlns:form="urn:import:com.extjs.gxt.ui.client.widget.form"
     xmlns:button="urn:import:com.extjs.gxt.ui.client.widget.button"
-    xmlns:menu="urn:import:com.extjs.gxt.ui.client.widget.menu">
+    xmlns:menu="urn:import:com.extjs.gxt.ui.client.widget.menu" xmlns:work="urn:import:com.jhickman.web.gwt.gxtuibindertest.client.view.work">
 
 	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.resources.icons.ExampleIcons" field="icons" />
 	<ui:with type="com.jhickman.web.gwt.gxtuibindertest.client.view.work.WorkInProgressView.Issue20Constants" field="issue20constants" />
@@ -12,6 +12,19 @@
 	<gxt:LayoutContainer>
 		<gxt:layoutdata type="FlowData" margins="10">
 		
+			
+			<form:FormPanel heading="Issue 28" frame="true" width="350" buttonAlign="CENTER">
+				<form:RadioGroup fieldLabel="Favorite Color">
+            		<work:MyRadio boxLabel="Red" value="true" />
+            		<form:Radio boxLabel="Blue" />
+          		</form:RadioGroup>
+          		
+				<work:MyRadioGroup fieldLabel="Favorite Color">
+            		<work:MyRadio boxLabel="Red" value="true" />
+            		<form:Radio boxLabel="Blue" />
+          		</work:MyRadioGroup>
+			</form:FormPanel>
+			
 		
 			<gxt:ContentPanel heading="Issue 24" width="350">
 				<gxt:LayoutContainer>

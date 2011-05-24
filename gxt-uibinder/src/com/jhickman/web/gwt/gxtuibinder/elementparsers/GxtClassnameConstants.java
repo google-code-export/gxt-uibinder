@@ -39,6 +39,8 @@ public interface GxtClassnameConstants {
 	public static final String LAYOUTCONTAINER = GXT_BASE_PACKAGE + "widget.LayoutContainer";
 	public static final String FORMPANEL = GXT_BASE_PACKAGE + "widget.form.FormPanel";
 	
+	public static final String RADIO = GXT_BASE_PACKAGE + "widget.form.Radio";
+	
 	public static final String FORMBUTTONBINDING = GXT_BASE_PACKAGE + "widget.form.FormButtonBinding";
 	
 	
@@ -91,4 +93,6 @@ public interface GxtClassnameConstants {
 	public static final String TREEPANEL = GXT_BASE_PACKAGE + "widget.treepanel.TreePanel";
 
 	public static final String HEADER = GXT_BASE_PACKAGE + "widget.Header";
+
+	
 }
