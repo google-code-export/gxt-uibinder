@@ -1,3 +1,5 @@
+1.0.1
+  * Issue 28 - Support for subclasses of Radio and RadioGroup
 
 1.0.0
   * Issue 19 - LayoutContainer with BorderLayout should change the styleAttribute attribute to be more consistent
