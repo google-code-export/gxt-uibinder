@@ -3,7 +3,7 @@
     <groupId>com.jhickman</groupId>
     <artifactId>gxt-uibinder-root</artifactId>
     <inceptionYear>2010</inceptionYear>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>GXT UiBinder Root</name>
