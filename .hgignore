@@ -14,6 +14,8 @@ gxt-uibinder-test/war/WEB-INF/deploy/gxt_uibinder_test/rpcPolicyManifest/manifes
 
 gxt-uibinder-test/war/WEB-INF/lib
 
+gxt-uibinder-test/gwt-unitCache
+
 
 .DS_Store
 *.swp

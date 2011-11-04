@@ -39,7 +39,7 @@
     </parent>
       
     <properties>
-        <gwtVersion>2.3.0</gwtVersion>
+        <gwtCustomUiBinder.version>1.2.0</gwtCustomUiBinder.version>
         <javac.source>1.5</javac.source>
         <javac.target>1.5</javac.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -127,22 +127,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
-            <version>${gwtVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>${gwtVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>com.jhickman</groupId>
             <artifactId>gwt-customuibinder</artifactId>
-            <version>1.1.0</version>
-            <scope>provided</scope>
+            <version>${gwtCustomUiBinder.version}</version>
         </dependency>
     </dependencies>
 </project>
